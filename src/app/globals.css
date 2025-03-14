@@ -1,26 +1,146 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #f1f8ff;
+    --foreground: #090b0d;
+  
+    --card: #ffffff;
+    --card-foreground: #090b0d;
+  
+    --popover: #ffffff;
+    --popover-foreground: #090b0d;
+  
+    --primary: #a33ef5;
+    --primary-foreground: #ffffff;
+  
+    --secondary: #300099;
+    --secondary-foreground: #ffffff;
+  
+    --muted: #f4f4f7;
+    --muted-foreground: #6f7175;
+  
+    --accent: #170066;
+    --accent-foreground: #ffffff;
+  
+    --destructive: #e02929;
+    --destructive-foreground: #ffffff;
+  
+    --border: #e3e5e9;
+    --input: #e3e5e9;
+    --ring: #a33ef5;
+  
+    --radius: 0.75rem;
+  
+    --sidebar-background: #fafafa;
+    --sidebar-foreground: #454b57;
+    --sidebar-primary: #191c1f;
+    --sidebar-primary-foreground: #fafafa;
+    --sidebar-accent: #f2f2f7;
+    --sidebar-accent-foreground: #191c1f;
+    --sidebar-border: #d0d8e6;
+    --sidebar-ring: #007aff;
+  }
+
+  * {
+    @apply border-border select-none;
+  }
+
+  html {
+    @apply font-poppins scroll-smooth;
+    overscroll-behavior: none;
+  }
+
+  body {
+    overscroll-behavior: none;
+    @apply bg-background text-foreground font-poppins antialiased;
+    background-image: radial-gradient(
+      circle at 50% 50%,
+      rgba(230, 230, 250, 0.5) 0%,
+      rgba(248, 248, 255, 1) 100%
+    );
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .glass {
+    @apply backdrop-blur-md bg-white/60 bg-opacity-70 border border-white/20 shadow-sm;
+  }
+  
+  .glass-card {
+    @apply backdrop-blur-lg bg-white/80 border border-white/30 shadow-md hover:shadow-lg transition-shadow duration-300;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-purpleDark via-brand-purple to-brand-purpleDeep bg-clip-text text-transparent;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-brand-purple to-brand-purpleDark text-white rounded-full font-medium shadow-md hover:shadow-lg transition-all duration-300 hover:translate-y-[-2px];
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-transparent border border-brand-purple text-brand-purple rounded-full font-medium hover:bg-brand-purple hover:text-white transition-all duration-300 hover:shadow-md;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .section-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 leading-none;
+  }
+  
+  .section-subheading {
+    @apply text-lg md:text-xl text-brand-navy/70 mb-12 max-w-2xl mx-auto;
+  }
+
+  .link {
+    @apply relative text-brand-navy hover:text-brand-purple transition-colors duration-300
+           after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 
+           after:bg-brand-purple after:transition-all after:duration-300 hover:after:w-full;
+  }
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  50% { transform: translateX(-50%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee-reverse 40s linear infinite;
+}
+
+.mask-gradient {
+  -webkit-mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+  mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
 }
