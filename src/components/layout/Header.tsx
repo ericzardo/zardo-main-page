@@ -2,65 +2,54 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { cn } from "@/lib/utils";
 import CustomButton from "../ui/Button";
+
+const NAV_ITEMS = ["projects", "about", "testimonials", "contact"];
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Efeito de scroll otimizado
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setIsMobileMenuOpen(false);
   };
 
   return (
     <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled
-          ? "py-5 bg-gradient-to-b from-80% from-white/80 to-transparent"
-          : "py-7 bg-white shadow-sm"
-      )}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? "py-5 bg-gradient-to-b from-white/80 to-transparent" : "py-7 bg-white shadow-sm"
+      }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between relative">
-        {/* Logo totalmente à esquerda */}
-        <div className="flex items-center">
-          <a href="#" className="flex items-center">
-            <span className="text-2xl font-bold text-gradient">zardo</span>
-          </a>
-        </div>
+        
+        {/* Logo */}
+        <a href="#" className="text-2xl font-bold text-gradient">
+          zardo
+        </a>
 
-        {/* Desktop Navigation - Centralizado Absoluto */}
+        {/* Navegação Desktop */}
         <nav className="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
-          {["projects", "about", "testimonials", "contact"].map((item) => (
-            <a
+          {NAV_ITEMS.map((item) => (
+            <button
               key={item}
               onClick={() => scrollToSection(item)}
-              className="link text-brand-navy font-medium hover:text-brand-purple transition-colors capitalize cursor-pointer"
+              className="text-brand-navy font-medium hover:text-brand-purple transition-colors capitalize"
             >
               {item}
-            </a>
+            </button>
           ))}
         </nav>
 
-        {/* Botão totalmente à direita */}
-        <div className="hidden md:flex items-center">
+        {/* Botão de ação Desktop */}
+        <div className="hidden md:flex">
           <CustomButton variant="primary" size="sm">
             Get Started
           </CustomButton>
@@ -82,13 +71,12 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={cn(
-          "fixed inset-0 top-[60px] z-40 bg-white/95 backdrop-blur-lg transform transition-transform duration-300 ease-in-out md:hidden flex flex-col items-center",
+        className={`fixed inset-0 top-[60px] z-40 bg-white/95 backdrop-blur-lg transform transition-transform duration-300 ease-in-out md:hidden flex flex-col items-center ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        )}
+        }`}
       >
         <div className="container mx-auto px-4 py-8 flex flex-col gap-6 items-center">
-          {["about", "features", "testimonials", "contact"].map((item) => (
+          {NAV_ITEMS.map((item) => (
             <button
               key={item}
               onClick={() => scrollToSection(item)}

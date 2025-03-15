@@ -74,7 +74,7 @@ const WebDevelopment = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
             {/* Imagem ou vídeo */}
             <SectionTransition direction="left">
-              <div className="flex justify-center">
+              <div className="flex justify-center"> 
                 <div className="relative w-fit max-w-80 rounded-lg overflow-hidden">
                   <video
                     src="https://videos.pexels.com/video-files/6331337/6331337-hd_1080_1920_30fps.mp4"

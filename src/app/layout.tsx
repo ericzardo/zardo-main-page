@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import "./globals.css";
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import "./globals.css";
 
 const poppins = Poppins({
   variable: "--font-poppins-sans",
@@ -21,22 +22,27 @@ export const metadata: Metadata = {
     "innovation",
     "web development",
     "digital solutions",
+    "zardo",
+    "AI agents",
+    "AI automation",
+    "machine learning",
+    "artificial intelligence",
   ],
-  authors: [{ name: "zardo", url: "https://zardo.com" }],
+  authors: [{ name: "zardo", url: "https://zardo.dev" }],
   creator: "zardo",
   publisher: "zardo",
   openGraph: {
-    title: "zardo - Digital Solutions",
+    title: "zardo",
     description:
       "zardo turns ideas into cutting-edge digital solutions. We create unique experiences with top-tier technology.",
-    url: "https://zardo.com",
+    url: "https://zardo.dev",
     siteName: "zardo",
     images: [
       {
-        url: "https://zardo.com/og-image.jpg",
+        url: "https://zardo.dev/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Zardo - Innovation & Technology",
+        alt: "zardo",
       },
     ],
     locale: "en_US",
@@ -44,7 +50,6 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
   },
 };
 

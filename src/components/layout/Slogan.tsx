@@ -1,9 +1,10 @@
+
+
 import SectionTransition from "../ui/SectionTransition";
 
 const Slogan = () => {
   return (
     <section className="relative py-12 md:py-16 flex items-center bg-brand-navy text-brand-lavender rounded-t-[20px] md:rounded-t-[40px] lg:rounded-t-[60px]" id="pre-footer">
-      <div className="absolute top-0 left-0 w-full bg-brand-offwhite"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <SectionTransition direction="up">

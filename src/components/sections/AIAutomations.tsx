@@ -7,8 +7,10 @@ import { gsap } from "gsap";
 import SectionTransition from "@/components/ui/SectionTransition";
 import PatternBackground from "@/components/ui/PatternBackground";
 
+// Registro do plugin GSAP
 gsap.registerPlugin();
 
+// Lista de integrações com ícones e nomes
 const integrations = [
   { name: "Google Sheets", icon: "/integration-logos/google-sheets.webp" },
   { name: "Airtable", icon: "/integration-logos/airtable.webp" },
@@ -34,98 +36,69 @@ const integrations = [
 ];
 
 const AIAutomations = () => {
-  const chatbotAnimationContainer = useRef(null);
-  const dashboardAnimationContainer = useRef(null);
-  const workflowAnimationContainer = useRef(null);
-  const machineLearningAnimationContainer = useRef(null);
-  const marqueeRef = useRef(null);
+  // Tipagem para referências de animação (useRef) - Elementos HTML podem ser nulos inicialmente
+  const chatbotAnimationContainer = useRef<HTMLDivElement | null>(null);
+  const dashboardAnimationContainer = useRef<HTMLDivElement | null>(null);
+  const workflowAnimationContainer = useRef<HTMLDivElement | null>(null);
+  const machineLearningAnimationContainer = useRef<HTMLDivElement | null>(null);
+  const marqueeRef = useRef<HTMLDivElement | null>(null);
 
-  // Animação do chatbot
+  // Função para carregar animações Lottie
+  const loadAnimation = (
+    container: HTMLDivElement | null,
+    path: string,
+    settings: { scale?: number; speed?: number; x?: number; y?: number } = {}
+  ) => {
+    if (!container) return;
+
+    const animation = lottie.loadAnimation({
+      container,
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      path,
+    });
+
+    // Aplicar configurações de animação
+    gsap.to(container, {
+      scale: settings.scale || 1,
+      x: settings.x || 0,
+      y: settings.y || 0,
+      duration: 0.3,
+      ease: "power2.out",
+    });
+
+    if (settings.speed) {
+      animation.setSpeed(settings.speed);
+    }
+
+    return () => animation.destroy();
+  };
+
+  // Carregar animações de forma eficiente
   useEffect(() => {
     if (chatbotAnimationContainer.current) {
-      const animation = lottie.loadAnimation({
-        container: chatbotAnimationContainer.current,
-        renderer: "svg",
-        loop: true,
-        autoplay: true,
-        path: "/animations/chatbot.json",
-      });
-
-      return () => animation.destroy();
+      loadAnimation(chatbotAnimationContainer.current, "/animations/chatbot.json");
     }
-  }, []);
 
-  // Animação do workflow
-  useEffect(() => {
     if (workflowAnimationContainer.current) {
-      const animation = lottie.loadAnimation({
-        container: workflowAnimationContainer.current,
-        renderer: "svg",
-        loop: true,
-        autoplay: true,
-        path: "/animations/workflow.json",
-        rendererSettings: {
-          preserveAspectRatio: "xMidYMid slice"
-        }
-      });
-
-      animation.setSpeed(0.7);
-
-      gsap.to(workflowAnimationContainer.current, {
+      loadAnimation(workflowAnimationContainer.current, "/animations/workflow.json", {
         scale: 1.5,
+        speed: 0.7,
         y: -17,
-        duration: 0.3,
-        ease: "power2.out",
       });
-
-      return () => animation.destroy();
     }
-  }, []);
 
-    // Animação da machine learning
-    useEffect(() => {
-      if (machineLearningAnimationContainer.current) {
-        const animation = lottie.loadAnimation({
-          container: machineLearningAnimationContainer.current,
-          renderer: "svg",
-          loop: true,
-          autoplay: true,
-          path: "/animations/machine-learn.json",
-        });
+    if (machineLearningAnimationContainer.current) {
+      loadAnimation(machineLearningAnimationContainer.current, "/animations/machine-learn.json", { scale: 2 });
+    }
 
-        gsap.to(machineLearningAnimationContainer.current, {
-          scale: 2,
-          duration: 0.3,
-          ease: "power2.out",
-        });
-  
-        return () => animation.destroy();
-      }
-    }, []);
-
-  // Animação do dashboard
-  useEffect(() => {
     if (dashboardAnimationContainer.current) {
-      const animation = lottie.loadAnimation({
-        container: dashboardAnimationContainer.current,
-        renderer: "svg",
-        loop: true,
-        autoplay: true,
-        path: "/animations/dashboard.json",
-      });
-
-      gsap.to(dashboardAnimationContainer.current, {
-        scale: 1.2,
-        x: -20,
-        duration: 0.3,
-        ease: "power2.out",
-      });
-
-      return () => animation.destroy();
+      loadAnimation(dashboardAnimationContainer.current, "/animations/dashboard.json", { scale: 1.2, x: -20 });
     }
   }, []);
 
-  // Animação infinita das logos
+  // Animação das logos infinitas
   useEffect(() => {
     if (marqueeRef.current) {
       gsap.to(marqueeRef.current, {
@@ -135,14 +108,16 @@ const AIAutomations = () => {
         ease: "linear",
       });
 
-      // Expandindo suavemente o tamanho da área animada sem usar ScrollTrigger
       gsap.to(marqueeRef.current, {
-        scaleX: 1.2, // Expansão natural da animação
+        scaleX: 1.2,
         duration: 2,
         ease: "power2.out",
       });
     }
   }, []);
+
+  // Tipagem para direction
+  type Direction = "left" | "right" | "up" | "scale";
 
   return (
     <section className="relative py-16 md:py-24 bg-brand-offwhite overflow-hidden" id="ai-automations">
@@ -150,9 +125,7 @@ const AIAutomations = () => {
       <div className="container mx-auto px-4">
         <SectionTransition direction="up">
           <div className="text-center mb-12">
-            <h2 className="section-heading text-gradient">
-              AI & Automations
-            </h2>
+            <h2 className="section-heading text-gradient">AI & Automations</h2>
             <p className="text-base text-brand-navy/60 max-w-2xl mx-auto">
               Intelligent automation for maximum efficiency. We optimize processes, eliminate repetitive tasks, and boost your business with customized AI solutions.
             </p>
@@ -160,57 +133,24 @@ const AIAutomations = () => {
         </SectionTransition>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <SectionTransition direction="left">
-            <div className="relative bg-white/50 rounded-lg p-6 shadow-sm border border-white/30 backdrop-blur-sm flex flex-col md:flex-row items-center md:items-start w-full max-w-md mx-auto md:max-w-none">
-              <div className="md:w-1/2 text-center md:text-left">
-                <h3 className="text-2xl font-medium text-brand-navy mb-2">AI-Driven Assistance</h3>
-                <p className="text-brand-navy/70 mb-8">
-                  Experience seamless interaction with AI—quick, automated solutions with a human touch.
-                </p>
+          {[
+            { title: "AI-Driven Assistance", description: "Experience seamless interaction with AI—quick, automated solutions with a human touch.", animationRef: chatbotAnimationContainer, direction: 'left' as Direction },
+            { title: "AI-Powered Personalization", description: "Create personalized, automated experiences that adjust to user behavior in real time.", animationRef: machineLearningAnimationContainer, direction: 'right' as Direction },
+            { title: "AI-Powered Insights", description: "Turn data into smart decisions with advanced analytics.", animationRef: dashboardAnimationContainer, direction: 'left' as Direction },
+            { title: "AI-Powered Automation", description: "Integrate apps, automate processes, and keep everything in sync—effortlessly.", animationRef: workflowAnimationContainer, direction: 'right' as Direction },
+          ].map(({ title, description, animationRef, direction }, index) => (
+            <SectionTransition direction={direction} key={index}>
+              <div className="relative bg-white/50 rounded-lg p-6 shadow-sm border border-white/30 backdrop-blur-sm flex flex-col md:flex-row items-center md:items-start w-full max-w-md mx-auto md:max-w-none">
+                <div className="md:w-1/2 text-center md:text-left">
+                  <h3 className="text-2xl font-medium text-brand-navy mb-2">{title}</h3>
+                  <p className="text-brand-navy/70 mb-8">{description}</p>
+                </div>
+                <div className="md:w-1/2 flex justify-center">
+                  <div ref={animationRef} className="w-[200px] h-[200px] md:w-[250px] md:h-[250px]"></div>
+                </div>
               </div>
-              <div className="md:w-1/2 flex justify-center">
-                <div ref={chatbotAnimationContainer} className="w-[200px] h-[200px] md:w-[250px] md:h-[250px]"></div>
-              </div>
-            </div>
-          </SectionTransition>
-
-          <SectionTransition direction="right">
-            <div className="relative bg-white/50 rounded-lg p-6 shadow-sm border border-white/30 backdrop-blur-sm flex flex-col md:flex-row items-center md:items-start w-full max-w-md mx-auto md:max-w-none">
-              <div className="text-center md:text-left">
-                <h3 className="text-2xl font-medium text-brand-navy mb-2">AI-Powered Personalization</h3>
-                <p className="text-brand-navy/70">Create personalized, automated experiences that adjust to user behavior in real time.</p>
-              </div>
-              <div className="flex justify-center">
-                <div ref={machineLearningAnimationContainer} className="w-[250px] h-[200px] md:w-[350px] md:h-[250px]"></div>
-              </div>
-            </div>
-          </SectionTransition>
-
-          <SectionTransition direction="left">
-            <div className="relative bg-white/50 rounded-lg p-6 shadow-sm border border-white/30 backdrop-blur-sm flex flex-col md:flex-row items-center md:items-start w-full max-w-md mx-auto md:max-w-none">
-              <div className="md:w-1/2 text-center md:text-left">
-                <h3 className="text-2xl font-medium text-brand-navy mb-2">AI-Powered Insights</h3>
-                <p className="text-brand-navy/70">Turn data into smart decisions with advanced analytics.</p>
-              </div>
-              <div className="md:w-2/3 flex justify-center">
-                <div ref={dashboardAnimationContainer} className="w-[250px] h-[200px] md:w-[350px] md:h-[250px]"></div>
-              </div>
-            </div>
-          </SectionTransition>
-
-          <SectionTransition direction="right">
-            <div className="relative bg-white/50 rounded-lg p-6 shadow-sm border border-white/30 backdrop-blur-sm flex flex-col md:flex-row items-center md:items-start w-full max-w-md mx-auto md:max-w-none">
-              <div className="md:w-1/2 text-center md:text-left">
-                <h3 className="text-2xl font-medium text-brand-navy mb-2">AI-Powered Automation</h3>
-                <p className="text-brand-navy/70 mb-8">
-                Integrate apps, automate processes, and keep everything in sync—effortlessly.
-                </p>
-              </div>
-              <div className="md:w-1/2 flex justify-center overflow-hidden">
-                <div ref={workflowAnimationContainer} className="max-w-[200px] md:max-w-[250px] object-fill object-center"></div>
-              </div>
-            </div>
-          </SectionTransition>
+            </SectionTransition>
+          ))}
         </div>
 
         <PatternBackground variant="circuit" opacity={0.2} />
@@ -231,8 +171,8 @@ const AIAutomations = () => {
                   key={index}
                   src={integration.icon}
                   alt={integration.name}
-                  width={150} // Garantindo tamanho fixo proporcional
-                  height={40} // Mantendo proporção
+                  width={150}
+                  height={40}
                   className="object-contain max-h-[40px] opacity-70 hover:opacity-100 transition-opacity duration-300"
                 />
               ))}

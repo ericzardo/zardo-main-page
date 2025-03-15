@@ -68,22 +68,6 @@ const Hero = () => {
               <div className="absolute -top-5 -left-5 h-32 w-32 bg-brand-purpleDark/10 rounded-full blur-2xl" />
             </div>
           </SectionTransition>
-
-          {/* <SectionTransition delay={1000}>
-            <div className="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
-              {[
-                { number: '98%', text: 'Customer Satisfaction' },
-                { number: '250+', text: 'Projects Completed' },
-                { number: '15+', text: 'Years of Experience' },
-                { number: '40+', text: 'Tech Experts' },
-              ].map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-brand-purpleDark">{stat.number}</div>
-                  <div className="text-sm text-brand-navy/70">{stat.text}</div>
-                </div>
-              ))}
-            </div>
-          </SectionTransition> */}
         </div>
       </div>
     </section>
