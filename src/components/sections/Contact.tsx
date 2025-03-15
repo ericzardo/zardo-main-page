@@ -50,7 +50,7 @@ const Contact: React.FC = () => {
 
           {/* Right Column - Contact Form */}
           <SectionTransition direction="right">
-            <div className="glass-card rounded-xl p-6 md:p-8 backdrop-blur-sm relative overflow-hidden">
+            <div className="bg-white/50 border border-white/30 rounded-lg shadow-md p-6 md:p-8 backdrop-blur-sm relative overflow-hidden">
               <div className="absolute top-0 right-0 w-40 h-40 bg-brand-purple/5 rounded-full translate-x-1/2 -translate-y-1/2 blur-xl"></div>
               
               <form className="space-y-5">

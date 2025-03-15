@@ -1,6 +1,6 @@
 "use client";
 
-import { SiTypescript, SiJavascript, SiReact, SiNextdotjs, SiTailwindcss, SiFastify, SiExpress, SiPrisma, SiMysql, SiDocker } from "react-icons/si";
+import { SiTypescript, SiReact, SiNextdotjs, SiTailwindcss, SiFastify, SiExpress, SiPrisma, SiDocker } from "react-icons/si";
 import SectionTransition from "@/components/ui/SectionTransition";
 import PatternBackground from "@/components/ui/PatternBackground";
 
@@ -11,12 +11,12 @@ const WebDevelopment = () => {
       <div className="container mx-auto px-4">
         <SectionTransition direction="up">
           <div className="text-center mb-12">
-            <span className="inline-block mb-3 px-3 py-1 bg-brand-lavender/30 backdrop-blur-sm rounded-full text-sm font-medium text-brand-purpleDark mx-auto">
-              Web Development
-            </span>
             <h2 className="section-heading text-gradient">
-              Build fast, scalable, and modern web solutions tailored to your business needs.
+              Web Development
             </h2>
+            <p className="text-base text-brand-navy/60 max-w-2xl mx-auto">
+              Fast, scalable and personalized digital experiences. We develop innovative solutions to transform your online presence and boost your business.
+            </p>
           </div>
         </SectionTransition>
 
@@ -62,7 +62,7 @@ const WebDevelopment = () => {
                     loop
                     muted
                     playsInline
-                    className="rounded-lg shadow-md"
+                    className="rounded-lg shadow-md border border-white/30 backdrop-blur-sm"
                   />
                   <div className="absolute inset-0 bg-gradient-to-bl from-brand-purpleDeep/60 via-transparent to-brand-purpleDeep/60"></div>
                 </div>
@@ -82,7 +82,7 @@ const WebDevelopment = () => {
                     loop
                     muted
                     playsInline
-                    className="rounded-lg shadow-md"
+                    className="rounded-lg shadow-md border border-white/30 backdrop-blur-sm"
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-brand-purpleDeep/60 via-transparent to-brand-purpleDeep/60"></div>
                 </div>

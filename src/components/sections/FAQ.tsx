@@ -82,7 +82,7 @@ const FAQ = () => {
         </SectionTransition>
         
         <SectionTransition direction="up" delay={300}>
-          <div className="max-w-3xl mx-auto bg-white/50 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-white/30">
+          <div className="max-w-3xl mx-auto bg-white/50 backdrop-blur-sm rounded-lg p-6 shadow-md border border-white/30">
             {faqItems.map((item, index) => (
               <FAQItem 
                 key={index} 

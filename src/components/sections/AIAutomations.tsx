@@ -150,18 +150,18 @@ const AIAutomations = () => {
       <div className="container mx-auto px-4">
         <SectionTransition direction="up">
           <div className="text-center mb-12">
-            <span className="inline-block mb-3 px-3 py-1 bg-brand-lavender/30 backdrop-blur-sm rounded-full text-sm font-medium text-brand-purpleDark mx-auto">
-              AI & Automations
-            </span>
             <h2 className="section-heading text-gradient">
-              Automate tasks, enhance workflows, and optimize productivity with AI-driven automation solutions.
+              AI & Automations
             </h2>
+            <p className="text-base text-brand-navy/60 max-w-2xl mx-auto">
+              Intelligent automation for maximum efficiency. We optimize processes, eliminate repetitive tasks, and boost your business with customized AI solutions.
+            </p>
           </div>
         </SectionTransition>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <SectionTransition direction="left">
-            <div className="relative bg-brand-lavender backdrop-blur-sm rounded-xl p-6 shadow-md flex flex-col md:flex-row items-center md:items-start w-full max-w-md mx-auto md:max-w-none">
+            <div className="relative bg-white/50 rounded-lg p-6 shadow-sm border border-white/30 backdrop-blur-sm flex flex-col md:flex-row items-center md:items-start w-full max-w-md mx-auto md:max-w-none">
               <div className="md:w-1/2 text-center md:text-left">
                 <h3 className="text-2xl font-medium text-brand-navy mb-2">AI-Driven Assistance</h3>
                 <p className="text-brand-navy/70 mb-8">
@@ -175,7 +175,7 @@ const AIAutomations = () => {
           </SectionTransition>
 
           <SectionTransition direction="right">
-            <div className="relative bg-brand-lavender backdrop-blur-sm rounded-xl p-6 shadow-md flex flex-col md:flex-row items-center md:items-start w-full max-w-md mx-auto md:max-w-none">
+            <div className="relative bg-white/50 rounded-lg p-6 shadow-sm border border-white/30 backdrop-blur-sm flex flex-col md:flex-row items-center md:items-start w-full max-w-md mx-auto md:max-w-none">
               <div className="text-center md:text-left">
                 <h3 className="text-2xl font-medium text-brand-navy mb-2">AI-Powered Personalization</h3>
                 <p className="text-brand-navy/70">Create personalized, automated experiences that adjust to user behavior in real time.</p>
@@ -187,7 +187,7 @@ const AIAutomations = () => {
           </SectionTransition>
 
           <SectionTransition direction="left">
-            <div className="relative bg-brand-lavender backdrop-blur-sm rounded-xl p-6 shadow-md flex flex-col md:flex-row items-center md:items-start w-full max-w-md mx-auto md:max-w-none">
+            <div className="relative bg-white/50 rounded-lg p-6 shadow-sm border border-white/30 backdrop-blur-sm flex flex-col md:flex-row items-center md:items-start w-full max-w-md mx-auto md:max-w-none">
               <div className="md:w-1/2 text-center md:text-left">
                 <h3 className="text-2xl font-medium text-brand-navy mb-2">AI-Powered Insights</h3>
                 <p className="text-brand-navy/70">Turn data into smart decisions with advanced analytics.</p>
@@ -199,7 +199,7 @@ const AIAutomations = () => {
           </SectionTransition>
 
           <SectionTransition direction="right">
-            <div className="relative bg-brand-lavender backdrop-blur-sm rounded-xl p-6 shadow-md flex flex-col md:flex-row items-center md:items-start w-full max-w-md mx-auto md:max-w-none">
+            <div className="relative bg-white/50 rounded-lg p-6 shadow-sm border border-white/30 backdrop-blur-sm flex flex-col md:flex-row items-center md:items-start w-full max-w-md mx-auto md:max-w-none">
               <div className="md:w-1/2 text-center md:text-left">
                 <h3 className="text-2xl font-medium text-brand-navy mb-2">AI-Powered Automation</h3>
                 <p className="text-brand-navy/70 mb-8">

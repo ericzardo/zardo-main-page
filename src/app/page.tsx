@@ -9,6 +9,7 @@ import FAQ from "@/components/sections/FAQ";
 import Services from "@/components/sections/ServicesList";
 import AIAutomations from "@/components/sections/AIAutomations";
 import WebDevelopment from "@/components/sections/WebDevelopment";
+import Portfolio from "@/components/sections/Portfolio";
 
 export default function Home() {
   return (
@@ -17,8 +18,9 @@ export default function Home() {
 
       <Hero/>
       <Services/>
-      <AIAutomations/>
+      <Portfolio/>
       <WebDevelopment/>
+      <AIAutomations/>
       <Behind/>
       <Contact/>
       <FAQ/>

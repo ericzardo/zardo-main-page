@@ -48,7 +48,7 @@ const Header = () => {
 
         {/* Desktop Navigation - Centralizado Absoluto */}
         <nav className="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
-          {["about", "features", "testimonials", "contact"].map((item) => (
+          {["projects", "about", "testimonials", "contact"].map((item) => (
             <a
               key={item}
               onClick={() => scrollToSection(item)}
