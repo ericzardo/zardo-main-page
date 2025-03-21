@@ -15,6 +15,7 @@ const Solutions = () => {
   const chatbotAnimationContainer = useRef<HTMLDivElement | null>(null);
   const machineLearningAnimationContainer = useRef<HTMLDivElement | null>(null);
   const websiteAnimationContainer = useRef<HTMLDivElement | null>(null);
+  const animationsRef = useRef<{ [key: string]: any }>({});
 
   const loadAnimation = (
     container: HTMLDivElement | null,
@@ -23,6 +24,11 @@ const Solutions = () => {
   ) => {
     if (!container) return;
 
+    // Limpa animação anterior se existir
+    if (animationsRef.current[path]) {
+      animationsRef.current[path].destroy();
+    }
+
     const animation = lottie.loadAnimation({
       container,
       renderer: "svg",
@@ -30,6 +36,9 @@ const Solutions = () => {
       autoplay: true,
       path,
     });
+
+    // Armazena a referência da animação
+    animationsRef.current[path] = animation;
 
     gsap.to(container, {
       scale: settings.scale || 1,
@@ -42,8 +51,6 @@ const Solutions = () => {
     if (settings.speed) {
       animation.setSpeed(settings.speed);
     }
-
-    return () => animation.destroy();
   };
 
   useEffect(() => {
@@ -56,6 +63,16 @@ const Solutions = () => {
     if (machineLearningAnimationContainer.current) {
       loadAnimation(machineLearningAnimationContainer.current, "/animations/machine-learn.json", { scale: 2.1, speed: 0.5 });
     }
+
+    // Cleanup function
+    return () => {
+      Object.values(animationsRef.current).forEach(animation => {
+        if (animation && typeof animation.destroy === 'function') {
+          animation.destroy();
+        }
+      });
+      animationsRef.current = {};
+    };
   }, []);
 
   const standardCards = [

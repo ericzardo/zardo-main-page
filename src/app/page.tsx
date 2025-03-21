@@ -1,5 +1,9 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import LoadingScreen from "@/components/ui/LoadingScreen";
 
 import Hero from "@/components/sections/Hero";
 import Behind from "@/components/sections/Behind";
@@ -13,8 +17,19 @@ import Solutions from "@/components/sections/Solutions";
 import Process from "@/components/sections/Process";
 
 export default function Home() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return <LoadingScreen />;
+  }
+
   return (
     <div className="overflow-hidden bg-brand-offwhite">
+      <LoadingScreen />
       <Header />
       <Hero/>
       <Solutions/>

@@ -8,100 +8,91 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Services = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const listRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.playbackRate = 1;
     }
 
-    const items = document.querySelectorAll(".list-item");
+    const items = gsap.utils.toArray(".list-item") as HTMLElement[];
     
-    items.forEach((item, index) => {
-      const listItem = item as HTMLElement;
+    // Set initial state
+    gsap.set(items, {
+      opacity: 0.25,
+      scale: 0.9,
+    });
+    
+    gsap.set(items[0], {
+      opacity: 1,
+      scale: 1.1,
+    });
 
-      
-      const distance = Math.abs(index - 0);
-
-      if (distance === 0) {
-        listItem.style.opacity = "1";
-      } else if (distance === 1) {
-        listItem.style.opacity = "0.75";
-      } else if (distance === 2) {
-        listItem.style.opacity = "0.5";
-      } else {
-        listItem.style.opacity = "0.25";
+    // Create scroll trigger
+    ScrollTrigger.create({
+      trigger: sectionRef.current,
+      start: "-5% top",
+      end: "+=150%",
+      pin: true,
+      scrub: 0.1,
+      onUpdate: (self) => {
+        const progress = self.progress;
+        const totalItems = items.length;
+        const currentIndex = Math.floor(progress * (totalItems - 1));
+        
+        items.forEach((item, index) => {
+          const distance = Math.abs(index - currentIndex);
+          const opacity = distance === 0 ? 1 : 
+                         distance === 1 ? 0.75 :
+                         distance === 2 ? 0.5 : 0.25;
+          const scale = distance === 0 ? 1.1 : 0.9;
+          
+          gsap.to(item, {
+            opacity,
+            scale,
+            duration: 0.1,
+            ease: "none"
+          });
+        });
       }
     });
 
-    gsap.to(items, {
-      scrollTrigger: {
-        trigger: ".scroll-trigger-section",
-        start: "5% top",
-        end: "bottom top",
-        scrub: 0.5,
-        markers: false,
-        pin: true,
-        onUpdate: (self) => {
-          const progress = self.progress;
-          const totalItems = items.length;
-          const currentItemIndex = Math.floor(progress * totalItems);
-
-          items.forEach((item, index) => {
-            const distance = Math.abs(index - currentItemIndex);
-
-            const listItem = item as HTMLElement;
-
-            if (distance === 0) {
-              listItem.style.opacity = "1";
-              listItem.classList.add("!scale-110");
-            } else if (distance === 1) {
-              listItem.style.opacity = "0.75";
-              listItem.classList.remove("!scale-110");
-            } else if (distance === 2) {
-              listItem.style.opacity = "0.5";
-              listItem.classList.remove("!scale-110");
-            } else if (distance === 3) {
-              listItem.style.opacity = "0.25";
-              listItem.classList.remove("!scale-110");
-            } else {
-              listItem.style.opacity = "0.25";
-              listItem.classList.remove("!scale-110");
-            }
-          });
-
-          if (progress === 1) {
-            const lastItem = items[items.length - 1] as HTMLElement;
-            lastItem.style.opacity = "1";
-          }
-        },
-      },
-    });
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
   }, []);
 
   return (
-    <section className="scroll-trigger-section relative min-h-screen flex justify-center items-center rounded-[20px] md:rounded-[40px] lg:rounded-[60px] overflow-hidden">
-      <video
-        ref={videoRef}
-        className="absolute top-0 left-0 w-full h-full object-cover"
-        autoPlay
-        loop
-        muted
-        preload="none"
-      >
-        <source src="https://videos.pexels.com/video-files/10915129/10915129-hd_3840_2160_30fps.mp4" type="video/mp4" />
-      </video>
+    <section 
+      ref={sectionRef}
+      className="relative min-h-screen flex justify-center items-center rounded-[20px] md:rounded-[40px] lg:rounded-[60px] overflow-hidden bg-brand-navy"
+    >
+      <div className="absolute inset-0 z-0">
+        <video
+          ref={videoRef}
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+        >
+          <source src="https://videos.pexels.com/video-files/10915129/10915129-hd_3840_2160_30fps.mp4" type="video/mp4" />
+        </video>
 
-      {/* Camada de cor navy sobre o vídeo */}
-      <div className="absolute top-0 left-0 w-full h-full bg-brand-navy opacity-85 z-10"></div> {/* Camada escurecendo o vídeo */}
+        {/* Camada de cor navy sobre o vídeo */}
+        <div className="absolute top-0 left-0 w-full h-full bg-brand-navy opacity-85"></div>
+      </div>
 
       {/* Conteúdo da seção */}
-      <div className="content-wrapper relative w-full flex flex-col justify-center items-center gap-6 py-16 md:py-28 lg:py-36 z-20">
-        <ul className="scroll-trigger-list flex flex-col items-center gap-12">
-          <li className="list-item text-4xl md:text-6xl lg:text-8xl text-brand-lavender opacity-40 transition-all ease-out transform scale-90 cursor-pointer">Web Development</li>
-          <li className="list-item text-4xl md:text-6xl lg:text-8xl text-brand-lavender opacity-40 transition-all ease-out transform scale-90 cursor-pointer">Web Applications</li>
-          <li className="list-item text-4xl md:text-6xl lg:text-8xl text-brand-lavender opacity-40 transition-all ease-out transform scale-90 cursor-pointer">AI Automation</li>
-          <li className="list-item text-4xl md:text-6xl lg:text-8xl text-brand-lavender opacity-40 transition-all ease-out transform scale-90 cursor-pointer">API Integrations</li>
-          <li className="list-item text-4xl md:text-6xl lg:text-8xl text-brand-lavender opacity-40 transition-all ease-out transform scale-90 cursor-pointer">Business Workflows</li>
+      <div className="relative w-full flex flex-col justify-center items-center gap-6 py-16 md:py-28 lg:py-36 z-20">
+        <ul ref={listRef} className="flex flex-col items-center gap-12">
+          <li className="list-item text-4xl md:text-6xl lg:text-8xl text-brand-lavender transition-all duration-150 ease-linear cursor-pointer">Web Development</li>
+          <li className="list-item text-4xl md:text-6xl lg:text-8xl text-brand-lavender transition-all duration-150 ease-linear cursor-pointer">Web Applications</li>
+          <li className="list-item text-4xl md:text-6xl lg:text-8xl text-brand-lavender transition-all duration-150 ease-linear cursor-pointer">AI Automation</li>
+          <li className="list-item text-4xl md:text-6xl lg:text-8xl text-brand-lavender transition-all duration-150 ease-linear cursor-pointer">API Integrations</li>
+          <li className="list-item text-4xl md:text-6xl lg:text-8xl text-brand-lavender transition-all duration-150 ease-linear cursor-pointer">Business Workflows</li>
         </ul>
       </div>
     </section>
