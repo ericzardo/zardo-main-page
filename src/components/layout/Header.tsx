@@ -1,8 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import CustomButton from "../ui/Button";
+import Button from "../ui/Button";
 
 const NAV_ITEMS = ["projects", "about", "testimonials", "contact"];
 
@@ -25,15 +26,15 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "py-5 bg-gradient-to-b from-white/80 to-transparent" : "py-7 bg-white shadow-sm"
+        isScrolled ? "py-5 bg-gradient-to-b from-white/80 from-80% to-transparent" : "py-7 bg-white shadow-sm"
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between relative">
         
         {/* Logo */}
-        <a href="#" className="text-2xl font-bold text-gradient">
+        <Link href="/" className="text-2xl font-bold text-gradient">
           zardo
-        </a>
+        </Link>
 
         {/* Navegação Desktop */}
         <nav className="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
@@ -50,9 +51,11 @@ const Header = () => {
 
         {/* Botão de ação Desktop */}
         <div className="hidden md:flex">
-          <CustomButton variant="primary" size="sm">
-            Get Started
-          </CustomButton>
+          <Link href="#contact">
+            <Button variant="primary" size="sm">
+              Get Started
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -85,9 +88,11 @@ const Header = () => {
               {item}
             </button>
           ))}
-          <CustomButton variant="primary" className="mt-4">
-            Get Started
-          </CustomButton>
+          <Link href="#contact">
+            <Button variant="primary" className="mt-4">
+              Get Started
+            </Button>
+          </Link>
         </div>
       </div>
     </header>

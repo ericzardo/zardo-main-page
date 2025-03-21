@@ -1,6 +1,7 @@
 "use client";
 
-import { ChevronDown, ChevronRight } from "lucide-react";
+import { ChevronDown, Instagram, Linkedin, Mail } from "lucide-react";
+import Link from "next/link";
 
 const Footer = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
@@ -9,8 +10,40 @@ const Footer = () => {
     <footer className="relative py-12 bg-brand-navy text-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col-reverse md:flex-row gap-5 justify-between items-center">
-          
-          {/* Botão de voltar ao topo */}
+
+          <div className="flex items-center gap-4">
+            <Link
+              href="#"
+              className="flex items-center justify-center hover:scale-90 hover:text-white/80 transition-all duration-200 ease-out"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Zardo's Instagram Profile"
+            >
+              <Instagram strokeWidth={2} className="size-6 text-white/60"/>
+            </Link>
+            <Link
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center hover:scale-90 hover:text-white/80 transition-all duration-200 ease-out"
+              aria-label="Zardo's LinkedIn Profile"
+            >
+              <Linkedin strokeWidth={2} className="size-6 text-white/60"/>
+            </Link>
+            <Link
+              href="mailto:contact@zardo.tech"
+              target="_blank"
+              rel="noopener noreferrer" 
+              className="flex items-center justify-center hover:scale-90 hover:text-white/80 transition-all duration-200 ease-out"
+              aria-label="Send an email to contact@zardo.tech"
+              title="Send email to contact@zardo.tech"
+            >
+              <Mail strokeWidth={2} className="size-6 text-white/60"/>
+            </Link>
+          </div>
+
+          <p className="text-white/70">2025 © zardo. All rights reserved.</p>
+
           <button
             onClick={scrollToTop}
             className="text-white/70 flex gap-2 items-center transition-all cursor-pointer hover:scale-90 hover:text-white/80 duration-200 ease-out group"
@@ -19,45 +52,6 @@ const Footer = () => {
             <ChevronDown className="transition-transform duration-300 group-hover:rotate-180" />
             Back to Top
           </button>
-
-          {/* Texto de direitos autorais */}
-          <p className="text-white/70">2025 © zardo. All rights reserved.</p>
-
-          {/* Botão de Follow Us com Dropdown */}
-          <div className="relative group">
-            <button
-              className="flex items-center gap-2 text-white/70 transition-all duration-300 ease-out group-hover:scale-90 group-hover:text-white/80"
-              aria-label="Follow us on social media"
-            >
-              Follow us
-              <ChevronRight className="transition-transform duration-300 group-hover:rotate-90 group-hover:scale-75" />
-            </button>
-
-            {/* Dropdown de redes sociais */}
-            <div className="absolute flex gap-2 right-0 py-1 transition-all duration-300 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/70 hover:text-white/80 transition-all hover:scale-90 duration-200 ease-out"
-                title="Follow us on LinkedIn"
-                aria-label="Follow us on LinkedIn"
-              >
-                IN
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/70 hover:text-white/80 transition-all hover:scale-90 duration-200 ease-out"
-                title="Follow us on Instagram"
-                aria-label="Follow us on Instagram"
-              >
-                IG
-              </a>
-            </div>
-          </div>
-
         </div>
       </div>
     </footer>

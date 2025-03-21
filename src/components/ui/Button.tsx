@@ -18,7 +18,7 @@ const Button = ({
   return (
     <button
       className={cn(
-        "flex items-center justify-center rounded-full font-medium transition-transform duration-300",
+        "flex items-center justify-center gap-2 rounded-full font-medium transition-transform duration-300",
         "hover:scale-90 focus:outline-none focus:ring-2 focus:ring-brand-purple/50",
         {
           "bg-gradient-to-r from-brand-purple to-brand-purpleDark text-white shadow-md hover:shadow-lg":

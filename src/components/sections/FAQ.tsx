@@ -77,9 +77,6 @@ const FAQ = () => {
       <div className="container mx-auto px-4">
         <SectionTransition direction="up">
           <div className="text-center mb-12">
-            <span className="inline-block mb-3 px-3 py-1 bg-brand-lavender/30 backdrop-blur-sm rounded-full text-sm font-medium text-brand-purpleDark mx-auto">
-              FAQ
-            </span>
             <h2 className="section-heading text-gradient">Common Questions</h2>
           </div>
         </SectionTransition>

@@ -7,20 +7,21 @@ import Contact from "@/components/sections/Contact";
 import Slogan from "@/components/layout/Slogan";
 import FAQ from "@/components/sections/FAQ";
 import Services from "@/components/sections/ServicesList";
-import AIAutomations from "@/components/sections/AIAutomations";
-import WebDevelopment from "@/components/sections/WebDevelopment";
 import Portfolio from "@/components/sections/Portfolio";
+import Solutions from "@/components/sections/Solutions";
+// import Benefits from "@/components/sections/Benefits";
+import Process from "@/components/sections/Process";
 
 export default function Home() {
   return (
     <div className="overflow-hidden bg-brand-offwhite">
       <Header />
-
       <Hero/>
-      <Services/>
+      <Solutions/>
       <Portfolio/>
-      <WebDevelopment/>
-      <AIAutomations/>
+      <Services/>
+      {/* <Benefits/> */}
+      <Process />
       <Behind/>
       <Contact/>
       <FAQ/>

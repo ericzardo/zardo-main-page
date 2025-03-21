@@ -80,31 +80,31 @@ const Services = () => {
 
   return (
     <section className="scroll-trigger-section relative min-h-screen flex justify-center items-center rounded-[20px] md:rounded-[40px] lg:rounded-[60px] overflow-hidden">
-    {/* Video com fundo */}
-    <video
-      ref={videoRef}
-      className="absolute top-0 left-0 w-full h-full object-cover"
-      autoPlay
-      loop
-      muted
-    >
-      <source src="https://videos.pexels.com/video-files/10915129/10915129-hd_3840_2160_30fps.mp4" type="video/mp4" />
-    </video>
+      <video
+        ref={videoRef}
+        className="absolute top-0 left-0 w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+        preload="none"
+      >
+        <source src="https://videos.pexels.com/video-files/10915129/10915129-hd_3840_2160_30fps.mp4" type="video/mp4" />
+      </video>
 
-    {/* Camada de cor navy sobre o vídeo */}
-    <div className="absolute top-0 left-0 w-full h-full bg-brand-navy opacity-85 z-10"></div> {/* Camada escurecendo o vídeo */}
+      {/* Camada de cor navy sobre o vídeo */}
+      <div className="absolute top-0 left-0 w-full h-full bg-brand-navy opacity-85 z-10"></div> {/* Camada escurecendo o vídeo */}
 
-    {/* Conteúdo da seção */}
-    <div className="content-wrapper relative w-full flex flex-col justify-center items-center gap-6 py-16 md:py-28 lg:py-36 z-20">
-      <ul className="scroll-trigger-list flex flex-col items-center gap-12">
-        <li className="list-item text-4xl md:text-6xl lg:text-8xl text-brand-lavender opacity-40 transition-all ease-out transform scale-90 cursor-pointer">Web Development</li>
-        <li className="list-item text-4xl md:text-6xl lg:text-8xl text-brand-lavender opacity-40 transition-all ease-out transform scale-90 cursor-pointer">Web Applications</li>
-        <li className="list-item text-4xl md:text-6xl lg:text-8xl text-brand-lavender opacity-40 transition-all ease-out transform scale-90 cursor-pointer">AI Automation</li>
-        <li className="list-item text-4xl md:text-6xl lg:text-8xl text-brand-lavender opacity-40 transition-all ease-out transform scale-90 cursor-pointer">API Integrations</li>
-        <li className="list-item text-4xl md:text-6xl lg:text-8xl text-brand-lavender opacity-40 transition-all ease-out transform scale-90 cursor-pointer">Business Workflows</li>
-      </ul>
-    </div>
-  </section>
+      {/* Conteúdo da seção */}
+      <div className="content-wrapper relative w-full flex flex-col justify-center items-center gap-6 py-16 md:py-28 lg:py-36 z-20">
+        <ul className="scroll-trigger-list flex flex-col items-center gap-12">
+          <li className="list-item text-4xl md:text-6xl lg:text-8xl text-brand-lavender opacity-40 transition-all ease-out transform scale-90 cursor-pointer">Web Development</li>
+          <li className="list-item text-4xl md:text-6xl lg:text-8xl text-brand-lavender opacity-40 transition-all ease-out transform scale-90 cursor-pointer">Web Applications</li>
+          <li className="list-item text-4xl md:text-6xl lg:text-8xl text-brand-lavender opacity-40 transition-all ease-out transform scale-90 cursor-pointer">AI Automation</li>
+          <li className="list-item text-4xl md:text-6xl lg:text-8xl text-brand-lavender opacity-40 transition-all ease-out transform scale-90 cursor-pointer">API Integrations</li>
+          <li className="list-item text-4xl md:text-6xl lg:text-8xl text-brand-lavender opacity-40 transition-all ease-out transform scale-90 cursor-pointer">Business Workflows</li>
+        </ul>
+      </div>
+    </section>
   );
 };
 

@@ -1,9 +1,10 @@
 "use client";
 
-import { ArrowRight } from 'lucide-react';
-import CustomButton from '../ui/Button';
-import SectionTransition from '../ui/SectionTransition';
-import PatternBackground from '../ui/PatternBackground';
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import Button from "../ui/Button";
+import SectionTransition from "../ui/SectionTransition";
+import PatternBackground from "../ui/PatternBackground";
 
 const Hero = () => {
   return (
@@ -34,13 +35,17 @@ const Hero = () => {
 
           <SectionTransition delay={600}>
             <div className="flex flex-col sm:flex-row gap-4 mt-4">
-              <CustomButton>
-                Get Started
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </CustomButton>
-              <CustomButton variant="secondary">
-                Learn More
-              </CustomButton>
+              <Link href="#contact">
+                <Button>
+                  Get Started
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link href="#solutions">
+                <Button variant="secondary">
+                  Learn More
+                </Button>
+              </Link>
             </div>
           </SectionTransition>
 
@@ -59,8 +64,8 @@ const Hero = () => {
                   
                   {/* Decorative elements */}
                   <div className="absolute top-5 left-5 h-2 w-2 bg-brand-purple rounded-full animate-pulse-slow" />
-                  <div className="absolute top-5 left-10 h-2 w-2 bg-brand-purple/70 rounded-full animate-pulse-slow" style={{ animationDelay: '0.5s' }} />
-                  <div className="absolute top-5 left-15 h-2 w-2 bg-brand-purple/40 rounded-full animate-pulse-slow" style={{ animationDelay: '1s' }} />
+                  <div className="absolute top-5 left-10 h-2 w-2 bg-brand-purple/70 rounded-full animate-pulse-slow" style={{ animationDelay: "0.5s" }} />
+                  <div className="absolute top-5 left-15 h-2 w-2 bg-brand-purple/40 rounded-full animate-pulse-slow" style={{ animationDelay: "1s" }} />
                 </div>
               </div>
 
