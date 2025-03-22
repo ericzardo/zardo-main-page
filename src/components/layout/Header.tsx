@@ -51,11 +51,9 @@ const Header = () => {
 
         {/* Botão de ação Desktop */}
         <div className="hidden md:flex">
-          <Link href="#contact">
-            <Button variant="primary" size="sm">
-              Get Started
-            </Button>
-          </Link>
+          <Button variant="primary" size="sm" onClick={() => scrollToSection("contact")}>
+            Get Started
+          </Button>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -88,11 +86,9 @@ const Header = () => {
               {item}
             </button>
           ))}
-          <Link href="#contact">
-            <Button variant="primary" className="mt-4">
-              Get Started
-            </Button>
-          </Link>
+          <Button variant="primary" className="mt-4" onClick={() => scrollToSection("contact")}>
+            Get Started
+          </Button>
         </div>
       </div>
     </header>
