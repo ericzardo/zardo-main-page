@@ -11,7 +11,7 @@ interface CaseData {
   techs: { name: string; icon: ReactElement }[];
   features: string[];
   date: { from: string; to: string };
-  note: string;
+  note: string | null;
   demo: { repository: string; preview: string };
   tags: string[];
   challenge: {
@@ -136,7 +136,7 @@ export const cases: CaseData[] = [
       "Contact form integration",
       "Smooth scroll and subtle animations",
     ],
-    note: "fully deployed",
+    note: null,
     demo: {
       repository: "https://github.com/ericzardo/mentesmart-lp",
       preview: "https://mentesmart.com.br/",

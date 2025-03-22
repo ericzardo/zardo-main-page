@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/providers/SmoothScroll";
+import { Toaster } from 'react-hot-toast';
 
 const poppins = Poppins({
   variable: "--font-poppins-sans",
@@ -61,6 +62,7 @@ export default function RootLayout({
         <SmoothScroll>
           {children}
         </SmoothScroll>
+        <Toaster />
       </body>
     </html>
   );

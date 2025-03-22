@@ -1,41 +1,85 @@
 "use client";
 
 import Link from "next/link";
-import { useState, FormEvent } from "react";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import toast from 'react-hot-toast';
 import SectionTransition from "../ui/SectionTransition";
 import PatternBackground from "../ui/PatternBackground";
 import Button from "../ui/Button";
 import { Instagram, Linkedin, Mail, Send } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
+import { contactSchema, type ContactFormData } from "@/lib/schemas/contact";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
-  
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<string | null>(null);
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+    mode: 'onSubmit', // Valida apenas no submit
+  });
+
+  const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-  
-    const res = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    });
-  
-    if (res.ok) {
-      setSubmitStatus("success");
-      setFormData({ name: "", email: "", message: "" });
-    } else {
-      setSubmitStatus("error");
+    
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+    
+      if (res.ok) {
+        toast.success('Message sent successfully! We\'ll get back to you soon.', {
+          duration: 5000,
+          position: 'top-center',
+          style: {
+            background: '#ffffff',
+            color: '#1a1a1a',
+            borderRadius: '16px',
+            padding: '16px 24px',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
+            border: '1px solid rgba(163, 62, 245, 0.1)',
+            fontSize: '14px',
+            fontWeight: '500',
+          },
+          iconTheme: {
+            primary: '#22c55e',
+            secondary: '#ffffff',
+          },
+        });
+        reset();
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch {
+      toast.error('Failed to send message. Please try again later.', {
+        duration: 5000,
+        position: 'top-center',
+        style: {
+          background: '#ffffff',
+          color: '#1a1a1a',
+          borderRadius: '16px',
+          padding: '16px 24px',
+          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
+          border: '1px solid rgba(239, 68, 68, 0.1)',
+          fontSize: '14px',
+          fontWeight: '500',
+        },
+        iconTheme: {
+          primary: '#ef4444',
+          secondary: '#ffffff',
+        },
+      });
+    } finally {
+      setIsSubmitting(false);
     }
-  
-    setIsSubmitting(false);
   };
 
   return (
@@ -46,10 +90,8 @@ const Contact = () => {
 
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 items-center gap-8 md:gap-12">
-
           <SectionTransition direction="left">
             <div className="flex flex-col text-left">
-
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gradient">
                 Get in touch
               </h2>
@@ -84,8 +126,8 @@ const Contact = () => {
                   <Link
                     href="#"
                     className="text-brand-navy/70 hover:text-brand-purple transition-colors cursor-pointer"
-                    aria-label="Send an email to contact@zardo.tech"
-                    title="Send email to contact@zardo.tech"
+                    aria-label="Visit our LinkedIn profile"
+                    title="Visit our LinkedIn profile"
                   >
                     Zardo Technology
                   </Link>
@@ -101,8 +143,8 @@ const Contact = () => {
                   <Link
                     href="#"
                     className="text-brand-navy/70 hover:text-brand-purple transition-colors cursor-pointer"
-                    aria-label="Send an email to contact@zardo.tech"
-                    title="Send email to contact@zardo.tech"
+                    aria-label="Visit our Instagram profile"
+                    title="Visit our Instagram profile"
                   >
                     Zardo Technology
                   </Link>
@@ -117,11 +159,10 @@ const Contact = () => {
                   aria-label="Start a WhatsApp chat with us"
                   className="flex items-center gap-2"
                 >
-                  <Button variant="secondary" className="w-fit" aria-label="">
+                  <Button variant="secondary" className="w-fit">
                     <SiWhatsapp className="h-5 w-5 text-green-500" />
                     Chat on WhatsApp
                   </Button>
-                
                 </Link>
               </div>
             </div>
@@ -131,7 +172,7 @@ const Contact = () => {
             <div className="bg-white/50 border border-white/30 rounded-lg shadow-md p-6 md:p-8 backdrop-blur-sm relative overflow-hidden">
               <div className="absolute top-0 right-0 w-40 h-40 bg-brand-purple/5 rounded-full translate-x-1/2 -translate-y-1/2 blur-xl"></div>
 
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-brand-navy mb-1">
                     Name
@@ -139,14 +180,19 @@ const Contact = () => {
                   <input
                     type="text"
                     id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-brand-lavender/50 focus:outline-none focus:border-brand-purple bg-white/70"
+                    {...register('name')}
+                    className={`w-full px-4 py-3 rounded-lg border ${
+                      errors.name ? 'border-red-500' : 'border-brand-lavender/50'
+                    } focus:outline-none focus:border-brand-purple bg-white/70`}
                     placeholder="Jack Connor"
-                    required
-                    aria-required="true"
+                    aria-invalid={errors.name ? 'true' : 'false'}
+                    aria-describedby={errors.name ? 'name-error' : undefined}
                   />
+                  {errors.name && (
+                    <p id="name-error" className="mt-1 text-sm text-red-500" role="alert">
+                      {errors.name.message}
+                    </p>
+                  )}
                 </div>
 
                 <div>
@@ -156,14 +202,19 @@ const Contact = () => {
                   <input
                     type="email"
                     id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-brand-lavender/50 focus:outline-none focus:border-brand-purple bg-white/70"
+                    {...register('email')}
+                    className={`w-full px-4 py-3 rounded-lg border ${
+                      errors.email ? 'border-red-500' : 'border-brand-lavender/50'
+                    } focus:outline-none focus:border-brand-purple bg-white/70`}
                     placeholder="jack@example.com"
-                    required
-                    aria-required="true"
+                    aria-invalid={errors.email ? 'true' : 'false'}
+                    aria-describedby={errors.email ? 'email-error' : undefined}
                   />
+                  {errors.email && (
+                    <p id="email-error" className="mt-1 text-sm text-red-500" role="alert">
+                      {errors.email.message}
+                    </p>
+                  )}
                 </div>
 
                 <div>
@@ -172,15 +223,20 @@ const Contact = () => {
                   </label>
                   <textarea
                     id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    {...register('message')}
                     rows={4}
-                    className="w-full px-4 py-3 rounded-lg border border-brand-lavender/50 focus:outline-none focus:border-brand-purple bg-white/70 resize-none"
+                    className={`w-full px-4 py-3 rounded-lg border ${
+                      errors.message ? 'border-red-500' : 'border-brand-lavender/50'
+                    } focus:outline-none focus:border-brand-purple bg-white/70 resize-none`}
                     placeholder="Type your message here..."
-                    required
-                    aria-required="true"
+                    aria-invalid={errors.message ? 'true' : 'false'}
+                    aria-describedby={errors.message ? 'message-error' : undefined}
                   ></textarea>
+                  {errors.message && (
+                    <p id="message-error" className="mt-1 text-sm text-red-500" role="alert">
+                      {errors.message.message}
+                    </p>
+                  )}
                 </div>
 
                 <div className="flex justify-end">
@@ -195,12 +251,6 @@ const Contact = () => {
                     <Send className="h-4 w-4" aria-hidden="true" />
                   </Button>
                 </div>
-
-                {submitStatus && (
-                  <div className="mt-4 text-center text-lg text-green-500">
-                    {submitStatus === "success" ? "Your message was sent successfully!" : "Something went wrong, please try again."}
-                  </div>
-                )}
               </form>
             </div>
           </SectionTransition>
