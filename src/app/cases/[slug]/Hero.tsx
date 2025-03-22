@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
+import { calculateMonthsBetweenDates, formatDate } from '@/lib/utils/date';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,10 +14,12 @@ interface HeroProps {
   banner: string;
   tags: string[];
   date: { from: string; to: string };
+  note: string | null;
 }
 
-const Hero = ({ title, description, banner, tags, date }: HeroProps) => {
+const Hero = ({ title, description, banner, tags, date, note }: HeroProps) => {
   const imageRef = useRef<HTMLImageElement>(null);
+  const months = calculateMonthsBetweenDates(date.from, date.to);
 
   useEffect(() => {
     if (imageRef.current) {
@@ -39,8 +42,8 @@ const Hero = ({ title, description, banner, tags, date }: HeroProps) => {
       id="hero"
     > 
       <div className="container mx-auto px-4 flex flex-col justify-start gap-10">
-        <div className="flex justify-between md:flex-row flex-col gap-4">
-          <div className="flex flex-col gap-8 md:max-w-3xl">
+        <div className="flex justify-between lg:flex-row flex-col gap-8">
+          <div className="flex flex-col gap-8 lg:max-w-3xl">
             <h1 className="section-heading text-brand-lavender mb-0">{title}</h1>
             <p className="text-lg text-brand-lavender/85">{description}</p>
             <div className="w-full flex gap-2 flex-wrap">
@@ -52,11 +55,27 @@ const Hero = ({ title, description, banner, tags, date }: HeroProps) => {
             </div>
           </div>
 
-          <div className="flex flex-col justify-end gap-4 md:w-1/3 w-full ">
-            <div className="flex flex-col gap-2">
-              <p className="text-sm text-brand-lavender/85">Project Duration</p>
-              <p className="text-brand-lavender font-medium">{date.from} - {date.to}</p>
+          <div className="flex flex-col justify-end gap-6 lg:w-1/3 w-full">
+            <div className="flex flex-col md:flex-row flex-wrap gap-4 w-full">
+              <div className="flex flex-col flex-1 gap-2 p-4 rounded-lg bg-brand-navy/50 border border-brand-lavender/10">
+                <p className="text-sm text-brand-lavender/85">Duration</p>
+                <p className="text-brand-lavender font-medium">
+                  {months} {months === 1 ? 'month' : 'months'}
+                </p>
+              </div>
+              <div className="flex flex-col flex-1 gap-2 p-4 rounded-lg bg-brand-navy/50 border border-brand-lavender/10">
+                <p className="text-sm text-brand-lavender/85">Dates</p>
+                <p className="text-brand-lavender font-medium">
+                  {formatDate(date.from)} - {formatDate(date.to)}
+                </p>
+              </div>
             </div>
+            {note && (
+              <div className="flex flex-col flex-1 gap-2 p-4 rounded-lg bg-brand-navy/50 border border-brand-lavender/10">
+                <p className="text-sm text-brand-lavender/85">Note</p>
+                <p className="text-brand-lavender font-medium">{note}</p>
+              </div>
+            )}
           </div>
         </div>
 

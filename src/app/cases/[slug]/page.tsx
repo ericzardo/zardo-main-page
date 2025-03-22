@@ -57,6 +57,7 @@ const CasePage = () => {
           banner={caseData.banner}
           tags={caseData.tags}
           date={caseData.date}
+          note={caseData.note}
         />
         <Challange
           intro={caseData.challenge.intro}
