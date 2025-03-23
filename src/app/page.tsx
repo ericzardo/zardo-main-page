@@ -15,6 +15,7 @@ import Portfolio from "@/components/sections/Portfolio";
 import Solutions from "@/components/sections/Solutions";
 // import Benefits from "@/components/sections/Benefits";
 import Process from "@/components/sections/Process";
+import Newsletter from "@/components/sections/Newsletter";
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
@@ -34,6 +35,7 @@ export default function Home() {
       <Hero/>
       <Solutions/>
       <Portfolio/>
+      <Newsletter />
       <Services/>
       {/* <Benefits/> */}
       <Process />
