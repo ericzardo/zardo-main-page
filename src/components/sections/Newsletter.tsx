@@ -23,9 +23,17 @@ const Newsletter = () => {
     setIsSubmitting(true);
     
     try {
-      // Here you would typically make an API call to handle the subscription
-      // For now, we'll just simulate a successful submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: data.email }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to subscribe');
+      }
       
       toast.success('Successfully subscribed to our newsletter!', {
         duration: 5000,
@@ -46,7 +54,8 @@ const Newsletter = () => {
         },
       });
       reset();
-    } catch {
+    } catch (error) {
+      console.error('Error subscribing to newsletter:', error);
       toast.error('Failed to subscribe. Please try again later.', {
         duration: 5000,
         position: 'top-center',

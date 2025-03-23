@@ -1,45 +1,43 @@
-import nodemailer from "nodemailer";
+import { addContact } from '@/lib/notion/services/contact';
+import { sendNotificationEmail } from '@/lib/email/services/notifications';
 
-export async function POST(req: Request) {
-  const { name, email, message } = await req.json();
-
-  if (!name || !email || !message) {
-    return new Response(
-      JSON.stringify({ message: "Missing required fields" }),
-      { status: 400 }
-    );
-  }
-
+export async function POST(request: Request) {
   try {
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-      debug: true,
-    });
+    const { name, email, message } = await request.json();
 
-    await transporter.sendMail({
-      from: `"${name}" <${email}>`,
-      to: process.env.EMAIL_USER,
-      subject: `New contact from website`,
-      html: `
-        <h2>New Contact Request</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong><br/>${message}</p>
+    if (!name || !email || !message) {
+      return new Response(
+        JSON.stringify({ error: 'Name, email and message are required' }), 
+        { status: 400 }
+      );
+    }
+
+    // Add to Notion
+    await addContact(name, email, message);
+
+    // Send email notification
+    await sendNotificationEmail({
+      to: process.env.EMAIL_RECEIVER || 'ericszardo@gmail.com',
+      subject: 'New Contact Form Submission',
+      text: `
+New contact form submission received:
+
+Name: ${name}
+Email: ${email}
+Message: ${message}
+
+This contact has been added to your Notion database.
       `,
     });
 
     return new Response(
-      JSON.stringify({ message: "Email sent successfully!" }),
+      JSON.stringify({ success: true }), 
       { status: 200 }
     );
-  } catch (err) {
-    console.error("Error sending email", err);
+  } catch (error) {
+    console.error('Error processing contact form:', error);
     return new Response(
-      JSON.stringify({ message: "Failed to send the email." }),
+      JSON.stringify({ error: 'Failed to process contact form' }), 
       { status: 500 }
     );
   }
