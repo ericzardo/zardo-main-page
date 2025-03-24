@@ -11,6 +11,7 @@ import Button from "../ui/Button";
 import { Instagram, Linkedin, Mail, Send } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
 import { contactSchema, type ContactFormData } from "@/lib/schemas/contact";
+import Input from "@/components/ui/Input";
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -177,44 +178,28 @@ const Contact = () => {
                   <label htmlFor="name" className="block text-sm font-medium text-brand-navy mb-1">
                     Name
                   </label>
-                  <input
+                  <Input
                     type="text"
                     id="name"
-                    {...register('name')}
-                    className={`w-full px-4 py-3 rounded-lg border ${
-                      errors.name ? 'border-red-500' : 'border-brand-lavender/50'
-                    } focus:outline-none focus:border-brand-purple bg-white/70`}
                     placeholder="Jack Connor"
-                    aria-invalid={errors.name ? 'true' : 'false'}
-                    aria-describedby={errors.name ? 'name-error' : undefined}
+                    error={!!errors.name}
+                    errorMessage={errors.name?.message}
+                    {...register('name')}
                   />
-                  {errors.name && (
-                    <p id="name-error" className="mt-1 text-sm text-red-500" role="alert">
-                      {errors.name.message}
-                    </p>
-                  )}
                 </div>
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-brand-navy mb-1">
                     Email
                   </label>
-                  <input
+                  <Input
                     type="email"
                     id="email"
-                    {...register('email')}
-                    className={`w-full px-4 py-3 rounded-lg border ${
-                      errors.email ? 'border-red-500' : 'border-brand-lavender/50'
-                    } focus:outline-none focus:border-brand-purple bg-white/70`}
                     placeholder="jack@example.com"
-                    aria-invalid={errors.email ? 'true' : 'false'}
-                    aria-describedby={errors.email ? 'email-error' : undefined}
+                    error={!!errors.email}
+                    errorMessage={errors.email?.message}
+                    {...register('email')}
                   />
-                  {errors.email && (
-                    <p id="email-error" className="mt-1 text-sm text-red-500" role="alert">
-                      {errors.email.message}
-                    </p>
-                  )}
                 </div>
 
                 <div>

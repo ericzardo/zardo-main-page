@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import toast from 'react-hot-toast';
 import { newsletterSchema, type NewsletterFormData } from "@/lib/schemas/newsletter";
+import Input from "@/components/ui/Input";
 
 const Newsletter = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -17,6 +18,9 @@ const Newsletter = () => {
   } = useForm<NewsletterFormData>({
     resolver: zodResolver(newsletterSchema),
     mode: 'onSubmit',
+    defaultValues: {
+      email: '',
+    },
   });
 
   const onSubmit = async (data: NewsletterFormData) => {
@@ -53,7 +57,16 @@ const Newsletter = () => {
           secondary: '#ffffff',
         },
       });
-      reset();
+      reset({ email: '' }, { 
+        keepValues: false,
+        keepDefaultValues: true,
+        keepErrors: false,
+        keepDirty: false,
+        keepIsSubmitted: false,
+        keepTouched: false,
+        keepIsValid: false,
+        keepSubmitCount: false
+      });
     } catch (error) {
       console.error('Error subscribing to newsletter:', error);
       toast.error('Failed to subscribe. Please try again later.', {
@@ -103,30 +116,23 @@ const Newsletter = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 leading-none">Be in the know first!</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md" noValidate>
               <div className="relative flex">
-                <input
+                <Input
                   type="email"
-                  id="email"
-                  {...register('email')}
-                  className={`w-full px-4 py-3 rounded-lg border ${
-                    errors.email ? 'border-red-500' : 'border-brand-lavender/50'
-                  } focus:outline-none focus:border-brand-purple bg-white placeholder:text-brand-navy/50 text-brand-navy shadow-md backdrop-blur-sm`}
+                  id="newsletter-email"
                   placeholder="connor@example.com"
-                  aria-invalid={errors.email ? 'true' : 'false'}
-                  aria-describedby={errors.email ? 'email-error' : undefined}
+                  variant="newsletter"
+                  error={!!errors.email}
+                  errorMessage={errors.email?.message}
+                  {...register('email')}
                 />
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 bg-brand-purple text-sm rounded-full hover:bg-brand-purple/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 bg-brand-purple text-sm rounded-full hover:scale-95 transition-transform duration-200 ease-out disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <ArrowRight className="size-5 text-brand-lavender" />
                 </button>
               </div>
-              {errors.email && (
-                <p id="email-error" className="mt-1 text-sm text-red-500" role="alert">
-                  {errors.email.message}
-                </p>
-              )}
             </form>
           </div>
         </div>
