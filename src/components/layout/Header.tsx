@@ -4,12 +4,14 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Button from "../ui/Button";
+import { useScrollToSection } from "@/hooks/useScrollToSection";
 
 const NAV_ITEMS = ["projects", "about", "testimonials", "contact"];
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const scrollToSection = useScrollToSection();
 
   // Efeito de scroll otimizado
   useEffect(() => {
@@ -18,8 +20,12 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  const handleScrollToSection = (id: string) => {
+    scrollToSection({ 
+      sectionId: id, 
+      offset: 80, // 80px offset to account for header height
+      duration: 800 // 800ms duration for a smooth but not too slow animation
+    });
     setIsMobileMenuOpen(false);
   };
 
@@ -41,7 +47,7 @@ const Header = () => {
           {NAV_ITEMS.map((item) => (
             <button
               key={item}
-              onClick={() => scrollToSection(item)}
+              onClick={() => handleScrollToSection(item)}
               className="text-brand-navy font-medium hover:text-brand-purple transition-colors capitalize"
             >
               {item}
@@ -51,7 +57,7 @@ const Header = () => {
 
         {/* Botão de ação Desktop */}
         <div className="hidden md:flex">
-          <Button variant="primary" size="sm" onClick={() => scrollToSection("contact")}>
+          <Button variant="primary" size="sm" onClick={() => handleScrollToSection("contact")}>
             Get Started
           </Button>
         </div>
@@ -80,13 +86,13 @@ const Header = () => {
           {NAV_ITEMS.map((item) => (
             <button
               key={item}
-              onClick={() => scrollToSection(item)}
+              onClick={() => handleScrollToSection(item)}
               className="text-lg text-brand-navy py-3 border-b border-brand-lavender/50 font-medium capitalize w-full text-center"
             >
               {item}
             </button>
           ))}
-          <Button variant="primary" className="mt-4" onClick={() => scrollToSection("contact")}>
+          <Button variant="primary" className="mt-4" onClick={() => handleScrollToSection("contact")}>
             Get Started
           </Button>
         </div>

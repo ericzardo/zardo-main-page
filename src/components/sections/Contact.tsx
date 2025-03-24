@@ -12,9 +12,11 @@ import { Instagram, Linkedin, Mail, Send } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
 import { contactSchema, type ContactFormData } from "@/lib/schemas/contact";
 import Input from "@/components/ui/Input";
+import { useScrollToSection } from "@/hooks/useScrollToSection";
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const scrollToSection = useScrollToSection();
 
   const {
     register,
@@ -25,6 +27,14 @@ const Contact = () => {
     resolver: zodResolver(contactSchema),
     mode: 'onSubmit', // Valida apenas no submit
   });
+
+  const handleSocialLink = (sectionId: string) => {
+    scrollToSection({ 
+      sectionId, 
+      offset: 80,
+      duration: 800
+    });
+  };
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
@@ -124,14 +134,14 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-sm font-semibold text-brand-navy">LinkedIn</h4>
-                  <Link
-                    href="#"
+                  <button
+                    onClick={() => handleSocialLink("linkedin")}
                     className="text-brand-navy/70 hover:text-brand-purple transition-colors cursor-pointer"
                     aria-label="Visit our LinkedIn profile"
                     title="Visit our LinkedIn profile"
                   >
                     Zardo Technology
-                  </Link>
+                  </button>
                 </div>
               </div>
 
@@ -141,14 +151,14 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-sm font-semibold text-brand-navy">Instagram</h4>
-                  <Link
-                    href="#"
+                  <button
+                    onClick={() => handleSocialLink("instagram")}
                     className="text-brand-navy/70 hover:text-brand-purple transition-colors cursor-pointer"
                     aria-label="Visit our Instagram profile"
                     title="Visit our Instagram profile"
                   >
                     Zardo Technology
-                  </Link>
+                  </button>
                 </div>
               </div>
 

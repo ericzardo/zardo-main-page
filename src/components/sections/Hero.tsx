@@ -1,12 +1,22 @@
 "use client";
 
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Button from "../ui/Button";
 import SectionTransition from "../ui/SectionTransition";
 import PatternBackground from "../ui/PatternBackground";
+import { useScrollToSection } from "@/hooks/useScrollToSection";
 
 const Hero = () => {
+  const scrollToSection = useScrollToSection();
+
+  const handleScrollToSection = (id: string) => {
+    scrollToSection({ 
+      sectionId: id, 
+      offset: 80,
+      duration: 800
+    });
+  };
+
   return (
     <section 
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
@@ -35,17 +45,13 @@ const Hero = () => {
 
           <SectionTransition delay={600}>
             <div className="flex flex-col sm:flex-row gap-4 mt-4">
-              <Link href="#contact">
-                <Button>
-                  Get Started
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-              <Link href="#solutions">
-                <Button variant="secondary">
-                  Learn More
-                </Button>
-              </Link>
+              <Button onClick={() => handleScrollToSection("contact")}>
+                Get Started
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button variant="secondary" onClick={() => handleScrollToSection("solutions")}>
+                Learn More
+              </Button>
             </div>
           </SectionTransition>
 

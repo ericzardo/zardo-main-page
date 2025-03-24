@@ -2,34 +2,46 @@
 
 import { ChevronDown, Instagram, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
+import { useScrollToSection } from "@/hooks/useScrollToSection";
 
 const Footer = () => {
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+  const scrollToSection = useScrollToSection();
+
+  const handleScrollToTop = () => {
+    scrollToSection({ 
+      sectionId: "hero", 
+      offset: 0,
+      duration: 800
+    });
+  };
+
+  const handleSocialLink = (sectionId: string) => {
+    scrollToSection({ 
+      sectionId, 
+      offset: 80,
+      duration: 800
+    });
+  };
 
   return (
     <footer className="relative py-12 bg-brand-navy text-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col-reverse md:flex-row gap-5 justify-between items-center">
-
           <div className="flex items-center gap-4">
-            <Link
-              href="#"
+            <button
+              onClick={() => handleSocialLink("instagram")}
               className="flex items-center justify-center hover:scale-90 hover:text-white/80 transition-all duration-200 ease-out"
-              target="_blank"
-              rel="noopener noreferrer"
               aria-label="Zardo's Instagram Profile"
             >
               <Instagram strokeWidth={2} className="size-6 text-white/60"/>
-            </Link>
-            <Link
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
+            </button>
+            <button
+              onClick={() => handleSocialLink("linkedin")}
               className="flex items-center justify-center hover:scale-90 hover:text-white/80 transition-all duration-200 ease-out"
               aria-label="Zardo's LinkedIn Profile"
             >
               <Linkedin strokeWidth={2} className="size-6 text-white/60"/>
-            </Link>
+            </button>
             <Link
               href="mailto:contact@zardo.tech"
               target="_blank"
@@ -45,7 +57,7 @@ const Footer = () => {
           <p className="text-white/70">2025 © zardo. All rights reserved.</p>
 
           <button
-            onClick={scrollToTop}
+            onClick={handleScrollToTop}
             className="text-white/70 flex gap-2 items-center transition-all cursor-pointer hover:scale-90 hover:text-white/80 duration-200 ease-out group"
             aria-label="Back to top"
           >
