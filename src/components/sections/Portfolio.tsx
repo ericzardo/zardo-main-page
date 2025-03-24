@@ -17,7 +17,7 @@ const Portfolio = () => {
       image: "/projects/ebook.lp.webp",
       alt: "ebook landing page banner",
       title: "eBook LP",
-      description: "A landing page focused on promoting Mente Smart’s ebook, highlighting key benefits and driving conversions through an engaging and streamlined user experience.",
+      description: "A landing page focused on promoting Mente Smart's ebook, highlighting key benefits and driving conversions through an engaging and streamlined user experience.",
       tags: ["Landing Page", "Web Development"],
       link: "cases/ebook-lp",
       delay: 400,

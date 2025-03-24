@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Button from "../ui/Button";
 import SectionTransition from "../ui/SectionTransition";
 import PatternBackground from "../ui/PatternBackground";
@@ -8,14 +9,6 @@ import { useScrollToSection } from "@/hooks/useScrollToSection";
 
 const Hero = () => {
   const scrollToSection = useScrollToSection();
-
-  const handleScrollToSection = (id: string) => {
-    scrollToSection({ 
-      sectionId: id, 
-      offset: 80,
-      duration: 800
-    });
-  };
 
   return (
     <section 
@@ -45,11 +38,26 @@ const Hero = () => {
 
           <SectionTransition delay={600}>
             <div className="flex flex-col sm:flex-row gap-4 mt-4">
-              <Button onClick={() => handleScrollToSection("contact")}>
+              <Button 
+                onClick={() => scrollToSection({ 
+                  sectionId: "contact", 
+                  offset: 80,
+                  duration: 800
+                })}
+                aria-label="Get started by scrolling to contact section"
+              >
                 Get Started
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
               </Button>
-              <Button variant="secondary" onClick={() => handleScrollToSection("solutions")}>
+              <Button 
+                variant="secondary" 
+                onClick={() => scrollToSection({ 
+                  sectionId: "solutions", 
+                  offset: 80,
+                  duration: 800
+                })}
+                aria-label="Learn more by scrolling to solutions section"
+              >
                 Learn More
               </Button>
             </div>
@@ -60,13 +68,15 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-b from-brand-purple/20 to-brand-purpleDark/20 blur-3xl rounded-full -z-10 opacity-30" />
               <div className="rounded-2xl bg-white/50 backdrop-blur-md shadow-xl overflow-hidden border border-white/30 p-2">
                 <div className="relative rounded-xl overflow-hidden aspect-video bg-brand-offwhite">
-                  {/* Hero image or mockup */}
-                  <div className="absolute inset-0 animate-pulse-slow bg-gradient-to-br from-brand-lavender/50 via-white to-brand-lavender/50" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-brand-purpleDark/70 font-medium">
-                      [Interactive Product Demo]
-                    </div>
-                  </div>
+                  <Image
+                    src="/hero-demo.webp"
+                    alt="Interactive product demo showcasing Zardo's innovative solutions"
+                    fill
+                    className="object-cover"
+                    priority
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                    quality={90}
+                  />
                   
                   {/* Decorative elements */}
                   <div className="absolute top-5 left-5 h-2 w-2 bg-brand-purple rounded-full animate-pulse-slow" />

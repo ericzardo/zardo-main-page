@@ -83,7 +83,7 @@ const Hero = ({ title, description, banner, tags, date, note }: HeroProps) => {
           <Image
             ref={imageRef}
             src={banner}
-            alt={`project ${title} banner image`}
+            alt={`${title} - Project showcase banner featuring ${tags.join(', ')} technologies. Duration: ${months} ${months === 1 ? 'month' : 'months'}.`}
             className="object-cover w-full h-full transition-transform will-change-transform"
             loading="lazy"
             width={2000}

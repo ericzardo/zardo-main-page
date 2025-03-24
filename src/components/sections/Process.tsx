@@ -1,47 +1,12 @@
 "use client";
 
 import React from "react";
-import { ArrowRight, Search, Lightbulb, Code, LineChart } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import PatternBackground from "../ui/PatternBackground";
 import { cn } from "@/lib/utils";
+import { processSteps } from "@/data/process";
 
 const ProcessSection = () => {
-  const steps = [
-    {
-      id: 1,
-      title: "Discovery",
-      description: "We start by understanding your business goals, challenges, and requirements to create a personalized strategy.",
-      icon: <Search className="w-8 h-8 text-brand-lavender" />,
-      color: "bg-blue-500",
-      delay: "300",
-    },
-    {
-      id: 2,
-      title: "Strategy",
-      description: "In this step, we design a roadmap that aligns with your objectives, ensuring a clear path towards success.",
-      icon: <Lightbulb className="w-8 h-8 text-brand-lavender" />,
-      color: "bg-green-500",
-      delay: "400",
-    },
-    {
-      id: 3,
-      title: "Execution",
-      description: "We bring the plan to life by developing and deploying the solutions with precision and efficiency.",
-      icon: <Code className="w-8 h-8 text-brand-lavender" />,
-      color: "bg-orange-500",
-      delay: "500",
-    },
-    {
-      id: 4,
-      title: "Optimization",
-      description: "We continuously optimize the solution to enhance performance, ensuring it grows with your business needs.",
-      icon: <LineChart className="w-8 h-8 text-brand-lavender" />,
-      color: "bg-purple-500",
-      delay: "600",
-    },
-  ];
-  
-
   return (
     <section className="relative py-16 md:py-24 bg-brand-offwhite overflow-hidden" id="projects">
       <PatternBackground variant="circuit" opacity={0.2} />
@@ -59,7 +24,7 @@ const ProcessSection = () => {
           <div className="hidden lg:block absolute top-20 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-brand-purple to-orange-500 opacity-30"></div>
           
           {/* Etapas do processo */}
-          {steps.map((step, index) => (
+          {processSteps.map((step, index) => (
             <div 
               key={step.id}
               className="relative"
@@ -68,7 +33,7 @@ const ProcessSection = () => {
               }}
             >
               {/* Conector para desktop */}
-              {index < steps.length - 1 && (
+              {index < processSteps.length - 1 && (
                 <div className="hidden lg:flex absolute top-20 -right-4 z-10 text-brand-purple">
                   <ArrowRight className="w-8 h-8" />
                 </div>

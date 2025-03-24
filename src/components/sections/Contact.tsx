@@ -118,12 +118,12 @@ const Contact = () => {
                 <div>
                   <h4 className="text-sm font-semibold text-brand-navy">Email</h4>
                   <Link
-                    href="mailto:contact@zardo.tech"
+                    href="mailto:contact@zardo.dev"
                     className="text-brand-navy/70 hover:text-brand-purple transition-colors cursor-pointer"
-                    aria-label="Send an email to contact@zardo.tech"
-                    title="Send email to contact@zardo.tech"
+                    aria-label="Send an email to contact@zardo.dev"
+                    title="Send email to contact@zardo.dev"
                   >
-                    contact@zardo.tech
+                    contact@zardo.dev
                   </Link>
                 </div>
               </div>

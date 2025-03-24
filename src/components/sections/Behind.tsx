@@ -5,17 +5,26 @@ import SectionTransition from "@/components/ui/SectionTransition";
 
 const Behind = () => {
   return (
-    <section className="relative py-20 md:py-32 bg-brand-navy rounded-[20px] md:rounded-[40px] lg:rounded-[60px]" id="about">
+    <section 
+      className="relative py-20 md:py-32 bg-brand-navy rounded-[20px] md:rounded-[40px] lg:rounded-[60px]" 
+      id="about"
+      aria-labelledby="about-heading"
+    >
       <div className="container mx-auto px-4">
-        <div className="mb-16 text-center">
+        <header className="mb-16 text-center">
           <SectionTransition delay={200}>
-            <h2 className="section-heading text-brand-offwhite">The guy behind Zardo</h2>
+            <h2 
+              id="about-heading"
+              className="section-heading text-brand-offwhite"
+            >
+              The guy behind Zardo
+            </h2>
           </SectionTransition>
-        </div>
+        </header>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center pt-20">
+        <article className="grid md:grid-cols-2 gap-12 items-center pt-20">
           <SectionTransition direction="left">
-            <div className="relative w-full max-w-md mx-auto shadow-md">
+            <figure className="relative w-full max-w-md mx-auto shadow-md">
               <div className="rounded-xl overflow-hidden">
                 <Image 
                   src="/me.webp" 
@@ -28,22 +37,36 @@ const Behind = () => {
                 <div className="absolute p-4 flex items-end justify-between bottom-0 left-0 right-0 h-1/5 bg-gradient-to-t from-brand-navy/90 to-transparent">
                   <p className="text-brand-lavender">/ More about me</p>
 
-                  <div className="flex items-center justify-end gap-2">
-                    <Link target="_blank" href="https://www.linkedin.com/in/eric-zardo-a53630228/" aria-label="Eric Zardo's LinkedIn Profile"  rel="noopener noreferrer"className="text-brand-offwhite transition-all duration-200 ease-out hover:scale-75 hover:text-brand-lavender" passHref>
-                      <Linkedin size={24} strokeWidth={1}/>
+                  <nav className="flex items-center justify-end gap-2">
+                    <Link 
+                      target="_blank" 
+                      href="https://www.linkedin.com/in/eric-zardo-a53630228/" 
+                      aria-label="Visit Eric Zardo's professional profile on LinkedIn"
+                      rel="noopener noreferrer"
+                      className="text-brand-offwhite transition-all duration-200 ease-out hover:scale-75 hover:text-brand-lavender" 
+                      passHref
+                    >
+                      <Linkedin size={24} strokeWidth={1} aria-hidden="true"/>
                     </Link>
-                    <Link target="_blank" href="https://github.com/ericzardo" aria-label="Eric Zardo's Github Profile" rel="noopener noreferrer" className="text-brand-offwhite transition-all duration-200 ease-out hover:scale-75 hover:text-brand-lavender" passHref>
-                      <Github size={24} strokeWidth={1}/>
+                    <Link 
+                      target="_blank" 
+                      href="https://github.com/ericzardo" 
+                      aria-label="View Eric Zardo's projects and contributions on GitHub"
+                      rel="noopener noreferrer" 
+                      className="text-brand-offwhite transition-all duration-200 ease-out hover:scale-75 hover:text-brand-lavender" 
+                      passHref
+                    >
+                      <Github size={24} strokeWidth={1} aria-hidden="true"/>
                     </Link>
-                  </div>
+                  </nav>
                 </div>
               </div>
-            </div>
+            </figure>
           </SectionTransition>
 
           {/* Coluna 2 - Texto */}
           <SectionTransition direction="right">
-            <div className="flex flex-col gap-8">
+            <section className="flex flex-col gap-8">
               <p className="text-brand-lavender">
                 Hi, I&apos;m Eric Zardo, from Porto Alegre, Brazil.
               </p>
@@ -56,9 +79,9 @@ const Behind = () => {
               <p className="text-brand-lavender">
                 At Zardo company, my goal is to help clients turn their ideas into powerful web solutions, while ensuring every project is scalable, efficient, and designed with the end user in mind. Let&apos;s work together and bring your vision to life!
               </p>
-            </div>
+            </section>
           </SectionTransition>
-        </div>
+        </article>
       </div>
     </section>
   );

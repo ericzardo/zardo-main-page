@@ -68,22 +68,27 @@
 @layer components {
   .glass {
     @apply backdrop-blur-md bg-white/60 bg-opacity-70 border border-white/20 shadow-sm;
+    will-change: transform, opacity;
   }
   
   .glass-card {
     @apply backdrop-blur-lg bg-white/80 border border-white/30 shadow-md hover:shadow-lg transition-shadow duration-300;
+    will-change: transform, opacity, box-shadow;
   }
   
   .text-gradient {
     @apply bg-gradient-to-r from-brand-purpleDark via-brand-purple to-brand-purpleDeep bg-clip-text text-transparent;
+    will-change: background-position;
   }
   
   .btn-primary {
     @apply px-6 py-3 bg-gradient-to-r from-brand-purple to-brand-purpleDark text-white rounded-full font-medium shadow-md hover:shadow-lg transition-all duration-300 hover:translate-y-[-2px];
+    will-change: transform, box-shadow;
   }
   
   .btn-secondary {
     @apply px-6 py-3 bg-transparent border border-brand-purple text-brand-purple rounded-full font-medium hover:bg-brand-purple hover:text-white transition-all duration-300 hover:shadow-md;
+    will-change: transform, background-color, color, box-shadow;
   }
   
   .section-padding {
@@ -102,6 +107,7 @@
     @apply relative text-brand-navy hover:text-brand-purple transition-colors duration-300
            after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 
            after:bg-brand-purple after:transition-all after:duration-300 hover:after:w-full;
+    will-change: color;
   }
 }
 
@@ -109,6 +115,7 @@
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: transform, opacity;
 }
 
 .reveal-on-scroll.revealed {
@@ -132,15 +139,18 @@
   display: flex;
   white-space: nowrap;
   animation: marquee 40s linear infinite;
+  will-change: transform;
 }
 
 .animate-marquee-reverse {
   display: flex;
   white-space: nowrap;
   animation: marquee-reverse 40s linear infinite;
+  will-change: transform;
 }
 
 .mask-gradient {
   -webkit-mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
   mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+  will-change: mask-image;
 }

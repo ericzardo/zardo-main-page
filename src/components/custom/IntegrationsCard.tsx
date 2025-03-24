@@ -57,7 +57,7 @@ const IntegrationsCard = () => {
       </div>
 
       {/* Marquee */}
-      <div className="relative w-full flex flex-col items-center z-10">
+      <div className="relative w-full flex flex-col items-center z-10 mt-2 md:mt-4 lg:mt-10">
         {/* Blur fixo nas laterais */}
         <div className="absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-slate-900 to-transparent z-10" />
         <div className="absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-slate-900 to-transparent z-10" />
