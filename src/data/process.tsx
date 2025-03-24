@@ -1,11 +1,11 @@
-import React from "react";
+import { ReactElement } from "react";
 import { Search, Lightbulb, Code, LineChart } from "lucide-react";
 
 export interface ProcessStep {
   id: number;
   title: string;
   description: string;
-  icon: JSX.Element;
+  icon: ReactElement;
   color: string;
   delay: string;
 }

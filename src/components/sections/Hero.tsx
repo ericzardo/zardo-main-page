@@ -1,7 +1,6 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
 import Button from "../ui/Button";
 import SectionTransition from "../ui/SectionTransition";
 import PatternBackground from "../ui/PatternBackground";
@@ -68,15 +67,6 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-b from-brand-purple/20 to-brand-purpleDark/20 blur-3xl rounded-full -z-10 opacity-30" />
               <div className="rounded-2xl bg-white/50 backdrop-blur-md shadow-xl overflow-hidden border border-white/30 p-2">
                 <div className="relative rounded-xl overflow-hidden aspect-video bg-brand-offwhite">
-                  <Image
-                    src="/hero-demo.webp"
-                    alt="Interactive product demo showcasing Zardo's innovative solutions"
-                    fill
-                    className="object-cover"
-                    priority
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-                    quality={90}
-                  />
                   
                   {/* Decorative elements */}
                   <div className="absolute top-5 left-5 h-2 w-2 bg-brand-purple rounded-full animate-pulse-slow" />
