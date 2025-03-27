@@ -9,7 +9,6 @@ Zardo is an application that transforms ideas into cutting-edge digital solution
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
-- [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -17,19 +16,15 @@ Zardo is an application that transforms ideas into cutting-edge digital solution
 
 - Responsive and intuitive user interface
 - Integration with external APIs
-- Support for custom themes
 - Real-time notifications
 - Form validation with Zod and React Hook Form
 
 ## Technologies Used
 
 - [Next.js](https://nextjs.org/) - React framework for web applications
-- [React](https://reactjs.org/) - JavaScript library for building user interfaces
 - [TypeScript](https://www.typescriptlang.org/) - A superset of JavaScript that adds static typing
-- [Yarn](https://yarnpkg.com/) - Package manager
 - [Zod](https://zod.dev/) - Schema validation library
 - [React Hook Form](https://react-hook-form.com/) - Library for form management
-- [Radix UI](https://www.radix-ui.com/) - Accessible and unstyled components
 
 ## Installation
 
@@ -38,7 +33,7 @@ To install and set up the project, follow the steps below:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/zardo.git
+   git clone https://github.com/ericzardo/zardo-main-page.git
    cd zardo
    ```
 
@@ -55,13 +50,6 @@ To install and set up the project, follow the steps below:
    ```
 
 4. Access the application at [http://localhost:3000](http://localhost:3000).
-
-## Usage
-
-Describe how to use the application, including examples of features and screenshots if possible. For example:
-
-- **Create a new idea**: Navigate to the creation page and fill out the form.
-- **View ideas**: Go to the main page to see all registered ideas.
 
 ## Contributing
 
@@ -93,5 +81,3 @@ Contributions are welcome! Follow the steps below to contribute:
 This project is licensed under the [MIT License](LICENSE).
 
 ---
-
-Feel free to customize this README with additional information, such as links to documentation, information about the team, or anything else you find relevant. A well-crafted README can help other developers quickly understand your project and how to contribute to it. If you need further assistance or adjustments, just let me know!

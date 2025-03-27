@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { useParams } from "next/navigation";
+import { notFound } from "next/navigation";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
@@ -43,7 +44,7 @@ const CasePage = () => {
   }, []);
 
   if (!caseData) {
-    return <div>Loading...</div>;
+    return notFound();
   }
 
   return (
