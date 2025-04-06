@@ -42,7 +42,7 @@ export async function getPropertyOptions(propertyName: string) {
       throw new Error(`Property ${propertyName} is not a select property`);
     }
 
-    return property.select.options;
+    return property.select?.options;
   } catch (error) {
     console.error(`Error fetching options for property ${propertyName}:`, error);
     throw error;
