@@ -53,7 +53,7 @@ export async function addNewsletterSubscriber(email: string) {
             };
           }
           return acc;
-        }, {} as Record<string, any>),
+        }, {} as Record<string, unknown>),
       },
     });
 

@@ -7,7 +7,7 @@ export const SOCIAL_LINKS = [
     label: "Zardo's Instagram Profile",
   },
   {
-    url: "#",
+    url: "https://www.linkedin.com/company/zardo-dev",
     icon: <Linkedin strokeWidth={2} className="size-6 text-white/60" />,
     label: "Zardo's LinkedIn Profile",
   }

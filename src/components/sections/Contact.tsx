@@ -10,16 +10,14 @@ import { SiWhatsapp } from "react-icons/si";
 
 import { Input, Button } from "@zardo/ui-kit";
 import { SectionTransition } from "@zardo/ui-kit/animations"
+import { PatternBackground } from "@zardo/ui-kit/layout";
 
 import { contactSchema, type ContactFormData } from "@/lib/schemas/contact";
 
-import { useScrollToSection } from "@/hooks/useScrollToSection";
-import { PatternBackground } from "@zardo/ui-kit/layout";
 
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const scrollToSection = useScrollToSection();
 
   const {
     register,
@@ -30,14 +28,6 @@ const Contact = () => {
     resolver: zodResolver(contactSchema),
     mode: 'onSubmit',
   });
-
-  const handleSocialLink = (sectionId: string) => {
-    scrollToSection({ 
-      sectionId, 
-      offset: 80,
-      duration: 800
-    });
-  };
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
@@ -135,14 +125,16 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-sm font-semibold text-brand-navy">LinkedIn</h4>
-                  <button
-                    onClick={() => handleSocialLink("linkedin")}
+                  <Link
+                    href="https://www.linkedin.com/company/zardo-dev"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-brand-navy/70 hover:text-brand-purple transition-colors cursor-pointer"
                     aria-label="Visit our LinkedIn profile"
                     title="Visit our LinkedIn profile"
                   >
-                    Zardo Technology
-                  </button>
+                    zardo.dev
+                  </Link>
                 </div>
               </div>
 
@@ -152,14 +144,16 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-sm font-semibold text-brand-navy">Instagram</h4>
-                  <button
-                    onClick={() => handleSocialLink("instagram")}
+                  <Link
+                    href="https://www.instagram.com/seuusuario"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-brand-navy/70 hover:text-brand-purple transition-colors cursor-pointer"
                     aria-label="Visit our Instagram profile"
                     title="Visit our Instagram profile"
                   >
-                    Zardo Technology
-                  </button>
+                    zardo.dev
+                  </Link>
                 </div>
               </div>
 
