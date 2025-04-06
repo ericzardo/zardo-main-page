@@ -1,11 +1,15 @@
 import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
-import "./globals.css";
 import { SmoothScroll } from "@/providers/SmoothScroll";
 import { Toaster } from 'react-hot-toast';
 
+import "./globals.css";
+import "@zardo/ui-kit/styles.css";
+
+import { Favicon, AppleTouchIcon, Logo192, Logo32, Logo512 } from "@zardo/ui-kit/logos"
+
 const poppins = Poppins({
-  variable: "--font-poppins-sans",
+  variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
@@ -55,15 +59,15 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/icons/favicon.ico', sizes: 'any' },
-      { url: '/icons/icon-32.png', type: 'image/png', sizes: '32x32' },
-      { url: '/icons/icon-192.png', type: 'image/png', sizes: '192x192' },
-      { url: '/icons/icon-512.png', type: 'image/png', sizes: '512x512' },
+      { url: Favicon, sizes: 'any' },
+      { url: Logo32, type: 'image/png', sizes: '32x32' },
+      { url: Logo192, type: 'image/png', sizes: '192x192' },
+      { url: Logo512, type: 'image/png', sizes: '512x512' },
     ],
     apple: [
-      { url: '/icons/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: AppleTouchIcon, sizes: '180x180', type: 'image/png' },
     ],
-    shortcut: ['/icons/favicon.ico'],
+    shortcut: [Favicon],
   },
   manifest: '/manifest.json',
   robots: {
@@ -76,9 +80,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  verification: {
-    google: 'your-google-site-verification',
   },
 };
 

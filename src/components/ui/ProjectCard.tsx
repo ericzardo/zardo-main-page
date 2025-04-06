@@ -25,7 +25,7 @@ const ProjectCard = ({ image, alt, title, description, tags, link }: ProjectCard
           />
 
           {/* Overlay com informações no hover */}
-          <div className="absolute inset-0 bg-brand-navy bg-opacity-65 opacity-0 flex flex-col justify-between items-start p-10 group-hover:opacity-100 transition-opacity duration-200 ease-out">
+          <div className="absolute inset-0 bg-brand-navy opacity-0 hover:bg-brand-navy/65 flex flex-col justify-between items-start p-10 group-hover:opacity-100 transition-opacity duration-200 ease-out">
             <div className="w-full flex items-center justify-between text-brand-lavender">
               <h3 className="text-2xl font-semibold">{title}</h3>
               {/* O botão "Read Case" ainda pode estar aqui se quiser */}

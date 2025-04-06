@@ -4,15 +4,18 @@ import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import toast from 'react-hot-toast';
-import SectionTransition from "../ui/SectionTransition";
-import PatternBackground from "../ui/PatternBackground";
-import Button from "../ui/Button";
+import toast from "react-hot-toast";
 import { Instagram, Linkedin, Mail, Send } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
+
+import { Input, Button } from "@zardo/ui-kit";
+import { SectionTransition } from "@zardo/ui-kit/animations"
+
 import { contactSchema, type ContactFormData } from "@/lib/schemas/contact";
-import Input from "@/components/ui/Input";
+
 import { useScrollToSection } from "@/hooks/useScrollToSection";
+import { PatternBackground } from "@zardo/ui-kit/layout";
+
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -25,7 +28,7 @@ const Contact = () => {
     formState: { errors },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
-    mode: 'onSubmit', // Valida apenas no submit
+    mode: 'onSubmit',
   });
 
   const handleSocialLink = (sectionId: string) => {
@@ -95,9 +98,7 @@ const Contact = () => {
 
   return (
     <section className="relative py-16 md:py-24 bg-brand-offwhite" id="contact">
-      <PatternBackground variant="circuit" opacity={0.2} />
-      <div className="absolute top-20 left-10 w-72 h-72 bg-brand-purple/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-80 h-80 bg-brand-purpleDark/5 rounded-full blur-3xl" />
+      <PatternBackground variant="three-blobs" />
 
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 items-center gap-8 md:gap-12">
@@ -170,7 +171,7 @@ const Contact = () => {
                   aria-label="Start a WhatsApp chat with us"
                   className="flex items-center gap-2"
                 >
-                  <Button variant="secondary" className="w-fit">
+                  <Button variant="outline" className="w-fit">
                     <SiWhatsapp className="h-5 w-5 text-green-500" />
                     Chat on WhatsApp
                   </Button>
@@ -193,7 +194,7 @@ const Contact = () => {
                     id="name"
                     placeholder="Jack Connor"
                     error={!!errors.name}
-                    errorMessage={errors.name?.message}
+                    message={errors.name?.message}
                     {...register('name')}
                   />
                 </div>
@@ -207,7 +208,7 @@ const Contact = () => {
                     id="email"
                     placeholder="jack@example.com"
                     error={!!errors.email}
-                    errorMessage={errors.email?.message}
+                    message={errors.email?.message}
                     {...register('email')}
                   />
                 </div>
@@ -239,7 +240,7 @@ const Contact = () => {
                     type="submit"
                     disabled={isSubmitting}
                     aria-label={isSubmitting ? "Sending your message" : "Send your message"}
-                    aria-busy={isSubmitting}
+                    aria-busy={isSubmitting}  
                     className="w-full md:w-auto"
                   >
                     {isSubmitting ? "Sending..." : "Send"}

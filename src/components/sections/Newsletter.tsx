@@ -1,11 +1,13 @@
-import PatternBackground from "@/components/ui/PatternBackground";
-import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import toast from 'react-hot-toast';
+import toast from "react-hot-toast";
+import { ArrowRight } from "lucide-react";
+
+import { Input } from "@zardo/ui-kit";
+
 import { newsletterSchema, type NewsletterFormData } from "@/lib/schemas/newsletter";
-import Input from "@/components/ui/Input";
+
 
 const Newsletter = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -94,7 +96,6 @@ const Newsletter = () => {
 
   return (
     <section className="relative py-16 md:py-24 bg-brand-offwhite overflow-hidden" id="projects">
-      <PatternBackground variant="circuit" opacity={0.2} />
       <div className="container mx-auto px-4">
         <div className="relative w-full max-w-6xl mx-auto rounded-lg overflow-hidden shadow-lg">
           {/* Video Background */}
@@ -120,9 +121,9 @@ const Newsletter = () => {
                   type="email"
                   id="newsletter-email"
                   placeholder="connor@example.com"
-                  variant="newsletter"
+                  variant="glass"
                   error={!!errors.email}
-                  errorMessage={errors.email?.message}
+                  message={errors.email?.message}
                   {...register('email')}
                 />
                 <button

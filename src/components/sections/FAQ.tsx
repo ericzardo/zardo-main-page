@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import SectionTransition from "../ui/SectionTransition";
-import PatternBackground from "../ui/PatternBackground";
+import { SectionTransition } from "@zardo/ui-kit/animations"
 
 interface FAQItemProps {
   question: string;
@@ -20,7 +19,7 @@ const FAQItem = ({ question, answer, index }: FAQItemProps) => {
     <div className="border-b border-brand-lavender/30 last:border-b-0">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between w-full py-4 text-left focus:outline-none"
+        className="flex items-center justify-between w-full py-4 text-left focus:outline-none cursor-pointer"
         aria-expanded={isOpen}
         aria-controls={contentId}
         id={buttonId}
@@ -81,9 +80,6 @@ const FAQ = () => {
 
   return (
     <section className="relative py-16 md:py-24 bg-brand-offwhite" id="faq">
-      <PatternBackground variant="circuit" opacity={0.15} />
-      <div className="absolute top-20 left-10 w-72 h-72 bg-brand-purple/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-80 h-80 bg-brand-purpleDark/5 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4">
         <SectionTransition direction="up">

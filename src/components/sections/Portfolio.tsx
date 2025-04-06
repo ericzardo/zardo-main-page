@@ -1,5 +1,4 @@
-import SectionTransition from "@/components/ui/SectionTransition";
-import PatternBackground from "@/components/ui/PatternBackground";
+import { SectionTransition } from "@zardo/ui-kit/animations"
 import ProjectCard from "@/components/ui/ProjectCard";
 
 const Portfolio = () => {
@@ -26,7 +25,6 @@ const Portfolio = () => {
 
   return (
     <section className="relative py-16 md:py-24 bg-brand-offwhite overflow-hidden" id="projects">
-      <PatternBackground variant="circuit" opacity={0.2} />
       <div className="container mx-auto px-4">
         <SectionTransition direction="up" delay={100}>
           <div className="text-center mb-12">

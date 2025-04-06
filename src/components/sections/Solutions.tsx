@@ -3,9 +3,8 @@
 import { useRef, useEffect } from "react";
 import lottie from "lottie-web";
 import { gsap } from "gsap";
-import SectionTransition from "@/components/ui/SectionTransition";
-import PatternBackground from "@/components/ui/PatternBackground";
-import IntegrationCard from "@/components/custom/IntegrationsCard";
+import { SectionTransition } from "@zardo/ui-kit/animations"
+import IntegrationCard from "@/components/ui/IntegrationsCard";
 
 gsap.registerPlugin();
 
@@ -103,7 +102,7 @@ const Solutions = () => {
       id="solutions"
       aria-labelledby="solutions-heading"
     >
-      <PatternBackground variant="circuit" opacity={0.2} />
+
       <main className="container mx-auto px-4">
         <header className="flex flex-col text-center md:text-left md:flex-row gap-8 mb-16 items-end justify-between">
           <SectionTransition direction="left">

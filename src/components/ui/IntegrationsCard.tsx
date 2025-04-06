@@ -48,7 +48,7 @@ const IntegrationsCard = () => {
   const integrationsBottom = integrations.slice(mid);
 
   return (
-    <div className="relative bg-slate-900 rounded-xl p-6 shadow-lg border border-brand-offwhite/15 backdrop-blur-sm flex flex-col justify-between w-full max-w-md mx-auto md:max-w-none h-full overflow-hidden">
+    <div className="relative bg-slate-900 rounded-xl p-6 shadow-lg border border-brand-offwhite/15 backdrop-blur-sm flex flex-col justify-between w-full max-w-md mx-auto md:max-w-none h-[300px] overflow-hidden">
       <div className="text-center md:text-left mb-6 z-10 relative">
         <h3 className="text-2xl font-semibold text-brand-lavender mb-2">API Integrations & Automations</h3>
         <p className="text-brand-lavender/80">

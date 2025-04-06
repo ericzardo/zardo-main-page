@@ -1,19 +1,22 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import LoadingScreen from '@/components/ui/LoadingScreen';
+import { useEffect, useState } from 'react';
+import { Header, Footer, Slogan } from '@zardo/ui-kit/layout';
+import { LoadingScreen } from "@zardo/ui-kit/feedback"
 
 import Hero from '@/components/sections/Hero';
-import Slogan from '@/components/layout/Slogan';
 import FAQ from '@/components/sections/FAQ';
 import Services from '@/components/sections/ServicesList';
 import Portfolio from '@/components/sections/Portfolio';
 import Newsletter from '@/components/sections/Newsletter';
 
-// Lazy loading apenas para componentes que não dependem de scroll ou interações complexas
+import { SOCIAL_LINKS } from '@/constants/footer';
+import { NAV_ITEMS } from '@/constants/nav';
+
+import { useScrollToSection } from '@/hooks/useScrollToSection';
+
+
 const SolutionsLazy = dynamic(() => import('@/components/sections/Solutions'), {
   loading: () => <div className="min-h-screen bg-brand-navy/5" />,
   ssr: false,
@@ -36,7 +39,7 @@ const ContactLazy = dynamic(() => import('@/components/sections/Contact'), {
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
-
+  const scrollToSection = useScrollToSection();
   useEffect(() => {
     setIsClient(true);
   }, []);
@@ -47,19 +50,31 @@ export default function Home() {
 
   return (
     <div className="overflow-hidden bg-brand-offwhite">
-      <LoadingScreen />
-      <Header />
+      <Header 
+        navItems={NAV_ITEMS.map(nav => ({
+          ...nav,
+          onClick: () => scrollToSection({ sectionId: nav.href, offset: 80, duration: 800 }),
+        }))}
+        ctaLabel="Get Started" 
+        ctaOnClick={() => scrollToSection({ sectionId: "contact", offset: 80, duration: 800 })} 
+      />
       <Hero/>
       <SolutionsLazy/>
       <Portfolio/>
       <Newsletter />
-      <Services/>
+      <Services />
       <ProcessLazy />
       <BehindLazy/>
       <ContactLazy/>
       <FAQ/>
-      <Slogan/>
-      <Footer />
+      <Slogan
+        title="Innovative Digital Solutions"
+        description="Combining creativity and cutting-edge technology to craft unique experiences that transform your business."/>
+      <Footer
+        email="contact@zardo.dev"
+        socialLinks={SOCIAL_LINKS}
+        onScrollToTop={() => scrollToSection({ sectionId: "hero", offset: 80, duration: 800 })}
+      />
     </div>
   );
 }

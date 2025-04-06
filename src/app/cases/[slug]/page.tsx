@@ -1,21 +1,26 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { useParams } from "next/navigation";
-import { notFound } from "next/navigation";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import { useParams, notFound } from "next/navigation";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
-import { cases } from "@/data/cases";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import Slogan from "@/components/layout/Slogan";
+
+import { Header, Footer, Slogan } from "@zardo/ui-kit/layout";
+import { LoadingScreen } from "@zardo/ui-kit/feedback";
+
 import Contact from "@/components/sections/Contact";
-import LoadingScreen from "@/components/ui/LoadingScreen";
 import Hero from "./Hero";
 import Challange from "./Challange";
 import Solution from "./Solution";
 import Features from "./Features";
+
+import { cases } from "@/data/cases";
+
+import { useScrollToSection } from "@/hooks/useScrollToSection";
+
+import { NAV_ITEMS } from "@/constants/nav";
+import { SOCIAL_LINKS } from "@/constants/footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,6 +28,12 @@ const CasePage = () => {
   const { slug } = useParams();
   const caseData = cases.find((item) => item.slug === slug);
   const imageOneRef = useRef<HTMLImageElement>(null);
+  const scrollToSection = useScrollToSection();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
     const animateImage = (ref: React.RefObject<HTMLImageElement | null>) => {
@@ -43,6 +54,10 @@ const CasePage = () => {
     animateImage(imageOneRef);
   }, []);
 
+  if (!isClient) {
+    return <LoadingScreen/>;
+  }
+
   if (!caseData) {
     return notFound();
   }
@@ -51,7 +66,14 @@ const CasePage = () => {
     <>
       <LoadingScreen />
       <div className="overflow-hidden bg-brand-offwhite">
-        <Header />
+        <Header 
+          navItems={NAV_ITEMS.map(nav => ({
+            ...nav,
+            onClick: () => scrollToSection({ sectionId: nav.href, offset: 80, duration: 800 }),
+          }))}
+          ctaLabel="Get Started" 
+          ctaOnClick={() => scrollToSection({ sectionId: "contact", offset: 80, duration: 800 })} 
+        />
         <Hero
           title={caseData.title}
           description={caseData.description[0]}
@@ -134,8 +156,14 @@ const CasePage = () => {
         </section>
 
         <Contact />
-        <Slogan />
-        <Footer />
+        <Slogan
+          title="Innovative Digital Solutions"
+          description="Combining creativity and cutting-edge technology to craft unique experiences that transform your business."/>
+        <Footer
+          email="contact@zardo.dev"
+          socialLinks={SOCIAL_LINKS}
+          onScrollToTop={() => scrollToSection({ sectionId: "hero", offset: 80, duration: 800 })}
+        />
       </div>
     </>
   );

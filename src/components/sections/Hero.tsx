@@ -1,9 +1,10 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
-import Button from "../ui/Button";
-import SectionTransition from "../ui/SectionTransition";
-import PatternBackground from "../ui/PatternBackground";
+import { Button } from "@zardo/ui-kit";
+import { SectionTransition } from "@zardo/ui-kit/animations"
+import { PatternBackground } from "@zardo/ui-kit/layout";
+
 import { useScrollToSection } from "@/hooks/useScrollToSection";
 
 const Hero = () => {
@@ -14,9 +15,7 @@ const Hero = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
       id="hero"
     >
-      <PatternBackground variant="circuit" opacity={0.3} />
-      <div className="absolute top-1/4 -left-10 w-64 h-64 bg-brand-purple/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 -right-10 w-72 h-72 bg-brand-purpleDark/10 rounded-full blur-3xl" />
+      <PatternBackground/>
       
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="flex flex-col items-center text-center max-w-6xl mx-auto">
@@ -49,7 +48,7 @@ const Hero = () => {
                 <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
               </Button>
               <Button 
-                variant="secondary" 
+                variant="outline" 
                 onClick={() => scrollToSection({ 
                   sectionId: "solutions", 
                   offset: 80,
@@ -59,24 +58,6 @@ const Hero = () => {
               >
                 Learn More
               </Button>
-            </div>
-          </SectionTransition>
-
-          <SectionTransition delay={800}>
-            <div className="mt-16 md:mt-20 relative w-full max-w-4xl mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-b from-brand-purple/20 to-brand-purpleDark/20 blur-3xl rounded-full -z-10 opacity-30" />
-              <div className="rounded-2xl bg-white/50 backdrop-blur-md shadow-xl overflow-hidden border border-white/30 p-2">
-                <div className="relative rounded-xl overflow-hidden aspect-video bg-brand-offwhite">
-                  
-                  {/* Decorative elements */}
-                  <div className="absolute top-5 left-5 h-2 w-2 bg-brand-purple rounded-full animate-pulse-slow" />
-                  <div className="absolute top-5 left-10 h-2 w-2 bg-brand-purple/70 rounded-full animate-pulse-slow" style={{ animationDelay: "0.5s" }} />
-                  <div className="absolute top-5 left-15 h-2 w-2 bg-brand-purple/40 rounded-full animate-pulse-slow" style={{ animationDelay: "1s" }} />
-                </div>
-              </div>
-
-              <div className="absolute -bottom-5 -right-5 h-24 w-24 bg-brand-purple/10 rounded-full blur-2xl" />
-              <div className="absolute -top-5 -left-5 h-32 w-32 bg-brand-purpleDark/10 rounded-full blur-2xl" />
             </div>
           </SectionTransition>
         </div>

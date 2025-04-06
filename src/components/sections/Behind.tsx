@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Linkedin, Github } from "lucide-react";
-import SectionTransition from "@/components/ui/SectionTransition";
+import { SectionTransition } from "@zardo/ui-kit/animations"
 
 const Behind = () => {
   return (
