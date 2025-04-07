@@ -18,22 +18,22 @@ import { useScrollToSection } from '@/hooks/useScrollToSection';
 
 
 const SolutionsLazy = dynamic(() => import('@/components/sections/Solutions'), {
-  loading: () => <div className="min-h-screen bg-brand-navy/5" />,
+  loading: () => <LoadingScreen />,
   ssr: false,
 });
 
 const ProcessLazy = dynamic(() => import('@/components/sections/Process'), {
-  loading: () => <div className="min-h-screen bg-brand-navy/5" />,
+  loading: () => <LoadingScreen />,
   ssr: false,
 });
 
 const BehindLazy = dynamic(() => import('@/components/sections/Behind'), {
-  loading: () => <div className="min-h-screen bg-brand-navy/5" />,
+  loading: () => <LoadingScreen />,
   ssr: false,
 });
 
 const ContactLazy = dynamic(() => import('@/components/sections/Contact'), {
-  loading: () => <div className="min-h-screen bg-brand-navy/5" />,
+  loading: () => <LoadingScreen />,
   ssr: false,
 });
 

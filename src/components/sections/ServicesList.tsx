@@ -34,6 +34,7 @@ const Services = () => {
       trigger: sectionRef.current,
       start: "-5% top",
       end: "+=150%",
+      markers: true,
       pin: true,
       scrub: 0.1,
       onUpdate: (self) => {

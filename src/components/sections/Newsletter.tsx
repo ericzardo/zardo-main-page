@@ -114,7 +114,7 @@ const Newsletter = () => {
           
           {/* Content */}
           <div className="relative z-10 h-full flex flex-col gap-4 items-center justify-center text-white py-4 px-8 md:px-6 md:py-12">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 leading-none">Be in the know first!</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 leading-none">Be the first to know!</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md" noValidate>
               <div className="relative flex">
                 <Input

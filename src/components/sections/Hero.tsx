@@ -18,18 +18,18 @@ const Hero = () => {
       <PatternBackground/>
       
       <div className="container mx-auto px-4 py-12 md:py-20">
-        <div className="flex flex-col items-center text-center max-w-6xl mx-auto">
+        <div className="flex flex-col items-center text-center max-w-7xl mx-auto">
           <SectionTransition>
             <div className="inline-block mb-4 px-3 py-1 bg-brand-lavender/30 backdrop-blur-sm rounded-full">
               <span className="text-sm font-medium text-brand-purpleDark">
-                Innovative Solutions for Modern Enterprises
+                Innovative Solutions for Modern Companies
               </span>
             </div>
           </SectionTransition>
 
           <SectionTransition delay={200}>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              Transforming Ideas
+              Transforming Ideas into
               <span className="block text-gradient">Powerful Solutions</span>
             </h1>
           </SectionTransition>
