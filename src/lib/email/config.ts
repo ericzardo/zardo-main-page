@@ -18,7 +18,6 @@ if (process.env.NODE_ENV === 'production') {
     },
   };
 } else {
-  // Configuração para desenvolvimento (usando Gmail)
   if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
     throw new Error('Email credentials not configured for development (.env.local)');
   }
@@ -32,7 +31,3 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 export const transporter = nodemailer.createTransport(transporterConfig);
-
-// O destinatário será sempre contact@zardo.dev em produção
-// e o valor de CONTACT_EMAIL em desenvolvimento (se você quiser testar para outro lugar)
-export const contactEmail = process.env.NODE_ENV === 'production' ? 'contact@zardo.dev' : process.env.EMAIL_RECEIVER;
