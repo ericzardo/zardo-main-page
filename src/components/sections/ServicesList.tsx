@@ -37,7 +37,6 @@ const Services = () => {
       trigger: containerRef.current,
       start: "-35px top",
       end: `+=${scrollDuration}%`,
-      markers: true,
       pin: true,
       scrub: 0.1,
       onUpdate: (self) => {

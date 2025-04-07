@@ -30,7 +30,7 @@ const Hero = () => {
           <SectionTransition delay={200}>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
               Transforming Ideas into
-              <span className="block text-gradient">Powerful Solutions</span>
+              <span className="block text-gradient">Powerful Digital Solutions</span>
             </h1>
           </SectionTransition>
 
