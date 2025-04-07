@@ -3,11 +3,7 @@ import nodemailer from 'nodemailer';
 
 let transporterConfig = {};
 
-if (process.env.NODE_ENV === 'production') {
-  if (!process.env.SMTP_HOST || !process.env.SMTP_PORT || process.env.SMTP_USER || process.env.SMTP_PASS) {
-    throw new Error('Missing SMTP credentials.');
-  }
-  
+if (process.env.NODE_ENV === 'production') {  
   transporterConfig = {
     host: process.env.SMTP_HOST,
     port: process.env.SMTP_PORT || 587,
