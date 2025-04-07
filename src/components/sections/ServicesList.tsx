@@ -1,17 +1,17 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Services = () => {
+  const containerRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const sectionRef = useRef<HTMLElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (videoRef.current) {
       videoRef.current.playbackRate = 1;
     }
@@ -29,11 +29,14 @@ const Services = () => {
       scale: 1.1,
     });
 
+    const scrollPerItem = 15;
+    const scrollDuration = scrollPerItem * items.length;
+
     // Create scroll trigger
     ScrollTrigger.create({
-      trigger: sectionRef.current,
-      start: "-5% top",
-      end: "+=150%",
+      trigger: containerRef.current,
+      start: "-35px top",
+      end: `+=${scrollDuration}%`,
       markers: true,
       pin: true,
       scrub: 0.1,
@@ -59,6 +62,10 @@ const Services = () => {
       }
     });
 
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 500);
+
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
@@ -66,7 +73,7 @@ const Services = () => {
 
   return (
     <section 
-      ref={sectionRef}
+      ref={containerRef}
       className="relative min-h-screen flex justify-center items-center rounded-[20px] md:rounded-[40px] lg:rounded-[60px] overflow-hidden bg-brand-navy"
     >
       <div className="absolute inset-0 z-0">
