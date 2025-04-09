@@ -31,11 +31,11 @@ export async function POST(request: Request) {
 
           <hr style="margin: 30px 0; border: none; border-top: 1px solid #eee;" />
 
-          <p style="text-align: center; font-size: 0.9em;">
+          <p style="font-size: 0.9em;">
             <a href="https://zardo.dev/" style="margin-right: 20px; color: #007bff; text-decoration: none;">Visit our website</a>
             <a href="mailto:eric@zardo.dev" style="color: #007bff; text-decoration: none;">Contact us</a>
           </p>
-          <p style="text-align: center; color: #aaa; font-size: 0.8em;">
+          <p style="text-align: center; color: #3b3b3b; font-size: 0.8em;">
             &copy; 2025 Zardo. All rights reserved.
           </p>
         </div>

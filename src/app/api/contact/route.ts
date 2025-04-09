@@ -38,20 +38,20 @@ export async function POST(request: Request) {
           <p>Thank you for contacting us.</p>
           <p>This email is a confirmation that we have received your message and we will respond to you shortly.</p>
 
-          <p style="color: #999; font-size: 0.9em;">
-            <strong>Note:</strong> Please do not reply to this email. This mailbox is not monitored.
-          </p>
+          <p><strong>
+            Note: Please do not reply to this email. This mailbox is not monitored.
+          </strong></p>
 
 
           <p>Best regards,<br/>The Zardo Team</p>
 
           <hr style="margin: 30px 0; border: none; border-top: 1px solid #eee;" />
 
-          <p style="text-align: center; font-size: 0.9em;">
+          <p style="font-size: 0.9em;">
             <a href="https://zardo.dev/" style="margin-right: 20px; color: #007bff; text-decoration: none;">Visit our website</a>
             <a href="mailto:eric@zardo.dev" style="color: #007bff; text-decoration: none;">Contact us</a>
           </p>
-          <p style="text-align: center; color: #aaa; font-size: 0.8em;">
+          <p style="text-align: center; color: #3b3b3b; font-size: 0.8em;">
             &copy; 2025 Zardo. All rights reserved.
           </p>
         </div>
