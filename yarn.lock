@@ -691,10 +691,10 @@
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-win32-x64-msvc/-/resolver-binding-win32-x64-msvc-1.4.1.tgz#e32c666092bc419fd7c3e28fea7c74292aaa94a3"
   integrity sha512-hVXaObGI2lGFmrtT77KSbPQ3I+zk9IU500wobjk0+oX59vg/0VqAzABNtt3YSQYgXTC2a/LYxekLfND/wlt0yQ==
 
-"@zardo/ui-kit@^2.0.26":
-  version "2.0.26"
-  resolved "https://registry.yarnpkg.com/@zardo/ui-kit/-/ui-kit-2.0.26.tgz#d89d725f7ac35fdadc29165dca596ea8616f5a3b"
-  integrity sha512-ykQ4lQfai/WFkbMsm7LfYfVFXhC2ho+/L345iMZzdtzRuaFc6bLv6KLiv3D2fCGBVZwtjOV1BHDmkHFtOfFspA==
+"@zardo/ui-kit@^2.0.28":
+  version "2.0.28"
+  resolved "https://registry.yarnpkg.com/@zardo/ui-kit/-/ui-kit-2.0.28.tgz#4e03fca212142f18edd8715165a7981284afa56e"
+  integrity sha512-364XJghvK59szOIRfspRwk/dnONqKWIo7wogmrO+X0jakPcVoq1ZKgxd7efVTICR3UbWWDoMWicvfh7ma7iRMw==
 
 acorn-jsx@^5.3.2:
   version "5.3.2"

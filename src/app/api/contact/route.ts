@@ -20,14 +20,43 @@ export async function POST(request: Request) {
       to: process.env.EMAIL_RECEIVER || 'ericszardo@gmail.com',
       subject: 'New Contact Form Submission',
       text: `
-New contact form submission received:
+        New contact form submission received:
 
-Name: ${name}
-Email: ${email}
-Message: ${message}
+        Name: ${name}
+        Email: ${email}
+        Message: ${message}
 
-This contact has been added to your Notion database.
+        This contact has been added to your Notion database.
       `,
+    });
+
+    await sendNotificationEmail({
+      to: email,
+      subject: 'We received your message.',
+      html: `
+        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+          <p>Thank you for contacting us.</p>
+          <p>This email is a confirmation that we have received your message and we will respond to you shortly.</p>
+
+          <p style="color: #999; font-size: 0.9em;">
+            <strong>Note:</strong> Please do not reply to this email. This mailbox is not monitored.
+          </p>
+
+
+          <p>Best regards,<br/>The Zardo Team</p>
+
+          <hr style="margin: 30px 0; border: none; border-top: 1px solid #eee;" />
+
+          <p style="text-align: center; font-size: 0.9em;">
+            <a href="https://zardo.dev/" style="margin-right: 20px; color: #007bff; text-decoration: none;">Visit our website</a>
+            <a href="mailto:eric@zardo.dev" style="color: #007bff; text-decoration: none;">Contact us</a>
+          </p>
+          <p style="text-align: center; color: #aaa; font-size: 0.8em;">
+            &copy; 2025 Zardo. All rights reserved.
+          </p>
+        </div>
+      `,
+      noReply: true,
     });
 
     return new Response(
