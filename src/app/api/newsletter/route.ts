@@ -35,7 +35,7 @@ export async function POST(request: Request) {
             <a href="https://zardo.dev/" style="margin-right: 20px; color: #007bff; text-decoration: none;">Visit our website</a>
             <a href="mailto:eric@zardo.dev" style="color: #007bff; text-decoration: none;">Contact us</a>
           </p>
-          <p style="text-align: center; color: #3b3b3b; font-size: 0.8em;">
+          <p color: #3b3b3b; font-size: 0.8em;">
             &copy; 2025 Zardo. All rights reserved.
           </p>
         </div>
