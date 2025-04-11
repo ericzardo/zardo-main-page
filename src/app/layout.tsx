@@ -1,3 +1,5 @@
+import "@/lib/translate/config"
+
 import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import { SmoothScroll } from "@/providers/SmoothScroll";
@@ -85,11 +87,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+  params,
+}: {
   children: React.ReactNode;
-}>) { 
+  params: { locale: string };
+}) {
   return (
-    <html lang="en">
+    <html lang={params.locale}>
       <body className={`${poppins.className} antialiased`}>
         <SmoothScroll>
           {children}

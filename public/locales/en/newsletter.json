@@ -1,0 +1,7 @@
+{
+  "title": "Be the first to know!",
+  "placeholder": "jack@example.com",
+  "ariaLabel": "Subscribe to newsletter",
+  "success": "Successfully subscribed to our newsletter!",
+  "error": "Failed to subscribe. Please try again later."
+}

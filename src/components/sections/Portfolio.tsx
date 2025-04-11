@@ -1,23 +1,29 @@
-import { SectionTransition } from "@zardo/ui-kit/animations"
+"use client";
+
+import { useTranslation } from "react-i18next";
+
+import { SectionTransition } from "@zardo/ui-kit/animations";
 import ProjectCard from "@/components/ui/ProjectCard";
 
 const Portfolio = () => {
+  const { t } = useTranslation("portfolio");
+
   const projects = [
     {
       image: "/projects/chatt.on.webp",
-      alt: "chatt.on project banner",
-      title: "chatt.on",
-      description: "A real-time chat platform with support for group discussions, private messaging, and administrative management of permissions and plans.",
-      tags: ["Web Applications", "API Integration", "UX/UI"],
+      alt: t("projects.chattOn.alt"),
+      title: t("projects.chattOn.title"),
+      description: t("projects.chattOn.description"),
+      tags: t("projects.chattOn.tags", { returnObjects: true }) as string[],
       link: "cases/chatt-on",
       delay: 300,
     },
     {
       image: "/projects/ebook.lp.webp",
-      alt: "ebook landing page banner",
-      title: "eBook LP",
-      description: "A landing page focused on promoting Mente Smart's ebook, highlighting key benefits and driving conversions through an engaging and streamlined user experience.",
-      tags: ["Landing Page", "Web Development"],
+      alt: t("projects.ebookLp.alt"),
+      title: t("projects.ebookLp.title"),
+      description: t("projects.ebookLp.description"),
+      tags: t("projects.ebookLp.tags", { returnObjects: true }) as string[],
       link: "cases/ebook-lp",
       delay: 400,
     },
@@ -28,9 +34,9 @@ const Portfolio = () => {
       <div className="container mx-auto px-4">
         <SectionTransition direction="up" delay={100}>
           <div className="text-center mb-12">
-            <h2 className="section-heading text-gradient">Success Cases</h2>
+            <h2 className="section-heading text-gradient">{t("title")}</h2>
             <p className="text-base text-brand-navy/60 max-w-2xl mx-auto">
-              Explore our portfolio of exceptional web development and custom automation workflows that drive results for businesses around the world.
+              {t("description")}
             </p>
           </div>
         </SectionTransition>

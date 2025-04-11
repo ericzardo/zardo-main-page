@@ -1,0 +1,22 @@
+{
+  "title": "Nosso Processo Comprovado",
+  "description": "Seguimos um processo estruturado para garantir que sua transformação seja tranquila, do início ao fim.",
+  "steps": {
+    "1": {
+      "title": "Descoberta",
+      "description": "Analisamos a fundo o seu negócio para compreender suas necessidades e objetivos."
+    },
+    "2": {
+      "title": "Planejamento",
+      "description": "Traçamos uma estratégia personalizada e um plano técnico para realizar sua visão."
+    },
+    "3": {
+      "title": "Execução",
+      "description": "Desenvolvemos, testamos e implementamos sua solução com boas práticas e métodos ágeis."
+    },
+    "4": {
+      "title": "Entrega",
+      "description": "Fazemos o lançamento com suporte completo, documentação e orientação para sua equipe."
+    }
+  }
+}

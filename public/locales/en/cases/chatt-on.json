@@ -1,0 +1,110 @@
+{
+  "slug": "chatt-on",
+  "hero": {
+    "title": "chatt.on",
+    "description": [
+      "A chat application designed to provide a real-time communication experience between users, offering both private messaging and group chat capabilities.",
+      "The platform aims to create a flexible, intuitive, and secure environment where users can interact effortlessly across different contexts and communities.",
+      "Additionally, it includes a fully integrated admin panel to manage users, permissions, and app-wide settings, focusing on scalability and ease of use."
+    ],
+    "banner": "/projects/mockups/chat-banner.webp",
+    "noteLabel": "Notes",
+    "note": "is in BETA version",
+    "tags": [
+      "Web Applications",
+      "API Integration",
+      "UX/UI"
+    ],
+    "dateLabel": "Dates",
+    "date": {
+      "from": "03/2024",
+      "to": "07/2024"
+    },
+    "durationLabel": "Duration",
+    "duration": "4",
+    "durationUnit": "months"
+  },
+  "features": {
+    "title": "Key Features",
+    "list": [
+      "Account creation and authentication",
+      "Participation in group conversations in rooms",
+      "Private conversations (Whisper)",
+      "User profiles with information editing",
+      "Switch between light and dark theme",
+      "Exclusive administration page",
+      "Management of permissions, roles, themes, and chats"
+    ],
+    "techsTitle": "Technologies used",
+    "techs": [
+      "JavaScript",
+      "React",
+      "Tailwind CSS",
+      "Node.js",
+      "Fastify",
+      "Prisma",
+      "MySQL",
+      "Git",
+      "Docker",
+      "Nginx"
+    ]
+  },
+  "challenge": {
+    "title": "Challenge",
+    "intro": "The concept behind chatt.on was to create a modern and robust chat platform from scratch, focusing on flexibility, scalability, and an intuitive user experience.",
+    "points": [
+      "Develop an end-to-end real-time communication system with WebSocket.",
+      "Ensure smooth handling of private and group conversations within a single app.",
+      "Design a responsive and clean UI/UX to ensure easy onboarding and engagement.",
+      "Implement a powerful admin panel for full control over user roles, permissions, themes, and chats.",
+      "Optimize the backend architecture to support future scalability and high traffic volumes."
+    ],
+    "missionTitle": "Our mission was to:",
+    "mission": [
+      "Deliver a fully functional MVP ready for beta testers and client demo.",
+      "Develop a scalable and secure system using modern technologies and Dockerized microservices.",
+      "Design an interface that feels both professional and user-friendly.",
+      "Ensure all features work seamlessly in both light and dark modes."
+    ]
+  },
+  "solution": {
+    "title": "Solution",
+    "beforeTitle": "Before",
+    "afterTitle": "After",
+    "beforeAfter": [
+      {
+        "before": "The project started from a blank canvas with only a concept.",
+        "after": "A complete real-time chat app with private/group messages, roles, themes, and admin panel."
+      },
+      {
+        "before": "No infrastructure in place for scalable architecture.",
+        "after": "Microservices running on Docker containers with Nginx reverse proxy and optimized Fastify APIs."
+      },
+      {
+        "before": "No UI/UX prototype defined.",
+        "after": "A responsive and accessible interface with a focus on usability and modern design principles."
+      }
+    ]
+  },
+  "demo": {
+    "title": "Project Demo",
+    "preview": "Live preview",
+    "repository": "Source code",
+    "links": {
+      "preview": "https://chat.mentesmart.com.br/",
+      "repository": "https://github.com/ericzardo/chatt.on"
+    }
+  },
+  "gallery": {
+    "title": "Gallery",
+    "images": [
+      "/projects/mockups/chat-mockup-1.webp",
+      "/projects/mockups/chat-conversation-mobile.webp",
+      "/projects/mockups/chat-profile-mobile.webp",
+      "/projects/mockups/chat-menu-mobile.webp"
+    ],
+    "videos": [
+      "/projects/videos/chat-dashboard.webm"
+    ]
+  }
+}

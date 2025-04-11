@@ -18,7 +18,7 @@
 
 @layer components {
   .section-heading {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 leading-none;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 leading-16;
   }
 
   .text-gradient {

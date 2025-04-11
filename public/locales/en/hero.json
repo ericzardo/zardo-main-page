@@ -1,0 +1,13 @@
+{
+  "tagline": "Innovative Solutions for Modern Companies",
+  "headline": {
+    "line1": "Transforming Ideas into",
+    "line2": "Powerful Digital Solutions"
+  },
+  "actions": {
+    "getStarted": "Get Started",
+    "getStartedAria": "Get started by scrolling to contact section",
+    "learnMore": "Learn More",
+    "learnMoreAria": "Learn more by scrolling to solutions section"
+  }
+}

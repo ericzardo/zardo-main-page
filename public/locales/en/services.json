@@ -1,0 +1,9 @@
+{
+  "items": {
+    "web_dev": "Web Development",
+    "web_apps": "Web Applications",
+    "ai_automation": "AI Automation",
+    "api_integrations": "API Integrations",
+    "business_workflows": "Business Workflows"
+  }
+}

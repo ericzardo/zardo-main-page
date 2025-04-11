@@ -1,0 +1,29 @@
+{
+  "validation": {
+    "name": {
+      "tooShort": "Name must be at least 2 characters",
+      "tooLong": "Name must be less than 50 characters"
+    },
+    "email": {
+      "invalid": "Please enter a valid email address"
+    },
+    "message": {
+      "tooShort": "Message must be at least 10 characters",
+      "tooLong": "Message must be less than 500 characters"
+    }
+  },
+  "title": "Get in touch",
+  "description": "Got an idea? Reach out to discuss how we can turn it into a digital solution that fits your business needs.",
+  "emailLabel": "Email",
+  "whatsapp": "Chat on WhatsApp",
+  "form": {
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "placeholder": "Type your message here...",
+    "placeholderName": "Jack Connor",
+    "placeholderEmail": "jack@example.com",
+    "send": "Send",
+    "sending": "Sending..."
+  }
+}

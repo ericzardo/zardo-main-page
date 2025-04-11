@@ -1,23 +1,35 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import toast from "react-hot-toast";
 import { Instagram, Linkedin, Mail, Send } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
+import { useTranslation } from "react-i18next";
 
 import { Input, Button } from "@zardo/ui-kit";
-import { SectionTransition } from "@zardo/ui-kit/animations"
+import { SectionTransition } from "@zardo/ui-kit/animations";
 import { PatternBackground } from "@zardo/ui-kit/layout";
 
 import { contactSchema, type ContactFormData } from "@/lib/schemas/contact";
 
-
-
 const Contact = () => {
+  const { t } = useTranslation("contact");
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+const schema = useMemo(
+  () => contactSchema({
+    'name.tooShort': t('validation.name.tooShort'),
+    'name.tooLong': t('validation.name.tooLong'),
+    'email.invalid': t('validation.email.invalid'),
+    'message.tooShort': t('validation.message.tooShort'),
+    'message.tooLong': t('validation.message.tooLong'),
+  }),
+  [t]
+)
+
 
   const {
     register,
@@ -25,7 +37,7 @@ const Contact = () => {
     reset,
     formState: { errors },
   } = useForm<ContactFormData>({
-    resolver: zodResolver(contactSchema),
+    resolver: zodResolver(schema),
     mode: 'onSubmit',
   });
 
@@ -40,47 +52,13 @@ const Contact = () => {
       });
     
       if (res.ok) {
-        toast.success('Message sent successfully! We\'ll get back to you soon.', {
-          duration: 5000,
-          position: 'top-center',
-          style: {
-            background: '#ffffff',
-            color: '#1a1a1a',
-            borderRadius: '16px',
-            padding: '16px 24px',
-            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
-            border: '1px solid rgba(163, 62, 245, 0.1)',
-            fontSize: '14px',
-            fontWeight: '500',
-          },
-          iconTheme: {
-            primary: '#22c55e',
-            secondary: '#ffffff',
-          },
-        });
+        toast.success(t("successMessage"));
         reset();
       } else {
-        throw new Error('Failed to send message');
+        throw new Error('Failed');
       }
     } catch {
-      toast.error('Failed to send message. Please try again later.', {
-        duration: 5000,
-        position: 'top-center',
-        style: {
-          background: '#ffffff',
-          color: '#1a1a1a',
-          borderRadius: '16px',
-          padding: '16px 24px',
-          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
-          border: '1px solid rgba(239, 68, 68, 0.1)',
-          fontSize: '14px',
-          fontWeight: '500',
-        },
-        iconTheme: {
-          primary: '#ef4444',
-          secondary: '#ffffff',
-        },
-      });
+      toast.error(t("errorMessage"));
     } finally {
       setIsSubmitting(false);
     }
@@ -95,30 +73,30 @@ const Contact = () => {
           <SectionTransition direction="left">
             <div className="flex flex-col text-left">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gradient">
-                Get in touch
+                {t("title")}
               </h2>
 
               <p className="text-lg text-brand-navy/70 mb-8 max-w-md">
-                Got an idea? Reach out to discuss how we can turn it into a digital solution that fits your business needs.
+                {t("description")}
               </p>
 
+              {/* Email */}
               <div className="flex items-center mb-8">
                 <div className="bg-brand-lavender/30 p-3 rounded-lg mr-4">
                   <Mail className="h-6 w-6 text-brand-purple" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-brand-navy">Email</h4>
+                  <h4 className="text-sm font-semibold text-brand-navy">{t("emailLabel")}</h4>
                   <Link
                     href="mailto:contact@zardo.dev"
                     className="text-brand-navy/70 hover:text-brand-purple transition-colors cursor-pointer"
-                    aria-label="Send an email to contact@zardo.dev"
-                    title="Send email to contact@zardo.dev"
                   >
                     contact@zardo.dev
                   </Link>
                 </div>
               </div>
 
+              {/* LinkedIn */}
               <div className="flex items-center mb-8">
                 <div className="bg-brand-lavender/30 p-3 rounded-lg mr-4">
                   <Linkedin className="h-6 w-6 text-brand-purple" />
@@ -130,14 +108,13 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-brand-navy/70 hover:text-brand-purple transition-colors cursor-pointer"
-                    aria-label="Visit our LinkedIn profile"
-                    title="Visit our LinkedIn profile"
                   >
                     zardo.dev
                   </Link>
                 </div>
               </div>
 
+              {/* Instagram */}
               <div className="flex items-center mb-8">
                 <div className="bg-brand-lavender/30 p-3 rounded-lg mr-4">
                   <Instagram className="h-6 w-6 text-brand-purple" />
@@ -149,31 +126,30 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-brand-navy/70 hover:text-brand-purple transition-colors cursor-pointer"
-                    aria-label="Visit our Instagram profile"
-                    title="Visit our Instagram profile"
                   >
                     zardo.dev
                   </Link>
                 </div>
               </div>
 
+              {/* WhatsApp */}
               <div className="mt-auto">
                 <Link  
                   href="https://wa.link/1v19wx"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Start a WhatsApp chat with us"
                   className="flex items-center gap-2"
                 >
                   <Button variant="outline" className="w-fit">
                     <SiWhatsapp className="h-5 w-5 text-green-500" />
-                    Chat on WhatsApp
+                    {t("whatsapp")}
                   </Button>
                 </Link>
               </div>
             </div>
           </SectionTransition>
 
+          {/* Form */}
           <SectionTransition direction="right">
             <div className="bg-white/50 border border-white/30 rounded-lg shadow-md p-6 md:p-8 backdrop-blur-sm relative overflow-hidden">
               <div className="absolute top-0 right-0 w-40 h-40 bg-brand-purple/5 rounded-full translate-x-1/2 -translate-y-1/2 blur-xl"></div>
@@ -181,12 +157,12 @@ const Contact = () => {
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-brand-navy mb-1">
-                    Name
+                    {t("form.name")}
                   </label>
                   <Input
                     type="text"
                     id="name"
-                    placeholder="Jack Connor"
+                    placeholder={t("form.placeholderName")}
                     error={!!errors.name}
                     message={errors.name?.message}
                     {...register('name')}
@@ -195,12 +171,12 @@ const Contact = () => {
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-brand-navy mb-1">
-                    Email
+                    {t("form.email")}
                   </label>
                   <Input
                     type="email"
                     id="email"
-                    placeholder="jack@example.com"
+                    placeholder={t("form.placeholderEmail")}
                     error={!!errors.email}
                     message={errors.email?.message}
                     {...register('email')}
@@ -209,7 +185,7 @@ const Contact = () => {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-brand-navy mb-1">
-                    Message
+                    {t("form.message")}
                   </label>
                   <textarea
                     id="message"
@@ -218,12 +194,10 @@ const Contact = () => {
                     className={`w-full px-4 py-3 rounded-lg border ${
                       errors.message ? 'border-red-500' : 'border-brand-lavender/50'
                     } focus:outline-none focus:border-brand-purple bg-white/70 resize-none`}
-                    placeholder="Type your message here..."
-                    aria-invalid={errors.message ? 'true' : 'false'}
-                    aria-describedby={errors.message ? 'message-error' : undefined}
+                    placeholder={t("form.placeholder")}
                   ></textarea>
                   {errors.message && (
-                    <p id="message-error" className="mt-1 text-sm text-red-500" role="alert">
+                    <p className="mt-1 text-sm text-red-500" role="alert">
                       {errors.message.message}
                     </p>
                   )}
@@ -233,11 +207,11 @@ const Contact = () => {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    aria-label={isSubmitting ? "Sending your message" : "Send your message"}
+                    aria-label={isSubmitting ? t("form.sending") : t("form.send")}
                     aria-busy={isSubmitting}  
                     className="w-full md:w-auto"
                   >
-                    {isSubmitting ? "Sending..." : "Send"}
+                    {isSubmitting ? t("form.sending") : t("form.send")}
                     <Send className="h-4 w-4" aria-hidden="true" />
                   </Button>
                 </div>

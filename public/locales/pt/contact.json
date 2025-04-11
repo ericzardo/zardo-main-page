@@ -1,0 +1,29 @@
+{
+  "validation": {
+    "name": {
+      "tooShort": "O nome deve ter pelo menos 2 caracteres",
+      "tooLong": "O nome deve ter no máximo 50 caracteres"
+    },
+    "email": {
+      "invalid": "Por favor, insira um endereço de e-mail válido"
+    },
+    "message": {
+      "tooShort": "A mensagem deve ter pelo menos 10 caracteres",
+      "tooLong": "A mensagem deve ter no máximo 500 caracteres"
+    }
+  },
+  "title": "Entre em contato",
+  "description": "Tem uma ideia? Entre em contato para discutirmos como transformá-la em uma solução digital ideal para o seu negócio.",
+  "emailLabel": "Email",
+  "whatsapp": "Conversar no WhatsApp",
+  "form": {
+    "name": "Nome",
+    "email": "Email",
+    "message": "Mensagem",
+    "placeholder": "Escreva sua mensagem aqui...",
+    "placeholderName": "João Silva",
+    "placeholderEmail": "joao@exemplo.com",
+    "send": "Enviar",
+    "sending": "Enviando..."
+  }
+}

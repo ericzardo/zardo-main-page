@@ -1,0 +1,7 @@
+{
+  "title": "Seja o primeiro a saber!",
+  "placeholder": "joao@exemplo.com",
+  "ariaLabel": "Inscreva-se na newsletter",
+  "success": "Inscrição realizada com sucesso na nossa newsletter!",
+  "error": "Erro ao se inscrever. Tente novamente mais tarde."
+}

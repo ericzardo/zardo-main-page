@@ -1,0 +1,22 @@
+{
+  "title": "Our Proven Process",
+  "description": "We follow a structured process to ensure your transformation is seamless, from start to finish.",
+  "steps": {
+    "1": {
+      "title": "Discovery",
+      "description": "We dive into your business to understand your needs and goals."
+    },
+    "2": {
+      "title": "Planning",
+      "description": "We outline a tailored strategy and technical roadmap to achieve your vision."
+    },
+    "3": {
+      "title": "Execution",
+      "description": "We develop, test, and implement your solution using best practices and agile methods."
+    },
+    "4": {
+      "title": "Delivery",
+      "description": "We launch with full support, documentation, and insights for your team."
+    }
+  }
+}

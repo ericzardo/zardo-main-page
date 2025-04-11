@@ -1,0 +1,25 @@
+{
+  "title": "Casos de Sucesso",
+  "description": "Explore nosso portfólio com desenvolvimento web de ponta e automações personalizadas que geram resultados reais para empresas ao redor do mundo.",
+  "projects": {
+    "chattOn": {
+      "title": "chatt.on",
+      "alt": "banner do projeto chatt.on",
+      "description": "Plataforma de chat em tempo real com suporte a grupos, mensagens privadas e gerenciamento administrativo de permissões e planos.",
+      "tags": [
+        "Aplicações Web",
+        "Integração de APIs",
+        "UX/UI"
+      ]
+    },
+    "ebookLp": {
+      "title": "eBook LP",
+      "alt": "banner da landing page do ebook",
+      "description": "Landing page para divulgação do eBook da Mente Smart, com foco em benefícios e conversão através de uma experiência envolvente.",
+      "tags": [
+        "Landing Page",
+        "Desenvolvimento Web"
+      ]
+    }
+  }
+}

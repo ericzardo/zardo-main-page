@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { ChevronDown } from "lucide-react";
-import { SectionTransition } from "@zardo/ui-kit/animations"
+import { SectionTransition } from "@zardo/ui-kit/animations";
 
 interface FAQItemProps {
   question: string;
@@ -50,41 +51,19 @@ const FAQItem = ({ question, answer, index }: FAQItemProps) => {
 };
 
 const FAQ = () => {
-  const faqItems = [
-    {
-      question: "How long does it take to complete a project?",
-      answer:
-        "The timeline for each project depends on its scope. We focus on delivering results quickly, but we'll work with you to establish realistic timelines based on your needs.",
-    },
-    {
-      question: "Do you offer AI-powered solutions?",
-      answer:
-        "Absolutely! We create intelligent solutions using AI to automate tasks, enhance user experiences, and provide innovative ways to drive business growth.",
-    },
-    {
-      question: "What types of businesses do you work with?",
-      answer:
-        "We work with small and medium-sized businesses across various industries, including retail, healthcare, restaurants, gyms, and more.",
-    },
-    {
-      question: "How much does a website or AI solution cost?",
-      answer:
-        "Pricing varies depending on the complexity of the project. We provide affordable solutions tailored to your business needs and budget.",
-    },
-    {
-      question: "Do I need a technical background to work with you?",
-      answer:
-        "Not at all! We make sure to explain everything in a simple and clear way, guiding you through the process with easy-to-understand language.",
-    },
-  ];
+  const { t } = useTranslation("faq");
+
+  const faqItems = t("items", { returnObjects: true }) as {
+    question: string;
+    answer: string;
+  }[];
 
   return (
     <section className="relative py-16 md:py-24 bg-brand-offwhite" id="faq">
-
       <div className="container mx-auto px-4">
         <SectionTransition direction="up">
           <div className="text-center mb-12">
-            <h2 className="section-heading text-gradient">Common Questions</h2>
+            <h2 className="section-heading text-gradient">{t("title")}</h2>
           </div>
         </SectionTransition>
 
@@ -92,7 +71,7 @@ const FAQ = () => {
           <div 
             className="max-w-3xl mx-auto bg-white/50 backdrop-blur-sm rounded-lg p-6 shadow-md border border-white/30"
             role="list"
-            aria-label="Frequently Asked Questions"
+            aria-label={t("title")}
           >
             {faqItems.map((item, index) => (
               <FAQItem key={index} question={item.question} answer={item.answer} index={index} />

@@ -1,0 +1,102 @@
+{
+  "slug": "ebook-lp",
+  "hero": {
+    "title": "Ebook Landing Page",
+    "description": [
+      "A high-converting landing page designed to promote and distribute a free ebook, focusing on engaging content and a frictionless user experience.",
+      "The page includes a bold value proposition, persuasive copywriting, and a lead capture form integrated with an email marketing platform.",
+      "Its goal is to increase downloads, generate qualified leads, and boost brand awareness through an elegant, fast, and responsive interface."
+    ],
+    "banner": "/projects/mockups/ebook-banner.webp",
+    "noteLabel": "Notes",
+    "tags": [
+      "Landing Pages",
+      "Lead Generation",
+      "Email Integration"
+    ],
+    "dateLabel": "Dates",
+    "date": {
+      "from": "01/2024",
+      "to": "01/2024"
+    },
+    "durationLabel": "Duration",
+    "duration": "1",
+    "durationUnit": "month"
+  },
+  "features": {
+    "title": "Key Features",
+    "list": [
+      "Responsive design for desktop and mobile",
+      "Integrated form with email service (e.g., Mailchimp)",
+      "Dynamic sections for testimonials, benefits, and FAQs",
+      "SEO-optimized structure and content",
+      "Easy-to-edit structure for marketing teams"
+    ],
+    "techsTitle": "Technologies Used",
+    "techs": [
+      "React",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Next.js",
+      "Vercel"
+    ]
+  },
+  "challenge": {
+    "title": "Challenge",
+    "intro": "The challenge was to create a visually appealing and conversion-focused landing page in a short timeframe, aiming to validate a content marketing strategy through lead generation.",
+    "points": [
+      "Design a visually appealing and easy-to-navigate layout.",
+      "Ensure mobile responsiveness without sacrificing content hierarchy.",
+      "Integrate with a third-party email marketing service.",
+      "Ensure fast load times and performance optimization.",
+      "Keep the project editable for marketing iterations."
+    ],
+    "missionTitle": "Our mission was to:",
+    "mission": [
+      "Deliver a minimal, elegant interface with no distractions.",
+      "Maximize ebook downloads with a seamless form flow.",
+      "Encourage trust through design, testimonials, and brand consistency.",
+      "Deploy with best practices in SEO and performance."
+    ]
+  },
+  "solution": {
+    "title": "Solution",
+    "beforeTitle": "Before",
+    "afterTitle": "After",
+    "beforeAfter": [
+      {
+        "before": "The ebook existed only in PDF format with no online presence.",
+        "after": "A fully responsive landing page capturing leads and distributing the ebook automatically."
+      },
+      {
+        "before": "No structured funnel for lead generation.",
+        "after": "A complete system integrated with an email platform and analytics tracking."
+      },
+      {
+        "before": "Limited user engagement and low visibility.",
+        "after": "Significantly increased ebook downloads and mailing list growth."
+      }
+    ]
+  },
+  "demo": {
+    "title": "Project Demo",
+    "preview": "Live Preview",
+    "repository": "Source Code",
+    "links": {
+      "preview": "https://ebook-landing.vercel.app/",
+      "repository": "https://github.com/ericzardo/ebook-landing"
+    }
+  },
+  "gallery": {
+    "title": "Gallery",
+    "images": [
+      "/projects/mockups/ebook-mockup-1.webp",
+      "/projects/mockups/ebook-hero-mobile.webp",
+      "/projects/mockups/ebook-journey-mobile.webp",
+      "/projects/mockups/ebook-checkout-mobile.webp"
+    ],
+    "videos": [
+      "/projects/videos/ebook-page.webm"
+    ]
+  }
+}
