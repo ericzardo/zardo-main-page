@@ -90,7 +90,7 @@ const schema = useMemo(
                   <h4 className="text-sm font-semibold text-brand-navy">{t("emailLabel")}</h4>
                   <Link
                     href="mailto:contact@zardo.dev"
-                    className="text-brand-navy/70 hover:text-brand-purple transition-colors cursor-pointer"
+                    className="mail-link text-brand-navy/70 hover:text-brand-purple transition-colors cursor-pointer"
                   >
                     contact@zardo.dev
                   </Link>
@@ -108,7 +108,7 @@ const schema = useMemo(
                     href="https://www.linkedin.com/company/zardo-dev"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-brand-navy/70 hover:text-brand-purple transition-colors cursor-pointer"
+                    className="social-link text-brand-navy/70 hover:text-brand-purple transition-colors cursor-pointer"
                   >
                     zardo.dev
                   </Link>
@@ -126,7 +126,7 @@ const schema = useMemo(
                     href="https://www.instagram.com/seuusuario"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-brand-navy/70 hover:text-brand-purple transition-colors cursor-pointer"
+                    className="social-link text-brand-navy/70 hover:text-brand-purple transition-colors cursor-pointer"
                   >
                     zardo.dev
                   </Link>
@@ -139,7 +139,7 @@ const schema = useMemo(
                   href="https://wa.link/1v19wx"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2"
+                  className="whatsapp-link flex items-center gap-2"
                 >
                   <Button variant="outline" className="w-fit">
                     <SiWhatsapp className="h-5 w-5 text-green-500" />
@@ -216,7 +216,7 @@ const schema = useMemo(
                     disabled={isSubmitting}
                     aria-label={isSubmitting ? t("form.sending") : t("form.send")}
                     aria-busy={isSubmitting}  
-                    className="w-full md:w-auto"
+                    className="contact-submit w-full md:w-auto"
                   >
                     {isSubmitting ? t("form.sending") : t("form.send")}
                     <Send className="h-4 w-4" aria-hidden="true" />

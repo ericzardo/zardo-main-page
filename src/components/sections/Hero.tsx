@@ -39,6 +39,7 @@ const Hero = () => {
           <SectionTransition delay={600}>
             <div className="flex flex-col sm:flex-row gap-4 mt-4">
               <Button 
+                className="cta-get-started"
                 onClick={() => scrollToSection({ 
                   sectionId: "contact", 
                   offset: 80,
@@ -50,6 +51,7 @@ const Hero = () => {
                 <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
               </Button>
               <Button 
+                className="cta-learn-more"
                 variant="outline" 
                 onClick={() => scrollToSection({ 
                   sectionId: "solutions", 

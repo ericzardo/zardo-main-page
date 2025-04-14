@@ -122,7 +122,7 @@ const Newsletter = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 cursor-pointer bg-brand-purple text-sm rounded-full hover:scale-95 transition-transform duration-200 ease-out disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="newsletter-submit absolute right-2 top-1/2 -translate-y-1/2 p-1.5 cursor-pointer bg-brand-purple text-sm rounded-full hover:scale-95 transition-transform duration-200 ease-out disabled:opacity-50 disabled:cursor-not-allowed"
                   aria-label={t("ariaLabel")}
                 >
                   <ArrowRight className="size-5 text-brand-lavender" />

@@ -48,7 +48,7 @@ const Behind = () => {
                       href="https://www.linkedin.com/in/eric-zardo-a53630228/" 
                       aria-label={t("linkedinAria")}
                       rel="noopener noreferrer"
-                      className="text-brand-offwhite transition-all duration-200 ease-out hover:scale-75 hover:text-brand-lavender" 
+                      className="owner-social-media text-brand-offwhite transition-all duration-200 ease-out hover:scale-75 hover:text-brand-lavender" 
                       passHref
                     >
                       <Linkedin size={24} strokeWidth={1} aria-hidden="true"/>
@@ -58,7 +58,7 @@ const Behind = () => {
                       href="https://github.com/ericzardo" 
                       aria-label={t("githubAria")}
                       rel="noopener noreferrer" 
-                      className="text-brand-offwhite transition-all duration-200 ease-out hover:scale-75 hover:text-brand-lavender" 
+                      className="owner-social-media text-brand-offwhite transition-all duration-200 ease-out hover:scale-75 hover:text-brand-lavender" 
                       passHref
                     >
                       <Github size={24} strokeWidth={1} aria-hidden="true"/>
