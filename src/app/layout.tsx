@@ -2,13 +2,14 @@ import "@/lib/translate/config"
 
 import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
-import { SmoothScroll } from "@/providers/SmoothScroll";
-import { Toaster } from 'react-hot-toast';
+import Script from "next/script";
 
-import "./globals.css";
-import "@zardo/ui-kit/styles.css";
+import { Toaster } from 'react-hot-toast';
+import { SmoothScroll } from "@/providers/SmoothScroll";
 
 import { Favicon, AppleTouchIcon, Logo192, Logo32, Logo512 } from "@zardo/ui-kit/logos"
+import "./globals.css";
+import "@zardo/ui-kit/styles.css";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -94,6 +95,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang={params.locale}>
+      <head>
+        {/* Google Analytics Scripts */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-TC7E508KHF"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-TC7E508KHF');
+          `}
+        </Script>
+      </head>
       <body className={`${poppins.className} antialiased`}>
         <SmoothScroll>
           {children}
