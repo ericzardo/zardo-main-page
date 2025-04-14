@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import toast from "react-hot-toast";
@@ -16,6 +16,7 @@ import { PatternBackground } from "@zardo/ui-kit/layout";
 import { contactSchema, type ContactFormData } from "@/lib/schemas/contact";
 
 const Contact = () => {
+  const formRef = useRef<HTMLFormElement>(null); 
   const { t } = useTranslation("contact");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -52,13 +53,13 @@ const schema = useMemo(
       });
     
       if (res.ok) {
-        toast.success(t("successMessage"));
+        toast.success(t("form.successMessage"));
         reset();
       } else {
         throw new Error('Failed');
       }
     } catch {
-      toast.error(t("errorMessage"));
+      toast.error(t("form.errorMessage"));
     } finally {
       setIsSubmitting(false);
     }
@@ -154,7 +155,7 @@ const schema = useMemo(
             <div className="bg-white/50 border border-white/30 rounded-lg shadow-md p-6 md:p-8 backdrop-blur-sm relative overflow-hidden">
               <div className="absolute top-0 right-0 w-40 h-40 bg-brand-purple/5 rounded-full translate-x-1/2 -translate-y-1/2 blur-xl"></div>
 
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
+              <form ref={formRef} onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-brand-navy mb-1">
                     {t("form.name")}
@@ -195,6 +196,12 @@ const schema = useMemo(
                       errors.message ? 'border-red-500' : 'border-brand-lavender/50'
                     } focus:outline-none focus:border-brand-purple bg-white/70 resize-none`}
                     placeholder={t("form.placeholder")}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" && !e.shiftKey) {
+                        e.preventDefault();
+                        handleSubmit(onSubmit)();
+                      }
+                    }}
                   ></textarea>
                   {errors.message && (
                     <p className="mt-1 text-sm text-red-500" role="alert">

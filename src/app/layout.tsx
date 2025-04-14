@@ -96,6 +96,17 @@ export default function RootLayout({
   return (
     <html lang={params.locale}>
       <head>
+        {/* Google Tag Manager */}
+        <Script id="gtm-init" strategy="afterInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id=GTM-K8Q329MT'+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-K8Q329MT');
+          `}
+        </Script>
+
         {/* Google Analytics Scripts */}
         <Script
           strategy="afterInteractive"
@@ -111,6 +122,14 @@ export default function RootLayout({
         </Script>
       </head>
       <body className={`${poppins.className} antialiased`}>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-K8Q329MT"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         <SmoothScroll>
           {children}
         </SmoothScroll>

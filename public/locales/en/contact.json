@@ -24,6 +24,8 @@
     "placeholderName": "Jack Connor",
     "placeholderEmail": "jack@example.com",
     "send": "Send",
-    "sending": "Sending..."
+    "sending": "Sending...",
+    "successMessage": "Your message has been sent successfully!",
+    "errorMessage": "Oops! Something went wrong. Please try again later."
   }
 }

@@ -703,10 +703,10 @@
   resolved "https://registry.yarnpkg.com/@unrs/resolver-binding-win32-x64-msvc/-/resolver-binding-win32-x64-msvc-1.5.0.tgz#5768c6bba4a27833a48a8a77e50eb01b520d0962"
   integrity sha512-wAvXp4k7jhioi4SebXW/yfzzYwsUCr9kIX4gCsUFKpCTUf8Mi7vScJXI3S+kupSUf0LbVHudR8qBbe2wFMSNUw==
 
-"@zardo/ui-kit@^2.0.30":
-  version "2.0.30"
-  resolved "https://registry.yarnpkg.com/@zardo/ui-kit/-/ui-kit-2.0.30.tgz#b925db2d19af22595b87cd5d8925a4b8a7df0451"
-  integrity sha512-JF7FXTeKjOfhLdHW8snJy27NQ1Q5s8BLJ4/I6+WHBg+guEeP3B745/Qwwj0YLm6wKO17zZE0pUHXGBU5M3zVaA==
+"@zardo/ui-kit@^2.0.31":
+  version "2.0.31"
+  resolved "https://registry.yarnpkg.com/@zardo/ui-kit/-/ui-kit-2.0.31.tgz#4c00a47a3c1c59b06f22cdf404259f41d6299ced"
+  integrity sha512-fRqUemk7ZNHvgN3D6pMgYIIq0YCorMrPWE6perbY0wxE/UCTpx2ifLS7C3xodHJxQhUMgrakafkAbbQ4cde9Qw==
   dependencies:
     lottie-react "^2.4.1"
 

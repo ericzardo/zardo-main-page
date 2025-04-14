@@ -24,6 +24,8 @@
     "placeholderName": "João Silva",
     "placeholderEmail": "joao@exemplo.com",
     "send": "Enviar",
-    "sending": "Enviando..."
+    "sending": "Enviando...",
+    "successMessage": "Sua mensagem foi enviada com sucesso!",
+    "errorMessage": "Opa! Algo deu errado. Por favor, tente novamente mais tarde."
   }
 }

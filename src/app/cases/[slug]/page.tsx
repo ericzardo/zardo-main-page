@@ -182,6 +182,7 @@ const CasePage = () => {
           email="contact@zardo.dev"
           socialLinks={SOCIAL_LINKS}
           onScrollToTop={() => scrollToSection({ sectionId: "hero", offset: 80, duration: 800 })}
+          backToTopLabel={tHome("footer.backToTop")}
         />
       </div>
     </>
