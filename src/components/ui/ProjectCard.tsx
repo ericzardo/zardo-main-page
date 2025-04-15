@@ -14,7 +14,7 @@ type ProjectCardProps = {
 const ProjectCard = ({ image, alt, title, description, tags, link }: ProjectCardProps) => {
   return (
     <div className="flex flex-col items-center max-w-[600px] w-full gap-4">
-      <Link href={link} className="block group relative w-full aspect-square rounded-lg overflow-hidden flex-shrink-0 shadow-md hover:scale-95 transition-all duration-200 ease-out">
+      <Link href={link} className="case-link block group relative w-full aspect-square rounded-lg overflow-hidden flex-shrink-0 shadow-md hover:scale-95 transition-all duration-200 ease-out">
         <div className="relative w-full h-full">
           <Image
             src={image}
