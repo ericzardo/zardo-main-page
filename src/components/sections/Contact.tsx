@@ -123,7 +123,7 @@ const schema = useMemo(
                 <div>
                   <h4 className="text-sm font-semibold text-brand-navy">Instagram</h4>
                   <Link
-                    href="https://www.instagram.com/seuusuario"
+                    href="https://www.instagram.com/zardo.dev/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social-link text-brand-navy/70 hover:text-brand-purple transition-colors cursor-pointer"
