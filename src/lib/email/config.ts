@@ -8,7 +8,7 @@ if (process.env.NODE_ENV === 'production') {
   transporterConfig = {
     host: process.env.SMTP_HOST,
     port: process.env.SMTP_PORT || 587,
-    secure: process.env.SMTP_SECURE === 'true' || true,
+    secure: process.env.SMTP_SECURE === 'true',
     auth: {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASS,
@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === 'production') {
   noReplyConfig = {
     host: process.env.SMTP_HOST,
     port: process.env.SMTP_PORT || 587,
-    secure: process.env.SMTP_SECURE === 'true' || true,
+    secure: process.env.SMTP_SECURE === 'true',
     auth: {
       user: process.env.EMAIL_NO_REPLY,
       pass: process.env.PASS_NO_REPLY,
