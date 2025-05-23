@@ -1,0 +1,15 @@
+{
+  "title": "How we automated our operation",
+  "description": "Real automations we've implemented to save time, generate leads, and improve scheduling — all inside our own operation.",
+  "prospecting": {
+    "title": "Automated Prospecting",
+    "description": "Finds, filters, and sends qualified opportunities every day — with zero manual effort.",
+    "result": "+300% reach with 0 weekly hours required"
+  },
+  "scheduling": {
+    "title": "Integrated Scheduling",
+    "description": "Combines replies, bookings, and communication channels in one place with automatic sync and notifications.",
+    "result": "Frictionless scheduling, no back-and-forth messaging"
+  },
+  "note": "If we use it to scale our own agency, it’s because it works."
+}

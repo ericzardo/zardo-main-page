@@ -36,5 +36,9 @@
   ],
   "footer": {
     "backToTop": "Voltar ao topo"
+  },
+  "consultancy": {
+    "slug": "consultoria-gratuita",
+    "labelText": "Agendar Consulta"
   }
 }

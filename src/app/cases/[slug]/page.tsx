@@ -18,6 +18,7 @@ import Challange from "./Challange";
 import Solution from "./Solution";
 import Features from "./Features";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
+import ConsultancyButton from "@/components/ui/ConsultancyButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -83,7 +84,8 @@ const CasePage = () => {
 
   return (
     <>
-      <div className="overflow-hidden bg-brand-offwhite relative">
+      <div className="overflow-hidden bg-brand-offwhite relative">\
+        <ConsultancyButton />
         <Header 
           navItems={NAV_ITEMS.map(nav => ({
             ...nav,

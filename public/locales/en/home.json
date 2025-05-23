@@ -36,5 +36,9 @@
   ],
   "footer": {
     "backToTop": "Back to top"
+  },
+  "consultancy": {
+    "slug": "free-booking",
+    "labelText": "Book with me"
   }
 }

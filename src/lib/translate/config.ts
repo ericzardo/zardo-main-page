@@ -39,6 +39,9 @@ import chattOnEN from '../../../public/locales/en/cases/chatt-on.json';
 import ebookLpPT from '../../../public/locales/pt/cases/ebook-lp.json';
 import ebookLpEN from '../../../public/locales/en/cases/ebook-lp.json';
 
+import ourautomationsPT from '../../../public/locales/pt/ourautomations.json';
+import ourautomationsEN from '../../../public/locales/en/ourautomations.json';
+
 i18n
   .use(initReactI18next)
   .init({
@@ -56,6 +59,7 @@ i18n
         solutions: solutionsEN,
         'cases/chatt-on': chattOnEN,
         'cases/ebook-lp': ebookLpEN,
+        ourautomations: ourautomationsEN,
       },
       pt: {
         home: homePT,
@@ -70,6 +74,7 @@ i18n
         solutions: solutionsPT,
         'cases/chatt-on': chattOnPT,
         'cases/ebook-lp': ebookLpPT,
+        ourautomations: ourautomationsPT,
       },
     },
     lng: 'pt',

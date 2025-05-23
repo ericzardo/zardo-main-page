@@ -43,9 +43,9 @@ const ProcessSection = () => {
   return (
     <section className="relative py-16 md:py-24 bg-brand-offwhite overflow-hidden" id="projects">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-left mb-12">
           <h2 className="section-heading text-gradient">{t("title")}</h2>
-          <p className="text-base text-brand-navy/60 max-w-2xl mx-auto">
+          <p className="text-base text-brand-navy/60 max-w-2xl">
             {t("description")}
           </p>
         </div>
