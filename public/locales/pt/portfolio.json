@@ -20,6 +20,16 @@
         "Landing Page",
         "Desenvolvimento Web"
       ]
+    },
+    "prospectingLeads": {
+      "title": "Prospecção Automatizada",
+      "alt": "banner da automação de prospecção via Google Maps",
+      "description": "Automação criada com n8n para captura e organização automática de leads via Google Maps, gerando planilhas qualificadas no Google Drive.",
+      "tags": [
+        "Automações",
+        "n8n",
+        "Geração de Leads"
+      ]
     }
   }
 }

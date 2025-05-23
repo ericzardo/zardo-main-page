@@ -20,6 +20,16 @@
         "Landing Page",
         "Web Development"
       ]
+    },
+    "prospectingLeads": {
+      "title": "Automated Prospecting",
+      "alt": "banner of the Google Maps prospecting automation",
+      "description": "Automation built with n8n for automatic capture and organization of leads via Google Maps, generating qualified spreadsheets on Google Drive.",
+      "tags": [
+        "Automations",
+        "n8n",
+        "Lead Generation"
+      ]
     }
   }
 }

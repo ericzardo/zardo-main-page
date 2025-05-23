@@ -1,0 +1,96 @@
+{
+  "slug": "prospecting-leads",
+  "hero": {
+    "title": "Prospecção Automatizada com Google Maps",
+    "description": [
+      "Uma automação criada com o n8n para captar leads de forma escalável via Google Maps, economizando tempo e esforço com tarefas repetitivas.",
+      "Ela busca dados de empresas em uma localidade, filtra resultados relevantes e organiza as informações em uma planilha no Google Drive.",
+      "Ideal para empresas que querem acelerar suas estratégias de outbound marketing com dados qualificados."
+    ],
+    "banner": "/projects/mockups/prospecting-mockup-1.webp",
+    "noteLabel": "Notas",
+    "note": "Em uso interno na agência",
+    "tags": [
+      "Automações",
+      "n8n",
+      "Geração de Leads",
+      "Google Maps API"
+    ],
+    "dateLabel": "Datas",
+    "date": {
+      "from": "04/2025",
+      "to": "05/2025"
+    },
+    "durationLabel": "Duração",
+    "duration": "2",
+    "durationUnit": "semanas"
+  },
+  "features": {
+    "title": "Funcionalidades principais",
+    "list": [
+      "Busca automatizada de empresas via Google Maps",
+      "Extração de dados como nome, telefone, e endereço",
+      "Filtragem de leads conforme critérios personalizados",
+      "Geração e organização em planilhas no Google Drive"
+    ],
+    "techsTitle": "Tecnologias utilizadas",
+    "techs": [
+      "n8n",
+      "Google Maps API",
+      "Google Sheets",
+      "Google Drive API",
+      "Webhook",
+      "JSON"
+    ]
+  },
+  "challenge": {
+    "title": "Desafio",
+    "intro": "A automação nasceu da necessidade de escalar a prospecção de leads sem depender de ações manuais repetitivas e demoradas.",
+    "points": [
+      "Interagir com a Google Maps API para retornar resultados relevantes.",
+      "Filtrar dados automaticamente para garantir a qualidade dos leads.",
+      "Evitar duplicidade e estruturar dados de maneira reutilizável.",
+      "Integrar com Google Sheets de forma organizada."
+    ],
+    "missionTitle": "Nossa missão era:",
+    "mission": [
+      "Construir uma solução plug-and-play para uso interno e para clientes.",
+      "Reduzir drasticamente o tempo de geração de leads qualificados.",
+      "Criar algo escalável com custo baixo usando recursos gratuitos ou acessíveis."
+    ]
+  },
+  "solution": {
+    "title": "Solução",
+    "beforeTitle": "Antes",
+    "afterTitle": "Depois",
+    "beforeAfter": [
+      {
+        "before": "Prospecção manual com muito tempo gasto em buscas.",
+        "after": "Automação completa rodando em segundo plano e atualizando o banco de leads."
+      },
+      {
+        "before": "Planilhas desorganizadas e com dados imprecisos.",
+        "after": "Planilhas estruturadas com filtros aplicados e dados relevantes prontos para uso."
+      }
+    ]
+  },
+  "demo": {
+    "title": "Demonstração da automação",
+    "preview": "Ver estrutura no n8n",
+    "repository": "Fluxo no GitHub",
+    "links": {
+      "preview": "https://n8n.io/workflows/ID-EXEMPLO",
+      "repository": "https://github.com/seuuser/prospect-map-bot"
+    }
+  },
+  "gallery": {
+    "title": "Galeria",
+    "images": [
+      "/projects/mockups/prospecting-mockup-2.webp",
+      "/projects/mockups/prospect-sheet.webp"
+    ],
+    "videos": [
+      "/projects/videos/prospecting-running.webm"
+    ]
+  }
+}

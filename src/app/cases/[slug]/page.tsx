@@ -152,26 +152,28 @@ const CasePage = () => {
 
         <Features />
 
-        <section className="py-20">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[1, 2, 3].map((index) => (
-                <div key={index} className="relative rounded-2xl overflow-hidden">
-                  <Image
-                    src={images[index]}
-                    alt={`Mobile mockup ${index}`}
-                    width={270}
-                    height={582}
-                    loading="lazy"
-                    quality={85}
-                    className="w-full h-full object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 270px"
-                  />
-                </div>
-              ))}
+        {images.length > 2 && (
+          <section className="py-20">
+            <div className="container mx-auto px-4 max-w-6xl">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {images.slice(1, 4).map((src, index) => (
+                  <div key={index} className="relative rounded-2xl overflow-hidden">
+                    <Image
+                      src={src}
+                      alt={`Mobile mockup ${index + 1}`}
+                      width={270}
+                      height={582}
+                      loading="lazy"
+                      quality={85}
+                      className="w-full h-full object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 270px"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         <Contact />
 

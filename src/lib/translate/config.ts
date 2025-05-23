@@ -42,6 +42,9 @@ import ebookLpEN from '../../../public/locales/en/cases/ebook-lp.json';
 import ourautomationsPT from '../../../public/locales/pt/ourautomations.json';
 import ourautomationsEN from '../../../public/locales/en/ourautomations.json';
 
+import prospectingLeadsPT from "../../../public/locales/pt/cases/prospecting-leads.json"
+import prospectingLeadsEN from "../../../public/locales/en/cases/prospecting-leads.json"
+
 i18n
   .use(initReactI18next)
   .init({
@@ -60,6 +63,7 @@ i18n
         'cases/chatt-on': chattOnEN,
         'cases/ebook-lp': ebookLpEN,
         ourautomations: ourautomationsEN,
+        'cases/prospecting-leads': prospectingLeadsEN,
       },
       pt: {
         home: homePT,
@@ -75,6 +79,7 @@ i18n
         'cases/chatt-on': chattOnPT,
         'cases/ebook-lp': ebookLpPT,
         ourautomations: ourautomationsPT,
+        'cases/prospecting-leads': prospectingLeadsPT,
       },
     },
     lng: 'pt',

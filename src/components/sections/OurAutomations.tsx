@@ -57,7 +57,7 @@ const OurAutomations = () => {
     <section className="relative py-20" id="automations">
       <PatternBackground />
 
-      <div className="container mx-auto px-4 max-w-6xl">
+      <div className="container mx-auto px-4">
         <div className="w-full text-right mb-14">
           <h2 className="section-heading text-gradient">{t("title")}</h2>
           <p className="text-base text-brand-navy/60 max-w-2xl ml-auto">
@@ -65,9 +65,9 @@ const OurAutomations = () => {
           </p>
         </div>
 
-        <ul className="flex flex-col max-w-4/5 mx-auto gap-12">
+        <ul className="flex flex-col gap-12">
           <SectionTransition direction="left">
-            <li>
+            <li className="mx-auto md:ml-auto md:mx-0 max-w-[90%] lg:max-w-[70%]">
               <AutomationCard
                 animationRef={prospectingAnimationRef}
                 title={t("prospecting.title")}
@@ -78,7 +78,7 @@ const OurAutomations = () => {
           </SectionTransition>
 
           <SectionTransition direction="right">
-            <li>
+            <li className="mx-auto max-w-[90%] lg:max-w-[70%]">
               <AutomationCard
                 animationRef={schedulingAnimationRef}
                 title={t("scheduling.title")}

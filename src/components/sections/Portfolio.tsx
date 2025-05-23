@@ -27,6 +27,15 @@ const Portfolio = () => {
       link: "cases/ebook-lp",
       delay: 400,
     },
+    {
+    image: "/projects/prospecting.leads.webp",
+    alt: t("projects.prospectingLeads.alt"),
+    title: t("projects.prospectingLeads.title"),
+    description: t("projects.prospectingLeads.description"),
+    tags: t("projects.prospectingLeads.tags", { returnObjects: true }) as string[],
+    link: "cases/prospecting-leads",
+    delay: 500,
+  },
   ];
 
   return (
