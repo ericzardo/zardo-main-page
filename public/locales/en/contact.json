@@ -16,6 +16,7 @@
   "description": "Got an idea? Reach out to discuss how we can turn it into a digital solution that fits your business needs.",
   "emailLabel": "Email",
   "whatsapp": "Chat on WhatsApp",
+  "whatsappLink": "https://wa.link/1v19wx",
   "form": {
     "name": "Name",
     "email": "Email",

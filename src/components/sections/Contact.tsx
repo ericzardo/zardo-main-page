@@ -21,17 +21,16 @@ const Contact = () => {
   const { t: tHome } = useTranslation("home");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-const schema = useMemo(
-  () => contactSchema({
-    'name.tooShort': t('validation.name.tooShort'),
-    'name.tooLong': t('validation.name.tooLong'),
-    'email.invalid': t('validation.email.invalid'),
-    'message.tooShort': t('validation.message.tooShort'),
-    'message.tooLong': t('validation.message.tooLong'),
-  }),
-  [t]
-)
-
+  const schema = useMemo(
+    () => contactSchema({
+      'name.tooShort': t('validation.name.tooShort'),
+      'name.tooLong': t('validation.name.tooLong'),
+      'email.invalid': t('validation.email.invalid'),
+      'message.tooShort': t('validation.message.tooShort'),
+      'message.tooLong': t('validation.message.tooLong'),
+    }),
+    [t]
+  );
 
   const {
     register,
@@ -85,9 +84,9 @@ const schema = useMemo(
               <div className="flex">
                 {/* Email */}
                 <div className="flex items-center mb-8">
-                  <div className="bg-brand-lavender/30 p-3 rounded-lg mr-4 cursor-pointer hover:scale-90 duration-200 ease-out">
+                  <Link href="mailto:contact@zardo.dev" className="bg-brand-lavender/30 p-3 rounded-lg mr-4 cursor-pointer hover:scale-90 duration-200 ease-out">
                     <Mail className="h-6 w-6 text-brand-purple" />
-                  </div>
+                  </Link>
                   {/* <div>
                     <h4 className="text-sm font-semibold text-brand-navy">{t("emailLabel")}</h4>
                     <Link
@@ -101,9 +100,14 @@ const schema = useMemo(
 
                 {/* LinkedIn */}
                 <div className="flex items-center mb-8">
-                  <div className="bg-brand-lavender/30 p-3 rounded-lg mr-4 cursor-pointer hover:scale-90 duration-200 ease-out">
+                  <Link
+                    href="https://www.linkedin.com/company/zardo-dev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-brand-lavender/30 p-3 rounded-lg mr-4 cursor-pointer hover:scale-90 duration-200 ease-out"
+                  >
                     <Linkedin className="h-6 w-6 text-brand-purple" />
-                  </div>
+                  </Link>
                   {/* <div>
                     <h4 className="text-sm font-semibold text-brand-navy">LinkedIn</h4>
                     <Link
@@ -119,9 +123,14 @@ const schema = useMemo(
 
                 {/* Instagram */}
                 <div className="flex items-center mb-8">
-                  <div className="bg-brand-lavender/30 p-3 rounded-lg mr-4 cursor-pointer hover:scale-90 duration-200 ease-out">
+                  <Link
+                    href="https://www.instagram.com/zardo.dev/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-brand-lavender/30 p-3 rounded-lg mr-4 cursor-pointer hover:scale-90 duration-200 ease-out"
+                  >
                     <Instagram className="h-6 w-6 text-brand-purple" />
-                  </div>
+                  </Link>
                   {/* <div>
                     <h4 className="text-sm font-semibold text-brand-navy">Instagram</h4>
                     <Link
@@ -147,7 +156,7 @@ const schema = useMemo(
 
                 {/* WhatsApp Button */}
                 <Link  
-                  href="https://wa.link/1v19wx"
+                  href={t("whatsappLink")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="whatsapp-link flex items-center gap-2"

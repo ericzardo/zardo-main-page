@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 import { useTranslation } from 'react-i18next';
@@ -18,7 +19,6 @@ import Challange from "./Challange";
 import Solution from "./Solution";
 import Features from "./Features";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
-import ConsultancyButton from "@/components/ui/ConsultancyButton";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,10 +28,10 @@ const iconMap = {
 };
 
 const CasePage = () => {
+  const router = useRouter();
   const { slug } = useParams<{ slug: string }>();
   const { t: tHome, i18n } = useTranslation('home');
   const { t: tCase, ready } = useTranslation(`cases/${slug}`);
-
   const imageOneRef = useRef<HTMLImageElement>(null);
   const scrollToSection = useScrollToSection();
 
@@ -85,14 +85,13 @@ const CasePage = () => {
   return (
     <>
       <div className="overflow-hidden bg-brand-offwhite relative">\
-        <ConsultancyButton />
         <Header 
           navItems={NAV_ITEMS.map(nav => ({
             ...nav,
             onClick: () => scrollToSection({ sectionId: nav.href, offset: 80, duration: 800 }),
           }))}
           ctaLabel={tHome('cta')}
-          ctaOnClick={() => scrollToSection({ sectionId: "contact", offset: 80, duration: 800 })}
+          ctaOnClick={() => router.push("/booking")}
           selector={{
             current: i18n.language,
             options: [

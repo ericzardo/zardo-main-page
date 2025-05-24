@@ -67,7 +67,7 @@ const OurAutomations = () => {
 
         <ul className="flex flex-col gap-12">
           <SectionTransition direction="left">
-            <li className="mx-auto md:ml-auto md:mx-0 max-w-[90%] lg:max-w-[70%]">
+            <li className="mx-auto lg:ml-auto lg:mx-0 max-w-[90%] lg:max-w-[70%]">
               <AutomationCard
                 animationRef={prospectingAnimationRef}
                 title={t("prospecting.title")}
@@ -78,7 +78,7 @@ const OurAutomations = () => {
           </SectionTransition>
 
           <SectionTransition direction="right">
-            <li className="mx-auto max-w-[90%] lg:max-w-[70%]">
+            <li className="mx-auto lg:mr-auto lg:mx-0 max-w-[90%] lg:max-w-[70%]">
               <AutomationCard
                 animationRef={schedulingAnimationRef}
                 title={t("scheduling.title")}
