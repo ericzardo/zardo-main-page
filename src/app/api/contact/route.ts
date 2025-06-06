@@ -27,7 +27,7 @@ export async function POST(request: Request) {
         Message: ${message}
 
         This contact has been added to your Notion database.
-      `,
+      `.trim(),
     });
 
     await sendNotificationEmail({

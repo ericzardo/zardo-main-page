@@ -1,4 +1,4 @@
-import { transporter, transporterNoReply } from '../config';
+import { transporter } from '../config';
 
 interface NotificationEmailOptions {
   to: string;
@@ -23,11 +23,7 @@ export async function sendNotificationEmail({ to, subject, text, html, noReply =
       ...(html && { html }),
     };
 
-    const transport = noReply ? transporterNoReply : transporter;
-
-    console.log('⚙️ Configurações SMTP:', transport.options);
-
-    const result = await transport.sendMail(mailOptions);
+    const result = await transporter.sendMail(mailOptions);
     console.log('✅ Email enviado com sucesso:', result);
   } catch (err) {
     console.error('❌ Erro ao enviar e-mail:');
