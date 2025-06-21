@@ -7,7 +7,7 @@
       "It searches for businesses in a specific location, filters relevant results, and organizes the information into a spreadsheet on Google Drive.",
       "Ideal for companies looking to accelerate outbound marketing strategies with qualified data."
     ],
-    "banner": "/projects/mockups/prospect-banner.webp",
+    "banner": "/projects/mockups/prospecting-mockup-1.webp",
     "noteLabel": "Notes",
     "note": "Currently used internally at the agency",
     "tags": [
@@ -86,11 +86,11 @@
   "gallery": {
     "title": "Gallery",
     "images": [
-      "/projects/mockups/prospect-flow-overview.webp",
+      "/projects/mockups/prospecting-mockup-2.webp",
       "/projects/mockups/prospect-sheet.webp"
     ],
     "videos": [
-      "/projects/videos/prospect-demo.webm"
+      "/projects/videos/prospecting-running.webm"
     ]
   }
 }
