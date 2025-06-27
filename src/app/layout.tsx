@@ -121,6 +121,19 @@ export default function RootLayout({
             gtag('config', 'G-TC7E508KHF');
           `}
         </Script>
+        <Script
+          id="clarity-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(c,l,a,r,i,t,y){
+                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "s6312ulcjp");
+            `
+          }}
+        />
       </head>
       <body className={`${poppins.className} antialiased`}>
         <noscript>
@@ -131,7 +144,6 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        <ClarityClient />
         <SmoothScroll>
           {children}
         </SmoothScroll>
