@@ -10,7 +10,6 @@ import { SmoothScroll } from "@/providers/SmoothScroll";
 import { Favicon, AppleTouchIcon, Logo192, Logo32, Logo512 } from "@zardo/ui-kit/logos"
 import "./globals.css";
 import "@zardo/ui-kit/styles.css";
-import { ClarityClient } from "@/providers/Clarity";
 
 const poppins = Poppins({
   variable: "--font-poppins",
