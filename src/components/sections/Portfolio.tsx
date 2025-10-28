@@ -10,32 +10,23 @@ const Portfolio = () => {
 
   const projects = [
     {
-      image: "/projects/chatt.on.webp",
-      alt: t("projects.chattOn.alt"),
-      title: t("projects.chattOn.title"),
-      description: t("projects.chattOn.description"),
-      tags: t("projects.chattOn.tags", { returnObjects: true }) as string[],
-      link: "cases/chatt-on",
+      image: "/projects/prospecting.leads.webp",
+      alt: t("projects.prospectingLeads.alt"),
+      title: t("projects.prospectingLeads.title"),
+      description: t("projects.prospectingLeads.description"),
+      tags: t("projects.prospectingLeads.tags", { returnObjects: true }) as string[],
+      link: "cases/prospecting-leads",
       delay: 300,
     },
     {
-      image: "/projects/ebook.lp.webp",
-      alt: t("projects.ebookLp.alt"),
-      title: t("projects.ebookLp.title"),
-      description: t("projects.ebookLp.description"),
-      tags: t("projects.ebookLp.tags", { returnObjects: true }) as string[],
-      link: "cases/ebook-lp",
-      delay: 400,
+      image: "/projects/automated.diagnosis.webp",
+      alt: t("projects.automatedDiagnosis.alt"),
+      title: t("projects.automatedDiagnosis.title"),
+      description: t("projects.automatedDiagnosis.description"),
+      tags: t("projects.automatedDiagnosis.tags", { returnObjects: true }) as string[],
+      link: "cases/automated-diagonsis",
+      delay: 500,
     },
-    {
-    image: "/projects/prospecting.leads.webp",
-    alt: t("projects.prospectingLeads.alt"),
-    title: t("projects.prospectingLeads.title"),
-    description: t("projects.prospectingLeads.description"),
-    tags: t("projects.prospectingLeads.tags", { returnObjects: true }) as string[],
-    link: "cases/prospecting-leads",
-    delay: 500,
-  },
   ];
 
   return (

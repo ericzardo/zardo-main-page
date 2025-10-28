@@ -1,0 +1,104 @@
+{
+  "slug": "automated-diagonsis",
+  "hero": {
+    "title": "Geração Automática de Diagnósticos PDF com IA",
+    "description": [
+      "Imagine engajar seus leads com um diagnóstico personalizado, mas sem o gargalo do trabalho manual. Este era o desafio.",
+      "Para resolver isso, desenvolvi uma solução de automação inteligente: utilizei IA para analisar as respostas de um formulário e gerar um diagnóstico completo e personalizado para cada lead.",
+      "O sistema conclui o processo gerando um documento PDF formatado a partir de um template e o envia automaticamente por e-mail. Resultado: leads engajados com conteúdo de valor, entregue em minutos, 24/7, sem esforço manual da sua equipe."
+    ],
+    "banner": "/projects/mockups/diagnostico-mockup-1.webp",
+    "noteLabel": "Status",
+    "note": "MVP Concluído e Ativo",
+    "tags": [
+      "Automação",
+      "Agente de IA",
+      "Google Sheets",
+      "Google Apps Script",
+      "n8n"
+    ],
+    "dateLabel": "Período",
+    "date": {
+      "from": "10/2025",
+      "to": "10/2025"
+    },
+    "durationLabel": "Duração",
+    "duration": "3",
+    "durationUnit": "semanas"
+  },
+  "features": {
+    "title": "Principais Funcionalidades",
+    "list": [
+      "Captura automática de dados de formulários (Google Forms).",
+      "Gerenciamento de fila para processamento confiável dos diagnósticos.",
+      "Coordenação inteligente (IA) da geração de conteúdo personalizado.",
+      "Criação de análises e recomendações específicas por IA.",
+      "Geração automática de PDF formatado a partir de um template.",
+      "Envio automatizado do relatório final por e-mail."
+    ],
+    "techsTitle": "Tecnologias Utilizadas",
+    "techs": [
+      "n8n",
+      "OpenAI API",
+      "Google Sheets API",
+      "Google Docs API",
+      "Google Apps Script",
+      "Gmail API",
+      "JSON",
+      "Webhooks"
+    ]
+  },
+  "challenge": {
+    "title": "O Desafio",
+    "intro": "Uma consultoria contábil buscava uma forma inovadora e escalável de engajar leads com um diagnóstico personalizado e automatizado. O desafio era criar essa ferramenta do zero, garantindo agilidade na entrega e conteúdo de alta qualidade, sem sobrecarregar a equipe com trabalho manual.",
+    "points": [
+      "Garantir que a IA gerasse análises e recomendações personalizadas, úteis e estratégicas para cada lead.",
+      "Automatizar o preenchimento de um template complexo, mantendo a formatação original.",
+      "Orquestrar um fluxo 100% automatizado, da coleta de dados ao envio do diagnóstico finalizado."
+    ],
+    "missionTitle": "Minha missão foi:",
+    "mission": [
+      "Estruturar um fluxo de automação confiável e organizado para gerenciar a geração do diagnóstico personalizado pela IA.",
+      "Desenvolver uma solução eficaz para inserir automaticamente as análises da IA em um template complexo, preservando toda a formatação original.",
+      "Criar uma experiência totalmente automatizada: do clique no botão 'Enviar' do formulário à entrega de um diagnóstico profissional em PDF no e-mail do lead, tudo em questão de minutos."
+    ]
+  },
+  "solution": {
+    "title": "A Solução e o Impacto",
+    "beforeTitle": "A Ideia",
+    "afterTitle": "Implementação",
+    "beforeAfter": [
+      {
+        "before": "A visão: um diagnóstico personalizado para engajar leads, mas impraticável de executar manualmente em escala (demandaria horas por lead).",
+        "after": "A realidade: um sistema 100% automatizado que gera e envia o diagnóstico 24/7, transformando a ideia em uma ferramenta escalável."
+      },
+      {
+        "before": "O risco: leads 'esfriando' pela demora em receber um conteúdo relevante e personalizado sobre temas complexos.",
+        "after": "O resultado: um funil de engajamento de alta velocidade, entregando valor imediato (diagnóstico em minutos) e qualificando o lead no pico do interesse."
+      },
+      {
+        "before": "A incerteza: como garantir um padrão de análise e qualidade consistente se cada diagnóstico fosse feito manualmente?",
+        "after": "A garantia: padronização da qualidade via IA, assegurando que a estrutura, o tom e as regras de negócio sejam aplicados consistentemente em todos os diagnósticos."
+      }
+    ]
+  },
+  "demo": {
+    "title": "Demonstração",
+    "preview": "Ver Arquitetura (Privado)",
+    "repository": "Ver Lógica (Privado)",
+    "links": {
+      "preview": "#",
+      "repository": "#"
+    }
+  },
+  "gallery": {
+    "title": "Galeria do Projeto",
+    "images": [
+      "/projects/mockups/diagnostico-workflow-1.webp",
+      "/projects/mockups/diagnostico-doc-1.webp"
+    ],
+    "videos": [
+      "/projects/videos/diagnostico-running.webm"
+    ]
+  }
+}

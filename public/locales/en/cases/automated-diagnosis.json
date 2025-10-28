@@ -1,0 +1,104 @@
+{
+  "slug": "automated-diagnosis",
+  "hero": {
+    "title": "Automatic Generation of PDF Diagnostics with AI",
+    "description": [
+      "Imagine engaging your leads with a personalized diagnosis, but without the bottleneck of manual work. This was the challenge.",
+      "To solve this, I developed an intelligent automation solution: I used AI to analyze form responses and generate a complete and personalized diagnosis for each lead.",
+      "The system completes the process by generating a formatted PDF document from a template and automatically sending it via email. Result: engaged leads with valuable content, delivered in minutes, 24/7, without manual effort from your team."
+    ],
+    "banner": "/projects/mockups/diagnostico-mockup-1.webp",
+    "noteLabel": "Status",
+    "note": "MVP Completed and Active",
+    "tags": [
+      "Automation",
+      "AI Agent",
+      "Google Sheets",
+      "Google Apps Script",
+      "n8n"
+    ],
+    "dateLabel": "Period",
+    "date": {
+      "from": "10/2025",
+      "to": "10/2025"
+    },
+    "durationLabel": "Duration",
+    "duration": "3",
+    "durationUnit": "weeks"
+  },
+  "features": {
+    "title": "Key Features",
+    "list": [
+      "Automatic data capture from forms (Google Forms).",
+      "Queue management for reliable diagnosis processing.",
+      "Intelligent coordination (AI) of personalized content generation.",
+      "Creation of specific analyses and recommendations by AI.",
+      "Automatic generation of formatted PDF from a template.",
+      "Automated sending of the final report via email."
+    ],
+    "techsTitle": "Technologies Used",
+    "techs": [
+      "n8n",
+      "OpenAI API",
+      "Google Sheets API",
+      "Google Docs API",
+      "Google Apps Script",
+      "Gmail API",
+      "JSON",
+      "Webhooks"
+    ]
+  },
+  "challenge": {
+    "title": "The Challenge",
+    "intro": "An accounting consultancy sought an innovative and scalable way to engage leads with a personalized and automated diagnosis. The challenge was to create this tool from scratch, ensuring fast delivery and high-quality content, without overburdening the team with manual work.",
+    "points": [
+      "Ensure the AI generated personalized, useful, and strategic analyses and recommendations for each lead.",
+      "Automate the filling of a complex template, maintaining the original formatting.",
+      "Orchestrate a 100% automated workflow, from data collection to sending the finalized diagnosis."
+    ],
+    "missionTitle": "My mission was:",
+    "mission": [
+      "Structure a reliable and organized automation workflow to manage the generation of the personalized diagnosis by AI.",
+      "Develop an effective solution to automatically insert AI analyses into a complex template, preserving all original formatting.",
+      "Create a fully automated experience: from clicking the form's 'Submit' button to delivering a professional PDF diagnosis to the lead's email, all within minutes."
+    ]
+  },
+  "solution": {
+    "title": "The Solution and Impact",
+    "beforeTitle": "The Idea",
+    "afterTitle": "Implementation",
+    "beforeAfter": [
+      {
+        "before": "The vision: a personalized diagnosis to engage leads, but impractical to execute manually at scale (would require hours per lead).",
+        "after": "The reality: a 100% automated system that generates and sends the diagnosis 24/7, turning the idea into a scalable tool."
+      },
+      {
+        "before": "The risk: leads 'cooling off' due to delays in receiving relevant and personalized content on complex topics.",
+        "after": "The result: a high-speed engagement funnel, delivering immediate value (diagnosis in minutes) and qualifying the lead at peak interest."
+      },
+      {
+        "before": "The uncertainty: how to ensure a consistent standard of analysis and quality if each diagnosis were done manually?",
+        "after": "The guarantee: quality standardization via AI, ensuring structure, tone, and business rules are consistently applied across all diagnoses."
+      }
+    ]
+  },
+  "demo": {
+    "title": "Demonstration",
+    "preview": "View Architecture (Private)",
+    "repository": "View Logic (Private)",
+    "links": {
+      "preview": "#",
+      "repository": "#"
+    }
+  },
+  "gallery": {
+    "title": "Project Gallery",
+    "images": [
+      "/projects/mockups/diagnostico-workflow-1.webp",
+      "/projects/mockups/diagnostico-doc-1.webp"
+    ],
+    "videos": [
+      "/projects/videos/diagnostico-running.webm"
+    ]
+  }
+}

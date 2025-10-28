@@ -17,21 +17,16 @@
       "href": "contact"
     }
   ],
-  "cta": "Get Started",
+  "cta": "Let's Talk!",
   "slogan": {
-    "title": "Innovative Digital Solutions",
-    "description": "Combining creativity and cutting-edge technology to craft unique experiences that transform your business."
+    "title": "Transformed and Simplified Processes",
+    "description": "With personalized solutions in Automation and AI, I simplify your processes and drive measurable results."
   },
   "social": [
     {
-      "platform": "instagram",
-      "url": "https://www.instagram.com/zardo.dev",
-      "label": "Zardo's Instagram Profile"
-    },
-    {
       "platform": "linkedin",
-      "url": "https://www.linkedin.com/company/zardo-dev",
-      "label": "Zardo's LinkedIn Profile"
+      "url": "https://www.linkedin.com/in/eric-zardo-a53630228/",
+      "label": "My LinkedIn profile"
     }
   ],
   "footer": {

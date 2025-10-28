@@ -1,22 +1,22 @@
 {
-  "heading": "Nossas soluções para o seu crescimento digital",
-  "description": "Do desenvolvimento web à automação com IA, entregamos soluções sob medida para impulsionar sua performance, engajamento e presença digital.",
+  "heading": "Soluções Inteligentes para Otimizar sua Empresa",
+  "description": "Utilizo Automação e IA para simplificar seus processos, liberar o tempo da sua equipe e impulsionar a eficiência do seu negócio.",
   "cards": {
     "chatbot": {
-      "title": "Assistência com IA",
-      "description": "Interação fluida com IA — soluções automáticas e rápidas com um toque humano."
+      "title": "Atendimento Inteligente",
+      "description": "Respostas automáticas e personalizadas com IA, agilizando o suporte e mantendo um toque humano essencial."
     },
     "ml": {
-      "title": "Personalização com IA",
-      "description": "Crie experiências automatizadas e personalizadas que se ajustam ao comportamento do usuário em tempo real."
+      "title": "Experiências Personalizadas",
+      "description": "Adapte a jornada do seu cliente em tempo real com IA, aumentando o engajamento e a satisfação."
     },
     "website": {
-      "title": "Aplicações Web Sob Medida",
-      "description": "Desenvolvemos sites e web apps de alta performance, unindo design, velocidade e escalabilidade."
+      "title": "Automação de Processos",
+      "description": "Elimino tarefas manuais repetitivas. Automatizo seus fluxos de trabalho para aumentar a produtividade e reduzir erros."
     },
     "integrations": {
-      "title": "Integrações de API e Automações",
-      "description": "Conecte serviços e automatize fluxos com integrações de API personalizadas."
+      "title": "Integração de Sistemas",
+      "description": "Conecto suas ferramentas e plataformas, criando um ecossistema digital coeso que facilita a gestão e otimiza operações."
     }
   }
 }

@@ -1,13 +1,13 @@
 {
-  "tagline": "Soluções inovadoras para Empresas Modernas",
+  "tagline": "Simplificando a Tecnologia para o seu Negócio",
   "headline": {
-    "line1": "Transformamos ideias em",
-    "line2": "Soluções Digitais Poderosas"
+    "line1": "Transforme seus Processos com",
+    "line2": "Automação & IA Estratégica"
   },
   "actions": {
-    "getStarted": "Começar Agora",
-    "getStartedAria": "Comece agora rolando para a seção de contato",
-    "learnMore": "Saiba Mais",
-    "learnMoreAria": "Saiba mais rolando para a seção de soluções"
+    "getStarted": "Ver Projetos",
+    "getStartedAria": "Navegue até a seção de projetos para ver exemplos de desenvolvimento web, automação e IA.",
+    "learnMore": "Entre em Contato",
+    "learnMoreAria": "Vá para o formulário de contato para discutir suas necessidades de automação, IA ou desenvolvimento web."
   }
 }

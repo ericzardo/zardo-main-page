@@ -1,22 +1,22 @@
 {
   "slug": "prospecting-leads",
   "hero": {
-    "title": "Automated Prospecting with Google Maps",
+    "title": "Automated Prospecting via Google Maps",
     "description": [
-      "An automation built with n8n to capture leads at scale via Google Maps, saving time and effort on repetitive tasks.",
-      "It searches for businesses in a specific location, filters relevant results, and organizes the information into a spreadsheet on Google Drive.",
-      "Ideal for companies looking to accelerate outbound marketing strategies with qualified data."
+      "Tired of wasting hours on manual prospecting? I developed this automation with n8n to capture qualified leads from Google Maps in a scalable and efficient way.",
+      "The solution searches for business data in defined locations, filters the most relevant results, and automatically organizes everything into a Google Drive spreadsheet.",
+      "Ideal for sales teams looking to accelerate lead generation without increasing manual work."
     ],
     "banner": "/projects/mockups/prospecting-mockup-1.webp",
-    "noteLabel": "Notes",
-    "note": "Currently used internally at the agency",
+    "noteLabel": "Status",
+    "note": "In internal use",
     "tags": [
-      "Automations",
+      "Automation",
       "n8n",
       "Lead Generation",
       "Google Maps API"
     ],
-    "dateLabel": "Dates",
+    "dateLabel": "Period",
     "date": {
       "from": "04/2025",
       "to": "05/2025"
@@ -28,10 +28,10 @@
   "features": {
     "title": "Key Features",
     "list": [
-      "Automated business search via Google Maps",
-      "Data extraction including name, phone, and address",
-      "Filtering leads based on custom criteria",
-      "Generation and organization of spreadsheets in Google Drive"
+      "Automated search for businesses via Google Maps",
+      "Data extraction (name, phone, address, etc.)",
+      "Intelligent lead filtering based on defined criteria",
+      "Automatic generation and organization into Google Drive spreadsheets"
     ],
     "techsTitle": "Technologies Used",
     "techs": [
@@ -44,47 +44,47 @@
     ]
   },
   "challenge": {
-    "title": "Challenge",
-    "intro": "The automation was born out of the need to scale lead prospecting without relying on manual, time-consuming tasks.",
+    "title": "The Challenge",
+    "intro": "Manual lead prospecting was a bottleneck: it consumed a lot of the team's time and hindered the scalability of sales actions.",
     "points": [
-      "Interacting with the Google Maps API to return relevant results.",
-      "Automatically filtering data to ensure lead quality.",
-      "Avoiding duplicates and structuring reusable data.",
-      "Integrating seamlessly with Google Sheets."
+      "Efficiently interacting with the Google Maps API.",
+      "Implementing automatic filters to ensure lead quality.",
+      "Structuring data cleanly, avoiding duplication.",
+      "Ensuring organized integration with Google Sheets."
     ],
-    "missionTitle": "Our mission was to:",
+    "missionTitle": "My mission was:",
     "mission": [
-      "Build a plug-and-play solution for internal use and clients.",
-      "Dramatically reduce the time needed to generate qualified leads.",
-      "Create a scalable, low-cost solution using free or affordable resources."
+      "Build a 'plug-and-play' solution easy to use internally or by clients.",
+      "Drastically reduce the time spent generating prospecting lists.",
+      "Create a scalable and low-cost automation."
     ]
   },
   "solution": {
-    "title": "Solution",
+    "title": "The Solution and Impact",
     "beforeTitle": "Before",
     "afterTitle": "After",
     "beforeAfter": [
       {
-        "before": "Manual prospecting with lots of time spent searching.",
-        "after": "Complete automation running in the background and updating the leads database."
+        "before": "Hours spent on manual searches on Google Maps.",
+        "after": "Automation running on demand, generating lists in minutes."
       },
       {
-        "before": "Disorganized spreadsheets with inaccurate data.",
-        "after": "Structured spreadsheets with applied filters and relevant, ready-to-use data."
+        "before": "Manually filled spreadsheets, prone to errors and outdated data.",
+        "after": "Structured spreadsheets, automatically updated with filtered leads ready for the sales team."
       }
     ]
   },
   "demo": {
-    "title": "Automation Demo",
-    "preview": "View workflow on n8n",
-    "repository": "Source code",
+    "title": "Demonstration",
+    "preview": "See Structure in n8n",
+    "repository": "See Flow on GitHub",
     "links": {
       "preview": "https://n8n.io/workflows/EXAMPLE-ID",
       "repository": "https://github.com/youruser/prospect-map-bot"
     }
   },
   "gallery": {
-    "title": "Gallery",
+    "title": "Project Gallery",
     "images": [
       "/projects/mockups/prospecting-mockup-2.webp",
       "/projects/mockups/prospect-sheet.webp"

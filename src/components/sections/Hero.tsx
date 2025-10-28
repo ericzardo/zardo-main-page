@@ -41,7 +41,7 @@ const Hero = () => {
               <Button 
                 className="cta-get-started"
                 onClick={() => scrollToSection({ 
-                  sectionId: "contact", 
+                  sectionId: "projects", 
                   offset: 80,
                   duration: 800
                 })}
@@ -54,7 +54,7 @@ const Hero = () => {
                 className="cta-learn-more"
                 variant="outline" 
                 onClick={() => scrollToSection({ 
-                  sectionId: "solutions", 
+                  sectionId: "contact", 
                   offset: 80,
                   duration: 800
                 })}

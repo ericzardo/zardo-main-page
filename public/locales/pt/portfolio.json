@@ -1,34 +1,25 @@
 {
-  "title": "Casos de Sucesso",
-  "description": "Explore nosso portfólio com desenvolvimento web de ponta e automações personalizadas que geram resultados reais para empresas ao redor do mundo.",
+  "title": "Resultados Reais",
+  "description": "Veja como ajudo negócios a simplificar processos, aumentar a produtividade e alcançar seus objetivos através de soluções inteligentes personalizadas.",
   "projects": {
-    "chattOn": {
-      "title": "chatt.on",
-      "alt": "banner do projeto chatt.on",
-      "description": "Plataforma de chat em tempo real com suporte a grupos, mensagens privadas e gerenciamento administrativo de permissões e planos.",
-      "tags": [
-        "Aplicações Web",
-        "Integração de APIs",
-        "UX/UI"
-      ]
-    },
-    "ebookLp": {
-      "title": "eBook LP",
-      "alt": "banner da landing page do ebook",
-      "description": "Landing page para divulgação do eBook da Mente Smart, com foco em benefícios e conversão através de uma experiência envolvente.",
-      "tags": [
-        "Landing Page",
-        "Desenvolvimento Web"
-      ]
-    },
     "prospectingLeads": {
       "title": "Prospecção Automatizada",
-      "alt": "banner da automação de prospecção via Google Maps",
-      "description": "Automação criada com n8n para captura e organização automática de leads via Google Maps, gerando planilhas qualificadas no Google Drive.",
+      "alt": "Fluxo da automação de prospecção via Google Maps no n8n",
+      "description": "Implementei uma automação com n8n que extrai e organiza leads do Google Maps automaticamente, economizando horas de trabalho manual e gerando listas prontas para a equipe comercial.",
       "tags": [
-        "Automações",
+        "Automação",
         "n8n",
         "Geração de Leads"
+      ]
+    },
+    "automatedDiagnosis": {
+      "title": "Diagnóstico Automatizado com IA",
+      "alt": "Fluxo do Maestro e Agentes de IA no n8n",
+      "description": "Um sistema de IA ponta-a-ponta que analisa um formulário, gera um diagnóstico técnico completo em PDF (Contexto, Insights, Conclusão) usando agentes OpenAI e o envia por e-mail ao lead, qualificando-o em minutos.",
+      "tags": [
+        "Automação",
+        "n8n",
+        "Agentes de IA"
       ]
     }
   }

@@ -1,32 +1,32 @@
 {
   "validation": {
     "name": {
-      "tooShort": "Name must be at least 2 characters",
-      "tooLong": "Name must be less than 50 characters"
+      "tooShort": "Your name seems a bit short (minimum 2 characters).",
+      "tooLong": "Your name seems a bit long (maximum 50 characters)."
     },
     "email": {
-      "invalid": "Please enter a valid email address"
+      "invalid": "Please double-check if the email address is correct."
     },
     "message": {
-      "tooShort": "Message must be at least 10 characters",
-      "tooLong": "Message must be less than 500 characters"
+      "tooShort": "Tell me a bit more (minimum 10 characters).",
+      "tooLong": "Your message is a bit long (maximum 500 characters)."
     }
   },
-  "title": "Get in touch",
-  "description": "Got an idea? Reach out to discuss how we can turn it into a digital solution that fits your business needs.",
-  "emailLabel": "Email",
-  "whatsapp": "Chat on WhatsApp",
-  "whatsappLink": "https://wa.link/1v19wx",
+  "title": "Let's talk!",
+  "description": "Have an idea or a challenge? I'd love to understand how I can help optimize your processes and bring more efficiency to your business. Get in touch!",
+  "emailLabel": "Your best email",
+  "whatsapp": "Chat via WhatsApp",
+  "whatsappLink": "https://wa.link/8tj8rv",
   "form": {
-    "name": "Name",
-    "email": "Email",
-    "message": "Message",
-    "placeholder": "Type your message here...",
-    "placeholderName": "Jack Connor",
-    "placeholderEmail": "jack@example.com",
-    "send": "Send",
+    "name": "Your name",
+    "email": "Your email",
+    "message": "Your message",
+    "placeholder": "Tell me about your project or idea...",
+    "placeholderName": "John Doe",
+    "placeholderEmail": "john@example.com",
+    "send": "Send Message",
     "sending": "Sending...",
-    "successMessage": "Your message has been sent successfully!",
-    "errorMessage": "Oops! Something went wrong. Please try again later."
+    "successMessage": "Message sent successfully! I'll reply soon.",
+    "errorMessage": "Oops! Something went wrong sending the message. Could you try again or reach out through another channel?"
   }
 }

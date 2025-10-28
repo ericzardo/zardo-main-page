@@ -17,21 +17,16 @@
       "href": "contact"
     }
   ],
-  "cta": "Começar agora",
+  "cta": "Vamos conversar!",
   "slogan": {
-    "title": "Soluções Digitais Inovadoras",
-    "description": "Combinamos criatividade e tecnologia de ponta para criar experiências únicas que transformam o seu negócio."
+    "title": "Processos Transformados e Simplificados",
+    "description": "Com soluções personalizadas em Automação e IA, simplifico seus processos e impulsiono resultados mensuráveis."
   },
   "social": [
     {
-      "platform": "instagram",
-      "url": "https://www.instagram.com/zardo.dev",
-      "label": "Perfil da Zardo no Instagram"
-    },
-    {
       "platform": "linkedin",
-      "url": "https://www.linkedin.com/company/zardo-dev",
-      "label": "Perfil da Zardo no LinkedIn"
+      "url": "https://www.linkedin.com/in/eric-zardo-a53630228/",
+      "label": "Meu perfil no LinkedIn"
     }
   ],
   "footer": {
@@ -39,6 +34,6 @@
   },
   "consultancy": {
     "slug": "consultoria-gratuita",
-    "labelText": "Agendar Consulta"
+    "labelText": "Agendar Conversa"
   }
 }

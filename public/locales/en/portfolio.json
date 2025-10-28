@@ -1,34 +1,25 @@
 {
-  "title": "Success Cases",
-  "description": "Explore our portfolio of exceptional web development and custom automation workflows that drive results for businesses around the world.",
+  "title": "Real Results",
+  "description": "See how I help businesses simplify processes, increase productivity, and achieve their goals through custom, intelligent solutions.",
   "projects": {
-    "chattOn": {
-      "title": "chatt.on",
-      "alt": "chatt.on project banner",
-      "description": "A real-time chat platform with support for group discussions, private messaging, and administrative management of permissions and plans.",
-      "tags": [
-        "Web Applications",
-        "API Integration",
-        "UX/UI"
-      ]
-    },
-    "ebookLp": {
-      "title": "eBook LP",
-      "alt": "ebook landing page banner",
-      "description": "A landing page focused on promoting Mente Smart's ebook, highlighting key benefits and driving conversions through an engaging and streamlined user experience.",
-      "tags": [
-        "Landing Page",
-        "Web Development"
-      ]
-    },
     "prospectingLeads": {
       "title": "Automated Prospecting",
-      "alt": "banner of the Google Maps prospecting automation",
-      "description": "Automation built with n8n for automatic capture and organization of leads via Google Maps, generating qualified spreadsheets on Google Drive.",
+      "alt": "Automation flow for Google Maps prospecting in n8n",
+      "description": "I implemented an n8n automation that automatically extracts and organizes leads from Google Maps, saving hours of manual work and generating lists ready for the sales team.",
       "tags": [
-        "Automations",
+        "Automation",
         "n8n",
         "Lead Generation"
+      ]
+    },
+    "automatedDiagnosis": {
+      "title": "AI-Powered Automated Diagnosis",
+      "alt": "Maestro and AI Agents flow in n8n",
+      "description": "An end-to-end AI system that analyzes a form, generates a complete technical PDF diagnosis (Context, Insights, Conclusion) using OpenAI agents, and emails it to the lead, qualifying them in minutes.",
+      "tags": [
+        "Automation",
+        "n8n",
+        "AI Agent"
       ]
     }
   }

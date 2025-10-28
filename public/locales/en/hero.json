@@ -1,13 +1,13 @@
 {
-  "tagline": "Innovative Solutions for Modern Companies",
+  "tagline": "Simplifying Technology for Your Business",
   "headline": {
-    "line1": "Transforming Ideas into",
-    "line2": "Powerful Digital Solutions"
+    "line1": "Transform Your Processes with",
+    "line2": "Strategic Automation & AI"
   },
   "actions": {
-    "getStarted": "Get Started",
-    "getStartedAria": "Get started by scrolling to contact section",
-    "learnMore": "Learn More",
-    "learnMoreAria": "Learn more by scrolling to solutions section"
+    "getStarted": "View Projects",
+    "getStartedAria": "Navigate to the projects section to see examples of web development, automation, and AI.",
+    "learnMore": "Get in Touch",
+    "learnMoreAria": "Go to the contact form to discuss your automation, AI, or web development needs."
   }
 }

@@ -1,22 +1,22 @@
 {
-  "heading": "Our solutions for your digital growth",
-  "description": "From web development to AI-powered automation, we deliver custom solutions to enhance your business performance, user engagement, and digital growth.",
+  "heading": "Intelligent Solutions to Optimize Your Business",
+  "description": "I use Automation and AI to simplify your processes, free up your team's time, and boost your business efficiency.",
   "cards": {
     "chatbot": {
-      "title": "AI-Driven Assistance",
-      "description": "Experience seamless interaction with AI—quick, automated solutions with a human touch."
+      "title": "Intelligent Support",
+      "description": "Automated and personalized responses with AI, speeding up support while maintaining an essential human touch."
     },
     "ml": {
-      "title": "AI-Powered Personalization",
-      "description": "Create personalized, automated experiences that adjust to user behavior in real time."
+      "title": "Personalized Experiences",
+      "description": "Adapt your customer's journey in real-time with AI, increasing engagement and satisfaction."
     },
     "website": {
-      "title": "Custom Web Applications",
-      "description": "We craft high-performance websites and web apps that combine design, speed, and scalability."
+      "title": "Process Automation",
+      "description": "I eliminate repetitive manual tasks. I automate your workflows to increase productivity and reduce errors."
     },
     "integrations": {
-      "title": "API Integrations & Automations",
-      "description": "Seamlessly connect services and automate workflows with custom API integrations."
+      "title": "Systems Integration",
+      "description": "I connect your tools and platforms, creating a cohesive digital ecosystem that simplifies management and optimizes operations."
     }
   }
 }

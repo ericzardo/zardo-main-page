@@ -1,7 +1,6 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { switchLanguage } from '@/lib/translate/service/switch';
@@ -11,12 +10,10 @@ import { Instagram, Linkedin } from 'lucide-react';
 
 import Hero from '@/components/sections/Hero';
 import FAQ from '@/components/sections/FAQ';
-import Services from '@/components/sections/ServicesList';
 import Portfolio from '@/components/sections/Portfolio';
 import Newsletter from '@/components/sections/Newsletter';
 
 import { useScrollToSection } from '@/hooks/useScrollToSection';
-import OurAutomations from '@/components/sections/OurAutomations';
 
 const iconMap = {
   instagram: <Instagram strokeWidth={2} className="size-6 text-white/60" />,
@@ -44,7 +41,6 @@ const ContactLazy = dynamic(() => import('@/components/sections/Contact'), {
 });
 
 export default function Home() {
-  const router = useRouter();
   const [isClient, setIsClient] = useState(false);
   const { t } = useTranslation('home');
   const { i18n } = useTranslation();
@@ -80,7 +76,7 @@ export default function Home() {
           onClick: () => scrollToSection({ sectionId: nav.href, offset: 80, duration: 800 }),
         }))}
         ctaLabel={t('cta')}
-        ctaOnClick={() => router.push("/booking")}
+        ctaOnClick={() => scrollToSection({ sectionId: "contact", offset: 80, duration: 800 })}
         selector={{
           current: i18n.language,
           options: [
@@ -96,9 +92,7 @@ export default function Home() {
       <SolutionsLazy />
       <Portfolio />
       <Newsletter />
-      <Services />
       <ProcessLazy />
-      <OurAutomations />
       <BehindLazy />
       <ContactLazy />
       <FAQ />

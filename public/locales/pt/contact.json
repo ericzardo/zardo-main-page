@@ -1,32 +1,32 @@
 {
   "validation": {
     "name": {
-      "tooShort": "O nome deve ter pelo menos 2 caracteres",
-      "tooLong": "O nome deve ter no máximo 50 caracteres"
+      "tooShort": "Seu nome parece curto demais (mínimo 2 caracteres).",
+      "tooLong": "Seu nome parece longo demais (máximo 50 caracteres)."
     },
     "email": {
-      "invalid": "Por favor, insira um endereço de e-mail válido"
+      "invalid": "Por favor, verifique se o e-mail está correto."
     },
     "message": {
-      "tooShort": "A mensagem deve ter pelo menos 10 caracteres",
-      "tooLong": "A mensagem deve ter no máximo 500 caracteres"
+      "tooShort": "Conte-me um pouco mais (mínimo 10 caracteres).",
+      "tooLong": "Sua mensagem está um pouco longa (máximo 500 caracteres)."
     }
   },
-  "title": "Entre em contato",
-  "description": "Tem uma ideia? Entre em contato para discutirmos como transformá-la em uma solução digital ideal para o seu negócio.",
-  "emailLabel": "Email",
-  "whatsapp": "Conversar no WhatsApp",
+  "title": "Vamos conversar!",
+  "description": "Tem uma ideia ou desafio? Adoraria entender como posso ajudar a otimizar seus processos e trazer mais eficiência para o seu negócio. Entre em contato!",
+  "emailLabel": "Seu melhor e-mail",
+  "whatsapp": "Conversar via WhatsApp",
   "whatsappLink": "https://wa.link/8tj8rv",
   "form": {
-    "name": "Nome",
-    "email": "Email",
-    "message": "Mensagem",
-    "placeholder": "Escreva sua mensagem aqui...",
+    "name": "Seu nome",
+    "email": "Seu e-mail",
+    "message": "Sua mensagem",
+    "placeholder": "Conte-me sobre seu projeto ou ideia...",
     "placeholderName": "João Silva",
     "placeholderEmail": "joao@exemplo.com",
-    "send": "Enviar",
+    "send": "Enviar Mensagem",
     "sending": "Enviando...",
-    "successMessage": "Sua mensagem foi enviada com sucesso!",
-    "errorMessage": "Opa! Algo deu errado. Por favor, tente novamente mais tarde."
+    "successMessage": "Mensagem enviada com sucesso! Responderei em breve.",
+    "errorMessage": "Opa! Houve um erro ao enviar. Pode tentar novamente ou me contatar por outro canal?"
   }
 }

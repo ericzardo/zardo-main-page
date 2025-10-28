@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 import { useTranslation } from 'react-i18next';
@@ -28,7 +27,6 @@ const iconMap = {
 };
 
 const CasePage = () => {
-  const router = useRouter();
   const { slug } = useParams<{ slug: string }>();
   const { t: tHome, i18n } = useTranslation('home');
   const { t: tCase, ready } = useTranslation(`cases/${slug}`);
@@ -91,7 +89,7 @@ const CasePage = () => {
             onClick: () => scrollToSection({ sectionId: nav.href, offset: 80, duration: 800 }),
           }))}
           ctaLabel={tHome('cta')}
-          ctaOnClick={() => router.push("/booking")}
+          ctaOnClick={() => scrollToSection({ sectionId: "contact", offset: 80, duration: 800 })}
           selector={{
             current: i18n.language,
             options: [

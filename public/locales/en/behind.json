@@ -1,11 +1,11 @@
 {
-  "title": "The guy behind Zardo",
-  "imageAlt": "Founder of Zardo, Eric Zardo",
+  "title": "The face behind Zardo",
+  "imageAlt": "Eric Zardo, developer specializing in Automation & AI",
   "moreAboutMe": "/ More about me",
-  "linkedinAria": "Visit Eric Zardo's professional profile on LinkedIn",
-  "githubAria": "View Eric Zardo's projects and contributions on GitHub",
+  "linkedinAria": "Visit my professional profile on LinkedIn",
+  "githubAria": "See my projects and code on GitHub",
   "paragraph1": "Hi, I'm Eric Zardo, from Porto Alegre, Brazil.",
-  "paragraph2": "My journey into the tech world began with a fascination for how things work behind the scenes. Over time, this curiosity transformed into a love for coding and building things from scratch, whether it's creating websites, building APIs, or working on innovative web solutions.",
-  "paragraph3": "I started my development career in 2020, and since then, I've focused on refining my skills in web development, diving into front-end technologies like React.js, Next.js, and TailwindCSS, while also learning the ins and outs of back-end systems using Node.js and Fastify. I found a real passion for creating not just functional, but also intuitive, responsive, and user-centric designs that solve real-world problems.",
-  "paragraph4": "At Zardo company, my goal is to help clients turn their ideas into powerful web solutions, while ensuring every project is scalable, efficient, and designed with the end user in mind. Let's work together and bring your vision to life!"
+  "paragraph2": "From an early age, technology fascinated me – not just the end result, but 'how' things work behind the scenes. This curiosity led me to programming and building my first solutions, always seeking to understand and optimize every detail.",
+  "paragraph3": "I started my career focused on web development, honing my skills in creating intuitive interfaces and robust systems. I quickly realized that true optimization went beyond code: it involved understanding and automating processes. This directed me towards the world of Automation and Artificial Intelligence, areas where I now apply my knowledge to create solutions that truly simplify operations and boost efficiency.",
+  "paragraph4": "Today, my focus is on helping businesses thrive through technology. I use my combined expertise in Web Development, Automation, and AI to analyze your challenges, design personalized solutions, and implement tools that free up your team's time and generate measurable results. Shall we talk about how I can optimize your business?"
 }

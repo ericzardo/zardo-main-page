@@ -5,7 +5,7 @@ import { useState, useMemo, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import toast from "react-hot-toast";
-import { CalendarDays, Instagram, Linkedin, Mail, Send } from "lucide-react";
+import { CalendarDays, Linkedin, Mail, Send } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
 import { useTranslation } from "react-i18next";
 
@@ -84,18 +84,9 @@ const Contact = () => {
               <div className="flex">
                 {/* Email */}
                 <div className="flex items-center mb-8">
-                  <Link href="mailto:contact@zardo.dev" className="bg-brand-lavender/30 p-3 rounded-lg mr-4 cursor-pointer hover:scale-90 duration-200 ease-out">
+                  <Link href="mailto:projetos@zardo.dev" className="bg-brand-lavender/30 p-3 rounded-lg mr-4 cursor-pointer hover:scale-90 duration-200 ease-out">
                     <Mail className="h-6 w-6 text-brand-purple" />
                   </Link>
-                  {/* <div>
-                    <h4 className="text-sm font-semibold text-brand-navy">{t("emailLabel")}</h4>
-                    <Link
-                      href="mailto:contact@zardo.dev"
-                      className="mail-link text-brand-navy/70 hover:text-brand-purple transition-colors cursor-pointer"
-                    >
-                      contact@zardo.dev
-                    </Link>
-                  </div> */}
                 </div>
 
                 {/* LinkedIn */}
@@ -108,40 +99,6 @@ const Contact = () => {
                   >
                     <Linkedin className="h-6 w-6 text-brand-purple" />
                   </Link>
-                  {/* <div>
-                    <h4 className="text-sm font-semibold text-brand-navy">LinkedIn</h4>
-                    <Link
-                      href="https://www.linkedin.com/company/zardo-dev"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="social-link text-brand-navy/70 hover:text-brand-purple transition-colors cursor-pointer"
-                    >
-                      zardo.dev
-                    </Link>
-                  </div> */}
-                </div>
-
-                {/* Instagram */}
-                <div className="flex items-center mb-8">
-                  <Link
-                    href="https://www.instagram.com/zardo.dev/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-brand-lavender/30 p-3 rounded-lg mr-4 cursor-pointer hover:scale-90 duration-200 ease-out"
-                  >
-                    <Instagram className="h-6 w-6 text-brand-purple" />
-                  </Link>
-                  {/* <div>
-                    <h4 className="text-sm font-semibold text-brand-navy">Instagram</h4>
-                    <Link
-                      href="https://www.instagram.com/zardo.dev/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="social-link text-brand-navy/70 hover:text-brand-purple transition-colors cursor-pointer"
-                    >
-                      zardo.dev
-                    </Link>
-                  </div> */}
                 </div>
               </div>
 

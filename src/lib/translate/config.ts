@@ -27,20 +27,11 @@ import portfolioPT from '../../../public/locales/pt/portfolio.json';
 import processEN from '../../../public/locales/en/process.json';
 import processPT from '../../../public/locales/pt/process.json';
 
-import servicesEN from '../../../public/locales/en/services.json';
-import servicesPT from '../../../public/locales/pt/services.json';
-
 import solutionsEN from '../../../public/locales/en/solutions.json';
 import solutionsPT from '../../../public/locales/pt/solutions.json';
 
-import chattOnPT from '../../../public/locales/pt/cases/chatt-on.json';
-import chattOnEN from '../../../public/locales/en/cases/chatt-on.json';
-
-import ebookLpPT from '../../../public/locales/pt/cases/ebook-lp.json';
-import ebookLpEN from '../../../public/locales/en/cases/ebook-lp.json';
-
-import ourautomationsPT from '../../../public/locales/pt/ourautomations.json';
-import ourautomationsEN from '../../../public/locales/en/ourautomations.json';
+import automatedDiagnosisPT from "../../../public/locales/pt/cases/automated-diagnosis.json"
+import automatedDiagnosisEN from "../../../public/locales/en/cases/automated-diagnosis.json"
 
 import prospectingLeadsPT from "../../../public/locales/pt/cases/prospecting-leads.json"
 import prospectingLeadsEN from "../../../public/locales/en/cases/prospecting-leads.json"
@@ -58,11 +49,8 @@ i18n
         newsletter: newsletterEN,
         portfolio: portfolioEN,
         process: processEN,
-        services: servicesEN,
         solutions: solutionsEN,
-        'cases/chatt-on': chattOnEN,
-        'cases/ebook-lp': ebookLpEN,
-        ourautomations: ourautomationsEN,
+        'cases/automated-diagonsis': automatedDiagnosisEN,
         'cases/prospecting-leads': prospectingLeadsEN,
       },
       pt: {
@@ -74,11 +62,8 @@ i18n
         newsletter: newsletterPT,
         portfolio: portfolioPT,
         process: processPT,
-        services: servicesPT,
         solutions: solutionsPT,
-        'cases/chatt-on': chattOnPT,
-        'cases/ebook-lp': ebookLpPT,
-        ourautomations: ourautomationsPT,
+        'cases/automated-diagonsis': automatedDiagnosisPT,
         'cases/prospecting-leads': prospectingLeadsPT,
       },
     },
