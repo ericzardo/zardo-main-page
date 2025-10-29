@@ -7,7 +7,7 @@
       "To solve this, I developed an intelligent automation solution: I used AI to analyze form responses and generate a complete and personalized diagnosis for each lead.",
       "The system completes the process by generating a formatted PDF document from a template and automatically sending it via email. Result: engaged leads with valuable content, delivered in minutes, 24/7, without manual effort from your team."
     ],
-    "banner": "/projects/mockups/diagnostico-mockup-1.webp",
+    "banner": "/projects/mockups/diagnosis-mockup-2.webp",
     "noteLabel": "Status",
     "note": "MVP Completed and Active",
     "tags": [
@@ -94,11 +94,11 @@
   "gallery": {
     "title": "Project Gallery",
     "images": [
-      "/projects/mockups/diagnostico-workflow-1.webp",
-      "/projects/mockups/diagnostico-doc-1.webp"
+      "/projects/mockups/diagnosis-mockup-1.webp",
+      "/projects/mockups/diagnosis-mockup-1.webp"
     ],
     "videos": [
-      "/projects/videos/diagnostico-running.webm"
+      "/projects/videos/diagnosis-result.webm"
     ]
   }
 }

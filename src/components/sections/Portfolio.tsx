@@ -19,7 +19,7 @@ const Portfolio = () => {
       delay: 300,
     },
     {
-      image: "/projects/automated.diagnosis.webp",
+      image: "/projects/mockups/diagnosis-mockup-2.webp",
       alt: t("projects.automatedDiagnosis.alt"),
       title: t("projects.automatedDiagnosis.title"),
       description: t("projects.automatedDiagnosis.description"),

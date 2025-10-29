@@ -11,9 +11,11 @@ import { Input } from "@zardo/ui-kit";
 
 import { newsletterSchema, type NewsletterFormData } from "@/lib/schemas/newsletter";
 
+type NewsletterPayload = NewsletterFormData & { language: string };
+
 const Newsletter = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { t } = useTranslation("newsletter");
+  const { t, i18n } = useTranslation("newsletter");
 
   const {
     register,
@@ -32,12 +34,17 @@ const Newsletter = () => {
     setIsSubmitting(true);
     
     try {
+      const payload: NewsletterPayload = {
+        email: data.email,
+        language: i18n.language,
+      };
+
       const response = await fetch('/api/newsletter', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email: data.email }),
+        body: JSON.stringify(payload),
       });
 
       if (!response.ok) {

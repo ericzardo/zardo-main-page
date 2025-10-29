@@ -1,9 +1,6 @@
-import { addContact } from '@/lib/notion/services/contact';
-import { sendNotificationEmail } from '@/lib/email/services/notifications';
-
 export async function POST(request: Request) {
   try {
-    const { name, email, message } = await request.json();
+    const { name, email, message, language = "pt" } = await request.json();
 
     if (!name || !email || !message) {
       return new Response(
@@ -12,52 +9,34 @@ export async function POST(request: Request) {
       );
     }
 
-    // Add to Notion
-    await addContact(name, email, message);
+    const webhookURL = process.env.N8N_CONTACT_WEBHOOK_URL;
 
-    // Send email notification
-    await sendNotificationEmail({
-      to: process.env.EMAIL_RECEIVER || 'ericszardo@gmail.com',
-      subject: 'New Contact Form Submission',
-      text: `
-        New contact form submission received:
+    if (!webhookURL) {
+      console.error('N8N_CONTACT_WEBHOOK_URL environment variable is not set.');
+      return new Response(
+        JSON.stringify({ error: 'Server configuration error' }),
+        { status: 500 }
+      );
+    }
 
-        Name: ${name}
-        Email: ${email}
-        Message: ${message}
+    const formData = { name, email, message, language };
 
-        This contact has been added to your Notion database.
-      `.trim(),
+    const response = await fetch(webhookURL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
     });
 
-    await sendNotificationEmail({
-      to: email,
-      subject: 'We received your message.',
-      html: `
-        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
-          <p>Thank you for contacting us.</p>
-          <p>This email is a confirmation that we have received your message and we will respond to you shortly.</p>
-
-          <p><strong>
-            Note: Please do not reply to this email. This mailbox is not monitored.
-          </strong></p>
-
-
-          <p>Best regards,<br/>The Zardo Team</p>
-
-          <hr style="margin: 30px 0; border: none; border-top: 1px solid #eee;" />
-
-          <p style="font-size: 0.9em;">
-            <a href="https://zardo.dev/" style="margin-right: 20px; color: #007bff; text-decoration: none;">Visit our website</a>
-            <a href="mailto:eric@zardo.dev" style="color: #007bff; text-decoration: none;">Contact us</a>
-          </p>
-          <p color: #3b3b3b; font-size: 0.8em;">
-            &copy; 2025 Zardo. All rights reserved.
-          </p>
-        </div>
-      `,
-      noReply: true,
-    });
+    if (!response.ok) {
+      const errorData = await response.text();
+      console.error(`Error calling n8n webhook: ${response.status} ${response.statusText}`, errorData);
+      return new Response(
+        JSON.stringify({ error: 'Failed to process contact form via webhook' }),
+        { status: response.status || 500 }
+      );
+    }
 
     return new Response(
       JSON.stringify({ success: true }), 

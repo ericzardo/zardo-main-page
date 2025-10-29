@@ -29,18 +29,20 @@ const ProjectCard = ({ image, alt, title, description, tags, link }: ProjectCard
             <div className="w-full flex items-center justify-between text-brand-lavender">
               <h3 className="text-2xl font-semibold">{title}</h3>
               {/* O botão "Read Case" ainda pode estar aqui se quiser */}
-              <span className="text-sm flex gap-2 items-center cursor-pointer group-hover:scale-90 group-hover:text-brand-offwhite transition-all duration-200 ease-out">
+            </div>
+
+            <div className="w-full flex gap-4 justify-between">
+              <span className="w-full flex gap-2 items-center">
+                {tags.map((tag, index) => (
+                  <div key={index} className="px-2 py-1 border border-brand-lavender text-brand-lavender rounded">
+                    <p className="text-xs">{tag}</p>
+                  </div>
+                ))}
+              </span>
+              <span className="text-sm flex flex-1/3 gap-2 items-center cursor-pointer group-hover:scale-90 group-hover:text-brand-offwhite transition-all duration-200 ease-out">
                 <p>Read Case</p>
                 <ArrowRight className="size-6" />
               </span>
-            </div>
-
-            <div className="w-full flex gap-2 flex-wrap">
-              {tags.map((tag, index) => (
-                <div key={index} className="px-2 py-1 border border-brand-lavender text-brand-lavender rounded">
-                  <p className="text-xs">{tag}</p>
-                </div>
-              ))}
             </div>
           </div>
         </div>

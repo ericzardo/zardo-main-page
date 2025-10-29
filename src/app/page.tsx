@@ -101,7 +101,7 @@ export default function Home() {
         description={t('slogan.description')}
       />
       <Footer
-        email="contact@zardo.dev"
+        email="projetos@zardo.dev"
         socialLinks={SOCIAL_LINKS}
         onScrollToTop={() => scrollToSection({ sectionId: "hero", offset: 80, duration: 800 })}
         backToTopLabel={t("footer.backToTop")}

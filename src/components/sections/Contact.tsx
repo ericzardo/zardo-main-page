@@ -15,9 +15,11 @@ import { PatternBackground } from "@zardo/ui-kit/layout";
 
 import { contactSchema, type ContactFormData } from "@/lib/schemas/contact";
 
+type ContactPayload = ContactFormData & { language: string };
+
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null); 
-  const { t } = useTranslation("contact");
+  const { t, i18n } = useTranslation("contact");
   const { t: tHome } = useTranslation("home");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -46,10 +48,15 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
+      const payload: ContactPayload = {
+        ...data,
+        language: i18n.language,
+      };
+
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify(payload),
       });
     
       if (res.ok) {
@@ -92,7 +99,7 @@ const Contact = () => {
                 {/* LinkedIn */}
                 <div className="flex items-center mb-8">
                   <Link
-                    href="https://www.linkedin.com/company/zardo-dev"
+                    href="https://www.linkedin.com/in/eric-zardo-a53630228/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-brand-lavender/30 p-3 rounded-lg mr-4 cursor-pointer hover:scale-90 duration-200 ease-out"
