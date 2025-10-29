@@ -5,7 +5,7 @@ import { useState, useMemo, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import toast from "react-hot-toast";
-import { CalendarDays, Linkedin, Mail, Send } from "lucide-react";
+import { Linkedin, Mail, Send } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
 import { useTranslation } from "react-i18next";
 
@@ -20,7 +20,6 @@ type ContactPayload = ContactFormData & { language: string };
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null); 
   const { t, i18n } = useTranslation("contact");
-  const { t: tHome } = useTranslation("home");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const schema = useMemo(
@@ -110,13 +109,6 @@ const Contact = () => {
               </div>
 
               <div className="mt-auto flex gap-2 md:gap-4 sm:flex-row flex-col">
-                {/* Booking Page Button */}
-                <Link href="/booking">
-                  <Button className="w-fit">
-                    <CalendarDays className="h-5 w-5 text-brand-lavender" />
-                    {tHome("consultancy.labelText")}
-                  </Button>
-                </Link>
 
                 {/* WhatsApp Button */}
                 <Link  
