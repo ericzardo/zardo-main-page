@@ -32,6 +32,31 @@ const config: NextConfig = {
   async headers() {
     return [
       {
+        source: '/:path*',
+        headers: [
+          {
+            // Protege contra Clickjacking
+            key: 'X-Frame-Options',
+            value: 'DENY',
+          },
+          {
+            // Evita que o navegador "adivinhe" tipos de arquivo (segurança básica)
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            // Força HTTPS (Strict-Transport-Security)
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload',
+          },
+          {
+            // Protege contra vazamento de dados ao clicar em links saindo do site
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin',
+          },
+        ],
+      },
+      {
         source: '/icons/:path*',
         headers: [
           {
